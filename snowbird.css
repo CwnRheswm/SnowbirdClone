@@ -1,0 +1,197 @@
+body{
+	margin: 0px;
+	font-family:"ProximaNova";
+}
+
+#header	{
+	position: fixed;
+	top:0rem;
+	width:100%;
+	height:20rem;
+	background-color: green;
+	z-index:100;
+	transition:top 2s ease;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+#headerBlock{
+	position:relative;
+	width:100%;
+	height:17rem;
+	bottom:0rem;
+	float:left;
+	background-color: purple;
+	transition:background-color 3s ease;
+}
+#snowData{
+	position: relative;
+	width:43%;
+	height:100%;
+	background-color:#1e1e1e;
+	float:left;
+}
+#mtnCam{
+	display: block;
+	width:38%;
+	height:5%;
+	background: url(Images/nav-cam@2x.png) no-repeat top;
+	background-size:90%;
+	margin:12% 30%;
+	padding-top:27%;
+	color:white;
+	font:bold .5rem "ProximaNova" sans-serif;
+	text-indent:6px;
+	text-decoration:none;
+}
+#snowTable{
+	float:left;
+	width:100%;
+	height:47%;
+	margin:0px 0%;
+	font:bold .8rem "ProximaNova",sans-serif;
+	color:#bcbcbc;
+	border-collapse:collapse;
+	border:none;
+}
+#snowTable #topRow{
+	border-collapse:collapse;
+	border:none;
+	background-color: #ff5a00;
+	color: white;
+}
+#snowTable th{
+	border-collapse:collapse;
+	border:none;
+	text-align:left;
+	width:50%;
+	padding-left: 27%;
+	padding-right: 0%;
+}
+#snowTable td{
+	border-collapse:collapse;
+	border:none;
+	text-align:right;
+	padding-right: 28%;
+	vertical-align: middle;
+	font-size:1.2rem;
+	color:white;
+}
+sup{
+	vertical-align:top;
+}
+#mtnRprtBtn{
+	display: block;
+	width:70%;
+	height:10%;
+	font:bold .7rem "ProximaNova", sans-serif;
+	text-transform:uppercase;
+	text-align: center;
+	border-radius: 1rem;
+	margin:0px auto;
+	border:none;
+	background:#009bd1;
+	color:white;
+}
+#tempData{
+	width:57%;
+	height:100%;
+	background-color:#353230;
+	float:left;
+	text-align:center;
+}
+#tempTable{
+	height:90%;
+	width:80%;
+	background-color: none;
+	color:white;
+	margin-left:10%;
+	font:bold .7rem "ProximaNova",sans-serif;
+	text-transform:uppercase;
+	border-collapse:collapse;
+}
+#tempTable #topRow{
+	height:35%;
+	font-size:4rem;
+}
+#tempTable #topRow th{
+	padding-left:4rem;
+	background: url(Images/clear.png) no-repeat left;
+}
+#tempTable th{
+
+}
+#tempTable .icon{
+	background: url(Images/clear.png) no-repeat center;
+	color:blue;
+	background-size: 100%;
+}
+#tempTable td{
+	color:green;
+	font-size: 1.5rem;
+	width:20%;
+}
+#headerBar{
+	height:3rem;
+	width:100%;
+	border:none;
+	float:left;
+}
+#border{
+	float:left;
+	height:10%;
+	width:100%;
+	background-color: linen;
+}
+#navOpen{
+	height: 95%;
+	width:15%;
+	background-color: white;
+	display: inline-flex;
+	border: none;
+	float:left;
+	transition: background-color 2s ease;
+}
+#navOpen:active~weatherOpen{
+	background-color: blue;
+}
+#navClick{
+	height: 100%;
+	width: 100%;
+	background: url(Images/plus@2x.png) no-repeat center;
+	background-size: 70%;
+	transition:background-color 2s ease;
+}
+#navOpen:active{
+}
+#logo{
+	text-align: center;
+	text-transform: lowercase;
+	width:70%;
+	height:95%;
+	background-color: white;
+	float:left;
+}
+#logo > span{
+	background: url(Images/wings.png) no-repeat right 0px;
+	background-size: 29px 16px; 
+	padding-right: 33px;
+}
+#weatherOpen{
+	height:95%;
+	width:15%;
+	background: url(Images/clear_black.png) no-repeat center;
+	background-color: white;
+	position: relative;
+	display: inline-flex;
+	border: none;
+	transition: background-color 2s ease;
+}
+weatherOpen:active{
+	background-color:yellow;
+}
+weatherOpen:active~#headerBlock{
+	background-color:maroon;
+	height:20rem;
+}
+weatherOpen:active~#navOpen{
+	background-color:blue;
+}
