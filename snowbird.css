@@ -1,6 +1,81 @@
+@font-family {
+
+}
 body{
-	margin: 0px;
-	font-family:"ProximaNova";
+	font:900 1.2rem "ProximaNova", Helvetica, sans-serif;
+	margin:0;
+	border-collapse:collapse;
+}
+#headerWrapper{
+	height:20rem;
+	width:100%;
+	top:0;
+}
+#blockWrapper{
+	background-color:#353230;
+	color:#fff;
+	height:17rem;
+	overflow:hidden;
+}
+#blockWrapper .leftCol{
+	float:left;
+	width:45%;
+	height:100%;
+	background-color:#000000;
+	top:0;
+}
+#blockWrapper .leftCol .mtnCam{
+	display: block;
+	width:38%;
+	height:5%;
+	background: url(Images/nav-cam@2x.png) no-repeat top;
+	background-size:90%;
+	margin:10% 30%;
+	padding-top:27%;
+	font-size:.5rem;
+	text-decoration:none;
+	text-indent: 6%
+}
+ul{
+	list-style: none;
+	text-decoration: none;
+	padding: 0;
+	margin:0;
+	height:45%;
+}
+#blockWrapper .leftCol ul li:first-child{
+	background-color: #ff5a00;
+}
+#blockWrapper .leftCol ul li{
+	width:100%;
+	height:25%;
+}
+#blockWrapper .leftCol ul span:first-child{
+	color:#bcbcbc;
+	padding-left: 30%;
+	width:30%;
+	font-size:.8rem;
+}
+#blockWrapper .leftCol ul span{
+	display:inline-block;
+	text-align:left;
+	width:20%;
+}
+#blockWrapper .leftCol button{
+	color:#fff;
+	font: bold .6rem "ProximaNova",Helvetica,Arial,sans-serif;
+	text-transform: uppercase;
+	border-collapse: collapse;
+	margin:0;
+	border-radius: 1rem;
+	border:none;
+	background-color:#009bd1;
+	width:70%;
+	margin-left: 15%;
+	padding: 5% 0;
+}
+#blockWrapper .rightCol{
+
 }
 
 #header	{
@@ -12,6 +87,13 @@ body{
 	z-index:100;
 	transition:top 2s ease;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+#weatherWidget col {
+
+}
+
+#weatherWidgetMobile .mtnCam li {
+
 }
 #headerBlock{
 	position:relative;
@@ -194,4 +276,21 @@ weatherOpen:active~#headerBlock{
 }
 weatherOpen:active~#navOpen{
 	background-color:blue;
+}
+
+#weatherWidgetMobile {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height opacity 2s ease-in;
+}
+#weatherWidgetMobile.open {
+	height: 300px;
+	opacity: 1;
+}
+
+#weatherWidgetMobile .wrapper {
+	position: relative;
+	height: 300px;
+
 }

@@ -4,9 +4,56 @@
 	<link rel=stylesheet type="text/css" href="snowbird.css">
 	<title>Fake Snowbird</title>
 </head>
-<body class="mBody">
-	<div id="header">
-
+<body>
+	<div id="headerWrapper">
+		<div id="blockWrapper">
+			<div class="leftCol">
+				<div class="mtnCam">MTN CAM</div>
+				<ul>
+					<li><span>24 hr</span><span>0&#8221</span></li>
+					<li><span>48 hr</span><span>0&#8221</span></li>
+					<li><span>Depth</span><span>0&#8221</span></li>
+					<li><span>YTD</span><span>0&#8221</span></li>
+				</ul>
+				<button>Mtn Report</button>
+			</div>
+			<div class="rightCol">
+				<div class="currentTemp"></div>
+				<div>
+					<span class='day'>tue</span>
+					<span class='icon'></span>
+					<span class='high'>51&deg</span>
+					<span class='low'>37&deg</span>
+				</div>
+				<div>
+					<span class='day'>wed</span>
+					<span class='icon'></span>
+					<span class='high'>51&deg</span>
+					<span class='low'>35&deg</span>
+				</div>
+				<div>
+					<span class='day'>thu</span>
+					<span class='icon'></span>
+					<span class='high'>52&deg</span>
+					<span class='low'>34&deg</span>
+				</div>
+				<div>
+					<span class='day'>fri</span>
+					<span class='icon'></span>
+					<span class='high'>53&deg</span>
+					<span class='low'>34&deg</span>
+				</div>
+				<div>
+					<span class='day'>sat</span>
+					<span class='icon'></span>
+					<span class='high'>50&deg</span>
+					<span class='low'>33&deg</span>
+				</div>
+			</div>
+		</div>
+		<div id="barWrapper">
+		</div>
+		<!--
 		<div id="headerBlock" style='height:17rem'>
 			<div id="snowData">
 				<a id="mtnCam" href="#">MTN CAM</a>
@@ -43,7 +90,7 @@
 					<button id="mtnRprtBtn">MTN REPORT
 					</button>
 			</div>
-
+			-->
 			<div id="tempData">
 				<table id="tempTable">
 					<tr id="topRow">
@@ -96,21 +143,22 @@
 	
 	</div>
 
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+	<!--<script src="jquery.min.js"></script>
+
+	//<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+	//<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>-->
 
 	<script>
-		var wO = $('#weatherOpen');
-		var bar = $('#header');
-		console.log(bar.position());
+		/*var wO = document.getElementById('#weatherOpen');
+		var bar = document.getElementById('#header');
+		
 		wO.click(function(){
 			if(bar.position()['top'] > '-17'){
 				bar.css('top','-17rem');
 			} else {
 				bar.css('top','0rem');
 			}
-		});	
+		});*/	
 	</script>
 </body>
 </html>
