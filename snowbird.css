@@ -9,22 +9,28 @@ body{
 #headerWrapper{
 	height:20rem;
 	width:100%;
-	top:0;
+	position: relative;
+	top:-17rem;
+	transition:top 2s ease;
 }
-#blockWrapper{
+#widgetWrapper{
 	background-color:#353230;
 	color:#fff;
 	height:17rem;
 	overflow:hidden;
+	transform: perspective(100px) rotateX(60deg);
+	transform-origin:bottom;
+
+	transition: transform 2s ease;
 }
-#blockWrapper .leftCol{
+#widgetWrapper .leftCol{
 	float:left;
 	width:45%;
 	height:100%;
 	background-color:#1c1c1c;
 	top:0;
 }
-#blockWrapper .leftCol .mtnCam{
+#widgetWrapper .leftCol .mtnCam{
 	display: block;
 	width:38%;
 	height:5%;
@@ -43,24 +49,24 @@ ul{
 	margin:0;
 	height:45%;
 }
-#blockWrapper .leftCol ul li:first-child{
+#widgetWrapper .leftCol ul li:first-child{
 	background-color: #ff5a00;
 }
-#blockWrapper .leftCol ul li{
+#widgetWrapper .leftCol ul li{
 	width:100%;
 	height:25%;
 }
-#blockWrapper .leftCol ul span:first-child{
+#widgetWrapper .leftCol ul span:first-child{
 	color:#bcbcbc;
 	padding-left: 30%;
 	width:30%;
 	font-size:.8rem;
 }
-#blockWrapper .leftCol ul span{
+#widgetWrapper .leftCol ul span{
 	display:inline-block;
 	text-align:left;
 }
-#blockWrapper .leftCol button{
+#widgetWrapper .leftCol button{
 	color:#fff;
 	font: bold .6rem "ProximaNova",Helvetica,Arial,sans-serif;
 	text-transform: uppercase;
@@ -73,40 +79,53 @@ ul{
 	margin-left: 15%;
 	padding: 5% 0;
 }
-#blockWrapper .rightCol{
+#widgetWrapper .rightCol{
 	width:55%;
 	height:100%;
 	float:left;
 }
-#blockWrapper .rightCol .currentTemp{
+#widgetWrapper .rightCol .currentTemp{
 	height:30%;
 	font-size: 4rem;
 	text-align: center;
 }
-#blockWrapper .rightCol .currentTemp .icon{
+#widgetWrapper .rightCol .currentTemp .icon{
 	background: url(Images/clear.png) no-repeat left;
 	padding-left:35%;
 }
-#blockWrapper .icon{
-	background: url(Images/snow.png) no-repeat left;
+#widgetWrapper ul li .icon{
+	background: url(Images/snow_blue.png) no-repeat left;
 	padding-left: 15%;
-	background-size: 100%;
+	background-size: auto 100%;
 }
-#blockWrapper .rightCol li{
-	height: 2rem;
+#widgetWrapper .rightCol ul li:nth-child(odd) .icon{
+	background: url(Images/clear_blue.png) no-repeat left;
+	background-size: auto 100%;
+}
+
+#widgetWrapper .rightCol li{
+	height: 25%;
 	text-align: center;
 	text-transform: uppercase;
+	font-size: 1.5rem;
 }
-#blockWrapper .rightCol li span:first-child{
+#widgetWrapper .rightCol li span:first-child{
 	display: inline-block;
 	padding-left: 5%;
 	width: 25%;
 	color:#bcbcbc;
+	font-size: .8rem;
 }
 .low{
 	font-weight: 400;
 	color:#6a90a0;
 }
+
+.navWrapper{
+	height:17rem;
+	background: blue;
+}
+
 
 #header	{
 	position: fixed;
@@ -118,142 +137,19 @@ ul{
 	transition:top 2s ease;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
-#weatherWidget col {
-
-}
-
-#weatherWidgetMobile .mtnCam li {
-
-}
-#headerBlock{
-	position:relative;
-	width:100%;
-	height:17rem;
-	bottom:0rem;
-	float:left;
-	background-color: purple;
-	transition:background-color 3s ease;
-}
-#snowData{
-	position: relative;
-	width:43%;
-	height:100%;
-	background-color:#1e1e1e;
-	float:left;
-}
-#mtnCam{
-	display: block;
-	width:38%;
-	height:5%;
-	background: url(Images/nav-cam@2x.png) no-repeat top;
-	background-size:90%;
-	margin:12% 30%;
-	padding-top:27%;
-	color:white;
-	font:bold .5rem "ProximaNova" sans-serif;
-	text-indent:6px;
-	text-decoration:none;
-}
-#snowTable{
-	float:left;
-	width:100%;
-	height:47%;
-	margin:0px 0%;
-	font:bold .8rem "ProximaNova",sans-serif;
-	color:#bcbcbc;
-	border-collapse:collapse;
-	border:none;
-}
-#snowTable #topRow{
-	border-collapse:collapse;
-	border:none;
-	background-color: #ff5a00;
-	color: white;
-}
-#snowTable th{
-	border-collapse:collapse;
-	border:none;
-	text-align:left;
-	width:50%;
-	padding-left: 27%;
-	padding-right: 0%;
-}
-#snowTable td{
-	border-collapse:collapse;
-	border:none;
-	text-align:right;
-	padding-right: 28%;
-	vertical-align: middle;
-	font-size:1.2rem;
-	color:white;
-}
-sup{
-	vertical-align:top;
-}
-#mtnRprtBtn{
-	display: block;
-	width:70%;
-	height:10%;
-	font:bold .7rem "ProximaNova", sans-serif;
-	text-transform:uppercase;
-	text-align: center;
-	border-radius: 1rem;
-	margin:0px auto;
-	border:none;
-	background:#009bd1;
-	color:white;
-}
-#tempData{
-	width:57%;
-	height:100%;
-	background-color:#353230;
-	float:left;
-	text-align:center;
-}
-#tempTable{
-	height:90%;
-	width:80%;
-	background-color: none;
-	color:white;
-	margin-left:10%;
-	font:bold .7rem "ProximaNova",sans-serif;
-	text-transform:uppercase;
-	border-collapse:collapse;
-}
-#tempTable #topRow{
-	height:35%;
-	font-size:4rem;
-}
-#tempTable #topRow th{
-	padding-left:4rem;
-	background: url(Images/clear.png) no-repeat left;
-}
-#tempTable th{
-
-}
-#tempTable .icon{
-	background: url(Images/clear.png) no-repeat center;
-	color:blue;
-	background-size: 100%;
-}
-#tempTable td{
-	color:green;
-	font-size: 1.5rem;
-	width:20%;
-}
 #headerBar{
 	height:3rem;
 	width:100%;
 	border:none;
 	float:left;
 }
-#border{
+#headerBar .border{
 	float:left;
 	height:10%;
 	width:100%;
 	background-color: linen;
 }
-#navOpen{
+#headerBar .navWBtn{
 	height: 95%;
 	width:15%;
 	background-color: white;
@@ -262,7 +158,7 @@ sup{
 	float:left;
 	transition: background-color 2s ease;
 }
-#navOpen:active~weatherOpen{
+#headerBar .navWBtn:active~weatherWBtn{
 	background-color: blue;
 }
 #navClick{
@@ -272,9 +168,9 @@ sup{
 	background-size: 70%;
 	transition:background-color 2s ease;
 }
-#navOpen:active{
+#navWBtn:active{
 }
-#logo{
+#headerBar .logo{
 	text-align: center;
 	text-transform: lowercase;
 	width:70%;
@@ -282,12 +178,12 @@ sup{
 	background-color: white;
 	float:left;
 }
-#logo > span{
+#headerBar .logo > span{
 	background: url(Images/wings.png) no-repeat right 0px;
 	background-size: 29px 16px; 
 	padding-right: 33px;
 }
-#weatherOpen{
+#headerBar .weatherWBtn{
 	height:95%;
 	width:15%;
 	background: url(Images/clear_black.png) no-repeat center;
@@ -296,15 +192,22 @@ sup{
 	display: inline-flex;
 	border: none;
 	transition: background-color 2s ease;
+	transition: background;
 }
-weatherOpen:active{
+#headerBar .weatherWBtn.opened{
+	height:95%;
+	width:15%;
+	background: url(Images/nav-scroll@2x.png) no-repeat center;
+	border:none;
+}
+weatherWBtn:active{
 	background-color:yellow;
 }
-weatherOpen:active~#headerBlock{
+weatherWBtn:active~#headerBlock{
 	background-color:maroon;
 	height:20rem;
 }
-weatherOpen:active~#navOpen{
+weatherWBtn:active~#navWBtn{
 	background-color:blue;
 }
 

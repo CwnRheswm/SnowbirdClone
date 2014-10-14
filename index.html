@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id="headerWrapper">
-		<div id="blockWrapper">
+		<div id="widgetWrapper">
 			<div class="leftCol">
 				<div class="mtnCam">MTN CAM</div>
 				<ul>
@@ -58,114 +58,72 @@
 		</div>
 		<div id="barWrapper">
 		</div>
-		<!--
-		<div id="headerBlock" style='height:17rem'>
-			<div id="snowData">
-				<a id="mtnCam" href="#">MTN CAM</a>
-				<table id="snowTable">
-					<tr id="topRow">
-						<th>24 hr</th>
-						<td>
-							0
-							<sup>"</sup>
-						</td>
-					</tr>
-					<tr>
-						<th>48 hr</th>
-						<td>
-							0
-							<sup>"</sup>
-						</td>
-					</tr>
-					<tr>
-						<th>Depth</th>
-						<td>
-							0
-							<sup>"</sup>
-						</td>
-					</tr>
-					<tr>
-						<th>YTD</th>
-						<td id="24hr">
-							0
-							<sup>"</sup>
-						</td>
-					</tr>	
-				</table>
-					<button id="mtnRprtBtn">MTN REPORT
-					</button>
+		
+		<div class="navWrapper">
+			<div class="searchBar">
 			</div>
-			-->
-			<!--
-			<div id="tempData">
-				<table id="tempTable">
-					<tr id="topRow">
-						<th colspan="5">46<sup>*</sup></th>
-					</tr>
-					<tr>
-						<th>tue</th>
-						<td class="icon"></td>
-						<td class="high">51<sup>*</sup></td>
-						<td class="low">37<sup>*</sup></td>
-					</tr>
-					<tr>
-						<th>wed</th>
-						<td class="icon"></td>
-						<td class="high">51<sup>*</sup></td>
-						<td class="low">35<sup>*</sup></td>
-					</tr>
-					<tr>
-						<th>thu</th>
-						<td class="icon"></td>
-						<td class="high">52<sup>*</sup></td>
-						<td class="low">34<sup>*</sup></td>
-					</tr>
-					<tr>
-						<th>fri</th>
-						<td class="icon"></td>
-						<td class="high">53<sup>*</sup></td>
-						<td class="low">34<sup>*</sup></td>
-					</tr>
-					<tr>
-						<th>sat</th>
-						<td class="icon"></td>
-						<td class="high">50<sup>*</sup></td>
-						<td class="low">33<sup>*</sup></td>
-					</tr>
-				</table>
+			<div class="homeBtn">
+			</div>
+			<div class="navBtnsBox">
+				<ul>
+					<li class="winterBtn" href="#">
+					</li>
+					<li class="summerBtn" href="#">
+					</li>
+					<li class="lodgingBtn" href="#">
+					</li>
+					<li class="diningBtn" href="#">
+					</li>
+					<li class="spaBtn" href="#">
+					</li>
+					<li class="eventsBtn" href="#">
+					</li>
+					<li class="groupsBtn" href="#">
+					</li>
+					<li class="shopBtn" href="#">
+					</li>
+					<li class="ticketsBtn" href="#">
+					</li>
+				</ul>
 			</div>
 		</div>
-	-->
+
 		<div id="headerBar">
-			<div id="border"></div>
-			<a id="navOpen" href="#">
+			<div class="border"></div>
+			<a class="navWBtn" href="#">
 				<span id="navClick"></span>
 			</a>
-			<a id=logo>
+			<a class="logo">
 				<span>snOWBird</span>
 			</a>
-			<a id=weatherOpen href="#">
+			<a class="weatherWBtn" href="#">
 			</a>
 		</div>
-	
 	</div>
 
-	<!--<script src="jquery.min.js"></script>
-
-	//<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-	//<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>-->
+	<script src="jquery-1.11.1.js"></script>
+	<!--<script src="underscore-min.js"></script>-->
+	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>-->
 
 	<script>
-		/*var wO = document.getElementById('#weatherOpen');
-		var bar = document.getElementById('#header');
+		var wO = $('.weatherWBtn');
+		var navBtn = $('.navWBtn');
+		var bar = $('#header');
+		var header = $("#headerWrapper");
+		var widgetWrapper = $("#widgetWrapper");
 		
 		wO.click(function(){
-			if(bar.position()['top'] > '-17'){
-				bar.css('top','-17rem');
-			} else {
-				bar.css('top','0rem');
-			}
-		});*/	
+			//if(widgetWrapper.height() == 0){
+			if(wO.attr("class") === "weatherWBtn"){
+				header.css("top","0");
+				widgetWrapper.css("transform","perspective(0) rotateX(0deg)");
+				wO.addClass("opened");
+			} else{
+				header.css("top","-17rem");
+				widgetWrapper.css("transform","perspective(100px) rotateX(60deg)");
+				wO.removeClass("opened");
+			};
+		});	
 	</script>
 </body>
 </html>
