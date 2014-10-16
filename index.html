@@ -55,37 +55,41 @@
 					</li>
 				</ul>
 			</div>
-		</div>
-		<div id="barWrapper">
-		</div>
-		
+		</div>		
 		<div class="navWrapper">
-			<div class="searchBar">
-			</div>
-			<div class="homeBtn">
-			</div>
-			<div class="navBtnsBox">
-				<ul>
-					<li class="winterBtn" href="#">
-					</li>
-					<li class="summerBtn" href="#">
-					</li>
-					<li class="lodgingBtn" href="#">
-					</li>
-					<li class="diningBtn" href="#">
-					</li>
-					<li class="spaBtn" href="#">
-					</li>
-					<li class="eventsBtn" href="#">
-					</li>
-					<li class="groupsBtn" href="#">
-					</li>
-					<li class="shopBtn" href="#">
-					</li>
-					<li class="ticketsBtn" href="#">
-					</li>
-				</ul>
-			</div>
+			<ul>
+				<li class="searchBar">
+				</li>
+				<li class="homeBtn">
+				</li>
+				<li class="winterBtn">
+					<a href="#" title="winter">winter</a>
+				</li>
+				<li class="summerBtn">
+					<a href="#" title="summer">summer</a>
+				</li>
+				<li class="lodgingBtn">
+					<a href="#" title="lodging">lodging</a>
+				</li>
+				<li class="diningBtn">
+					<a href="#" title="dining">dining</a>
+				</li>
+				<li class="spaBtn">
+					<a href="#" title="spa">cliff spa</a>
+				</li>
+				<li class="eventsBtn">
+					<a href="#" title="events">events</a>
+				</li>
+				<li class="groupsBtn">
+					<a href="#" title="groups">groups</a>
+				</li>
+				<li class="shopBtn">
+					<a href="#" title="shop">shop</a>
+				</li>
+				<li class="ticketsBtn">
+					<a href="#" title="tickets">tickets</a>
+				</li>
+			</ul>
 		</div>
 
 		<div id="headerBar">
@@ -111,19 +115,39 @@
 		var bar = $('#header');
 		var header = $("#headerWrapper");
 		var widgetWrapper = $("#widgetWrapper");
-		
+		var navWrapper = $(".navWrapper");
+
 		wO.click(function(){
 			//if(widgetWrapper.height() == 0){
 			if(wO.attr("class") === "weatherWBtn"){
 				header.css("top","0");
 				widgetWrapper.css("transform","perspective(0) rotateX(0deg)");
+				widgetWrapper.css("height","17rem")
 				wO.addClass("opened");
 			} else{
-				header.css("top","-17rem");
+				header.css("top","0");
 				widgetWrapper.css("transform","perspective(100px) rotateX(60deg)");
+				widgetWrapper.css("height","0")
 				wO.removeClass("opened");
 			};
-		});	
+		});
+
+		navBtn.click(function(){
+			if(navBtn.attr("class") === "navWBtn"){
+				header.css("top","0")
+				navWrapper.css("transform","perspective(0) rotateX(0deg)");
+				navWrapper.css("height","17rem")
+				navBtn.addClass("opened");
+				if(wO.attr("class") === "weatherWBtn opened"){
+					console.log("switch between things");
+				}
+			} else {
+				header.css("top","0")
+				navWrapper.css("transform","perspective(100px) rotateX(60deg)");
+				navWrapper.css("height","0")
+				navBtn.removeClass("opened");
+			}
+		});
 	</script>
 </body>
 </html>

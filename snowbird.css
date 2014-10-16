@@ -1,5 +1,5 @@
-@font-family {
-
+@font-face {
+	font-family:"ProximaNova", Helvetica, sans-serif;
 }
 body{
 	font:900 1.2rem "ProximaNova", Helvetica, sans-serif;
@@ -10,18 +10,17 @@ body{
 	height:20rem;
 	width:100%;
 	position: relative;
-	top:-17rem;
+	top:0;
 	transition:top 2s ease;
 }
 #widgetWrapper{
 	background-color:#353230;
 	color:#fff;
-	height:17rem;
+	height:0;
 	overflow:hidden;
 	transform: perspective(100px) rotateX(60deg);
 	transform-origin:bottom;
-
-	transition: transform 2s ease;
+	transition: transform 2s ease, height 2s ease;
 }
 #widgetWrapper .leftCol{
 	float:left;
@@ -42,7 +41,7 @@ body{
 	text-decoration:none;
 	text-indent: 6%
 }
-ul{
+#widgetWrapper ul{
 	list-style: none;
 	text-decoration: none;
 	padding: 0;
@@ -120,28 +119,87 @@ ul{
 	font-weight: 400;
 	color:#6a90a0;
 }
-
 .navWrapper{
-	height:17rem;
-	background: blue;
+	overflow: hidden;
+	height:0;
+	transform: perspective(100px) rotateX(60deg);
+	transform-origin:bottom;
+	transition: transform 2s ease, height 2s ease;
 }
-
-
-#header	{
-	position: fixed;
-	top:0rem;
+.navWrapper ul{
+	height:100%;
+	background: #fff;
+	padding:0;
+	margin:0;
+	list-style:none;
+	display:flex;
+	flex-flow: row wrap;
+}
+.navWrapper li{
+	width:33.33%;
+	height:25%;
+	border-collapse: collapse;
+}
+.navWrapper .searchBar{
+	width:66.66%;
+	background: #66c3e3;
+	display:flex;
+	border-right: 1px solid #fff;
+}
+.navWrapper .homeBtn{
+	width:33%;
+	background: #66c3e3;
+	display:flex;
+}
+.navWrapper li a{
+	display:block;
+	text-align:center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size:.7rem;
+	font-weight: bold;
+	padding:3rem 0 .5rem 0;
 	width:100%;
-	height:20rem;
-	background-color: green;
-	z-index:100;
-	transition:top 2s ease;
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	height:10px;
+	color:#000;
+	border:1px solid #b0b0b0;
+	border-top: none;
+	border-left: none;
+	background-size: 50%;
+	background-repeat: no-repeat;
 }
+.winterBtn a{
+	background: url(Images/nav-winter@2x.png) top;
+}
+.summerBtn a{
+	background: url(Images/nav-summer@2x.png) top;
+}
+.lodgingBtn a{
+	background: url(Images/nav-lodging@2x.png) top;
+}
+.diningBtn a{
+	background: url(Images/nav-dining@2x.png) top;
+}
+.spaBtn a{
+	background: url(Images/nav-spa@2x.png) top;
+}
+.eventsBtn a{
+	background: url(Images/nav-events@2x.png) top;
+}
+.groupsBtn a{
+	background: url(Images/nav-groups@2x.png) top;
+}
+.shopBtn a{
+	background: url(Images/nav-shop@2x.png) top;
+}
+.ticketsBtn a{
+	background: url(Images/nav-tickets@2x.png) top;
+}
+
 #headerBar{
 	height:3rem;
 	width:100%;
 	border:none;
-	float:left;
 }
 #headerBar .border{
 	float:left;
