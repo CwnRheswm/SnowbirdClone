@@ -13,6 +13,103 @@ body{
 	top:0;
 	transition:top 2s ease;
 }
+
+
+
+.navWrapper{
+	overflow: hidden;
+	height:0;
+	transform: perspective(100px) rotateX(60deg);
+	transform-origin:bottom;
+	transition: transform 2s ease, height 2s ease;
+}
+.navWrapper ul{
+	height:100%;
+	background: #fff;
+	padding:0;
+	margin:0;
+	list-style:none;
+	display:flex;
+	flex-flow: row wrap;
+}
+.navWrapper li{
+	width:33.33%;
+	height:25%;
+	border-collapse: collapse;
+}
+.navWrapper li a{
+	display:block;
+	text-align:center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size:.7rem;
+	font-weight: bold;
+	padding:3rem 0 .5rem 0;
+	width:100%;
+	height:10px;
+	color:#000;
+	border:1px solid #b0b0b0;
+	border-top: none;
+	border-left: none;
+	background-size: 50%;
+	background-repeat: no-repeat;
+}
+.navWrapper .searchBar{
+	width:66.66%;
+	background: #66c3e3;
+	display:flex;
+	border-right: 1px solid #fff;
+}
+.navWrapper .searchBar a{
+	background: url(Images/nav-search-icon.png) no-repeat;
+	background-size: 15%;
+	background-position: 10% 50%;
+	text-align: center;
+	vertical-align: center;
+	padding:1.75rem 2rem 1.75rem 0;
+	font-size: 1rem;
+	color:#fff;
+}
+.navWrapper .homeBtn{
+	width:33%;
+	background: #66c3e3;
+	display:flex;
+}
+.navWrapper .homeBtn a{
+	background: url(Images/nav-logo-white@2x.png) no-repeat center;
+	background-size: 40%;
+	color:#fff;
+}
+.winterBtn a{
+	background: url(Images/nav-winter@2x.png) top;
+}
+.summerBtn a{
+	background: url(Images/nav-summer@2x.png) top;
+}
+.lodgingBtn a{
+	background: url(Images/nav-lodging@2x.png) top;
+}
+.diningBtn a{
+	background: url(Images/nav-dining@2x.png) top;
+}
+.spaBtn a{
+	background: url(Images/nav-spa@2x.png) top;
+}
+.eventsBtn a{
+	background: url(Images/nav-events@2x.png) top;
+}
+.groupsBtn a{
+	background: url(Images/nav-groups@2x.png) top;
+}
+.shopBtn a{
+	background: url(Images/nav-shop@2x.png) top;
+}
+.ticketsBtn a{
+	background: url(Images/nav-tickets@2x.png) top;
+}
+
+
+
 #widgetWrapper{
 	background-color:#353230;
 	color:#fff;
@@ -119,82 +216,8 @@ body{
 	font-weight: 400;
 	color:#6a90a0;
 }
-.navWrapper{
-	overflow: hidden;
-	height:0;
-	transform: perspective(100px) rotateX(60deg);
-	transform-origin:bottom;
-	transition: transform 2s ease, height 2s ease;
-}
-.navWrapper ul{
-	height:100%;
-	background: #fff;
-	padding:0;
-	margin:0;
-	list-style:none;
-	display:flex;
-	flex-flow: row wrap;
-}
-.navWrapper li{
-	width:33.33%;
-	height:25%;
-	border-collapse: collapse;
-}
-.navWrapper .searchBar{
-	width:66.66%;
-	background: #66c3e3;
-	display:flex;
-	border-right: 1px solid #fff;
-}
-.navWrapper .homeBtn{
-	width:33%;
-	background: #66c3e3;
-	display:flex;
-}
-.navWrapper li a{
-	display:block;
-	text-align:center;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size:.7rem;
-	font-weight: bold;
-	padding:3rem 0 .5rem 0;
-	width:100%;
-	height:10px;
-	color:#000;
-	border:1px solid #b0b0b0;
-	border-top: none;
-	border-left: none;
-	background-size: 50%;
-	background-repeat: no-repeat;
-}
-.winterBtn a{
-	background: url(Images/nav-winter@2x.png) top;
-}
-.summerBtn a{
-	background: url(Images/nav-summer@2x.png) top;
-}
-.lodgingBtn a{
-	background: url(Images/nav-lodging@2x.png) top;
-}
-.diningBtn a{
-	background: url(Images/nav-dining@2x.png) top;
-}
-.spaBtn a{
-	background: url(Images/nav-spa@2x.png) top;
-}
-.eventsBtn a{
-	background: url(Images/nav-events@2x.png) top;
-}
-.groupsBtn a{
-	background: url(Images/nav-groups@2x.png) top;
-}
-.shopBtn a{
-	background: url(Images/nav-shop@2x.png) top;
-}
-.ticketsBtn a{
-	background: url(Images/nav-tickets@2x.png) top;
-}
+
+
 
 #headerBar{
 	height:3rem;
@@ -224,7 +247,7 @@ body{
 	width: 100%;
 	background: url(Images/plus@2x.png) no-repeat center;
 	background-size: 70%;
-	transition:background-color 2s ease;
+	transition: transform 1s ease;
 }
 #navWBtn:active{
 }

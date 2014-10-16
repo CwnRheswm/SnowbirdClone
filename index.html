@@ -6,6 +6,44 @@
 </head>
 <body>
 	<div id="headerWrapper">
+		<div class="navWrapper">
+			<ul>
+				<li class="searchBar">
+					<a href="#" title="search">search</a>
+				</li>
+				<li class="homeBtn">
+					<a href="#" title="home">home</a>
+				</li>
+				<li class="winterBtn">
+					<a href="#" title="winter">winter</a>
+				</li>
+				<li class="summerBtn">
+					<a href="#" title="summer">summer</a>
+				</li>
+				<li class="lodgingBtn">
+					<a href="#" title="lodging">lodging</a>
+				</li>
+				<li class="diningBtn">
+					<a href="#" title="dining">dining</a>
+				</li>
+				<li class="spaBtn">
+					<a href="#" title="spa">cliff spa</a>
+				</li>
+				<li class="eventsBtn">
+					<a href="#" title="events">events</a>
+				</li>
+				<li class="groupsBtn">
+					<a href="#" title="groups">groups</a>
+				</li>
+				<li class="shopBtn">
+					<a href="#" title="shop">shop</a>
+				</li>
+				<li class="ticketsBtn">
+					<a href="#" title="tickets">tickets</a>
+				</li>
+			</ul>
+		</div>
+
 		<div id="widgetWrapper">
 			<div class="leftCol">
 				<div class="mtnCam">MTN CAM</div>
@@ -56,41 +94,7 @@
 				</ul>
 			</div>
 		</div>		
-		<div class="navWrapper">
-			<ul>
-				<li class="searchBar">
-				</li>
-				<li class="homeBtn">
-				</li>
-				<li class="winterBtn">
-					<a href="#" title="winter">winter</a>
-				</li>
-				<li class="summerBtn">
-					<a href="#" title="summer">summer</a>
-				</li>
-				<li class="lodgingBtn">
-					<a href="#" title="lodging">lodging</a>
-				</li>
-				<li class="diningBtn">
-					<a href="#" title="dining">dining</a>
-				</li>
-				<li class="spaBtn">
-					<a href="#" title="spa">cliff spa</a>
-				</li>
-				<li class="eventsBtn">
-					<a href="#" title="events">events</a>
-				</li>
-				<li class="groupsBtn">
-					<a href="#" title="groups">groups</a>
-				</li>
-				<li class="shopBtn">
-					<a href="#" title="shop">shop</a>
-				</li>
-				<li class="ticketsBtn">
-					<a href="#" title="tickets">tickets</a>
-				</li>
-			</ul>
-		</div>
+		
 
 		<div id="headerBar">
 			<div class="border"></div>
@@ -116,37 +120,40 @@
 		var header = $("#headerWrapper");
 		var widgetWrapper = $("#widgetWrapper");
 		var navWrapper = $(".navWrapper");
+		var navClick = $("#navClick");
 
 		wO.click(function(){
 			//if(widgetWrapper.height() == 0){
 			if(wO.attr("class") === "weatherWBtn"){
 				header.css("top","0");
 				widgetWrapper.css("transform","perspective(0) rotateX(0deg)");
-				widgetWrapper.css("height","17rem")
+				widgetWrapper.css("height","17rem");
 				wO.addClass("opened");
 			} else{
 				header.css("top","0");
 				widgetWrapper.css("transform","perspective(100px) rotateX(60deg)");
-				widgetWrapper.css("height","0")
+				widgetWrapper.css("height","0");
 				wO.removeClass("opened");
 			};
 		});
 
 		navBtn.click(function(){
 			if(navBtn.attr("class") === "navWBtn"){
-				header.css("top","0")
+				header.css("top","0");
 				navWrapper.css("transform","perspective(0) rotateX(0deg)");
-				navWrapper.css("height","17rem")
+				navWrapper.css("height","17rem");
 				navBtn.addClass("opened");
+				navClick.css("transform","rotateZ(45deg)");
 				if(wO.attr("class") === "weatherWBtn opened"){
 					console.log("switch between things");
 				}
 			} else {
-				header.css("top","0")
+				header.css("top","0");
 				navWrapper.css("transform","perspective(100px) rotateX(60deg)");
-				navWrapper.css("height","0")
+				navWrapper.css("height","0");
 				navBtn.removeClass("opened");
-			}
+				navClick.css("transform","rotateZ(0deg)");
+			};
 		});
 	</script>
 </body>
