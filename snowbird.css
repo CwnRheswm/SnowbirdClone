@@ -11,7 +11,7 @@ html{
 	width:100%;
 }
 #Plot #plotNav{
-	display:block;
+	display:none;
 	background: url(Images/plot_navigation.png) no-repeat top;
 	background-size: contain;
 	height:500px;
@@ -19,6 +19,8 @@ html{
 #Plot #plotWeather{
 	display:block;
 	background: url(Images/plot_weather.png) no-repeat top;
+	background-size: contain;
+	height: 48%;
 }
 #Plot #plotBody{
 	display: block;
@@ -30,6 +32,14 @@ body{
 	font:900 1.6rem "ProximaNova", Helvetica, sans-serif;
 	margin:0;
 	border-collapse:collapse;
+}
+button{
+	background-color: #009bd1;
+	border: none;
+	border-collapse: collapse;
+	border-radius: 1rem;
+	color:#fff;
+	text-transform: uppercase;
 }
 #headerWrapper{
 	height:48%; 25rem;
@@ -134,8 +144,8 @@ Start Navigation Widget Styling
 	border-left:none;
 	border-top:none;
 	border-collapse: collapse;
-	height:25%;
-	width:33.33%;
+	height:24%;
+	width:33%;
 	overflow-y:hidden;
 	overflow-x:hidden;
 }
@@ -163,18 +173,20 @@ Start Navigation Widget Styling
 	border-right: 1px solid #fff;
 }
 .navMobileWidget .searchBar a{
-	background: url(Images/nav-search-icon.png) no-repeat;
-	background-size: 10%;
+	background-image: url(Images/nav-search-icon.png);
 	background-position: 10% 50%;
-	text-align: center;
-	vertical-align: center;
-	padding:1.95rem 7.7rem 1.75rem 0;
-	font-size: 1.6rem;
+	background-repeat: no-repeat;
+	background-size: 10%;
 	color:#fff;
 	height:24%;
+	font-size: 1.6rem;
+	padding:9% 31% 10% 0;
+	text-align: center;
+	text-transform: capitalize;
+	vertical-align: bottom;
 }
 .navMobileWidget .homeBtn{
-	width:33%;
+	width:32%;
 	background: #66c3e3;
 	display:flex;
 }
@@ -230,12 +242,6 @@ Start Weather Widget Styling
 	width:100%;
 	
 }
-/*
-.widgetWrapper {
-	height:20rem;
-}
-*/
-
 .weatherMobileWidget ul{
 	list-style: none;
 	text-decoration: none;
@@ -287,15 +293,16 @@ Start Weather Widget Styling
 	text-align:left;
 }
 .weatherMobileWidget .leftCol button{
-	color:#fff;
-	font-size: 0.9rem;
+	/*color:#fff;
+	
 	text-transform: uppercase;
 	border-collapse: collapse;
 	border-radius: 1rem;
 	border:none;
-	background-color:#009bd1;
+	background-color:#009bd1;*/
+	font-size: 0.9rem;
 	width:63%;
-	margin: 11% 0 5% 19%;
+	margin: 8% 0 5% 19%;
 	padding: 4% 0;
 }
 .weatherMobileWidget .rightCol{
