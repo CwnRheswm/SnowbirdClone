@@ -471,12 +471,29 @@ Start Header Styling
 #headerBar .weatherWidgetBtn{
 	height:95%;
 	width:15%;
-	background: url(Images/clear_black.png) no-repeat center;
+	/*background: url(Images/clear_black.png) no-repeat center;*/
+	background-repeat: no-repeat;
+	background-position: center;
 	background-color: #fff;
 	position: relative;
 	display: inline-flex;
 	border: none;
 	transition: background 1s ease;
+}
+.weatherWidgetBtn.clear{
+	background-image: url(Images/clear_black.png);
+}
+.weatherWidgetBtn.cloudy{
+	background-image: url(Images/cloudy_black.png);
+}
+.weatherWidgetBtn.partlycloudy{
+	background-image: url(Images/partly_cloudy_black.png);
+}
+.weatherWidgetBtn.rain{
+	background-image: url(Images/rain_black.png);
+}
+.weatherWidgetBtn.snow{
+	background-image: url(Images/snow_black.png);
 }
 #headerBar .weatherWidgetBtn.active{
 	height:95%;

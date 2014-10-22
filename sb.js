@@ -99,6 +99,47 @@ var $ = function(selector) {
 		*/
 	};
 
+	getWeatherFromCookie = function(cookie, success){
+		array = JSON.parse(cookie);
+		success(array);
+	};
+	setWeatherFromCookie = function(weatherArray){
+		console.log(weatherArray);
+		$(".curr")[0].innerHTML = Math.round(weatherArray.today.main.temp)+"<span><sup>&deg</sup></span>";
+		var curWeather = getIconUrl(weatherArray.today.weather[0].icon);
+		$(".currentTemp .icon")[0].classList.add(curWeather);
+		//console.log($(".currentTemp .icon")[0]);
+		var rightColList = $(".rightCol ul")[0];
+		//console.log(rightColList.children[0].children[2].innerHTML);
+		//console.log(snowbirdWeather.fiveDay.list);
+		
+		for(var i = 0; i < rightColList.children.length; i++){
+			var d = new Date();
+			var day=d.getDay();
+			var weekday = new Array(7);
+			weekday[0] = "sun";
+			weekday[1] = "mon";
+			weekday[2] = "tue";
+			weekday[3] = "wed";
+			weekday[4] = "thu";
+			weekday[5] = "fri";
+			weekday[6] = "sat";
+			
+			day = day+i;
+			if(day > 6){day-=7};
+
+			rightColList.children[i].children[0].innerHTML = weekday[day];
+			var addClass = getIconUrl(weatherArray.fiveDay.list[i].weather[0].icon);
+			for (var cls of addClass){
+				rightColList.children[i].children[1].classList.add(cls);
+			};
+			rightColList.children[i].children[2].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.max)+'&deg'
+			rightColList.children[i].children[3].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.min)+'&deg'
+			//if(snowbirdWeather.fiveDay.list[i].weather[0].main == "Clouds"){rightColList.children[i].children[1].style.backgroundImage = "url('Images/clear_blue.png')"};console.log(rightColList.children[i].children[1].style.backgroundImage);
+		};
+		$(".weatherWidgetBtn")[0].classList.add(curWeather);
+	};
+
 	getPrecip = function(precip){
 		if (precip){
 			//
@@ -121,10 +162,11 @@ var $ = function(selector) {
 				_plot.classList.add('opened');
 			},minorDelay);
 			if(!isWeatherWritten){
+				/*
 				//console.log(Math.round(snowbirdWeather.today.main.temp));
 				$(".curr")[0].innerHTML = Math.round(snowbirdWeather.today.main.temp)+"<span><sup>&deg</sup></span>";
 				$(".currentTemp .icon")[0].classList.add(getIconUrl(snowbirdWeather.today.weather[0].icon));
-				console.log($(".currentTemp .icon")[0]);
+				//console.log($(".currentTemp .icon")[0]);
 				var rightColList = $(".rightCol ul")[0];
 				//console.log(rightColList.children[0].children[2].innerHTML);
 				//console.log(snowbirdWeather.fiveDay.list);
@@ -155,7 +197,9 @@ var $ = function(selector) {
 				};
 
 				isWeatherWritten = true;
+			*/
 			};
+			
 		},
 
 		_close = function(){
@@ -235,10 +279,10 @@ var $ = function(selector) {
 								//console.log("Empty Cookie, Generating Weather Data");
 							});
 						})
-		: snowbirdWeather = JSON.parse(cookie);
+		: snowbirdWeather = getWeatherFromCookie(cookie, function(){
+			setWeatherFromCookie(array);
+		}) //(snowbirdWeather = JSON.parse(cookie), console.log(snowbirdWeather.today.weather.description));
 }());
-
-
 /*
 current({"coord":{"lon":-0.13,
 				  "lat":51.51},
