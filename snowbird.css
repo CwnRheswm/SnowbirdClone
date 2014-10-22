@@ -4,30 +4,6 @@
 html{
 	font-size: 62.5%;
 }
-#Plot{
-	position: absolute;
-	opacity: 0.5;
-	height:100%;
-	width:100%;
-}
-#Plot #plotNav{
-	display:none;
-	background: url(Images/plot_navigation.png) no-repeat top;
-	background-size: contain;
-	height:500px;
-}
-#Plot #plotWeather{
-	display:block;
-	background: url(Images/plot_weather.png) no-repeat top;
-	background-size: contain;
-	height: 48%;
-}
-#Plot #plotBody{
-	display: block;
-	background: url(Images/plot_body.png) no-repeat top;
-	background-size: 100% auto;
-	height:500px;
-}
 body{
 	font:900 1.6rem "ProximaNova", Helvetica, sans-serif;
 	margin:0;
@@ -44,7 +20,7 @@ button{
 #headerWrapper{
 	height:48%; 25rem;
 	width:100%;
-	position: absolute;
+	position: fixed;
 	top:0;
 	/*transition:top 2s ease;*/
 }
@@ -467,4 +443,34 @@ weatherWidgetBtn:active~#headerBlock{
 }
 weatherWidgetBtn:active~#navWBtn{
 	background-color:blue;
+}
+
+
+#Plot{
+	opacity: 1;
+	display: block;
+	height:2000px;
+	margin-top:13%;
+	transition: margin-top 2s ease;
+}
+#Plot.opened{
+	margin-top:84%;
+}
+#Plot #plotNav{
+	display:none;
+	background: url(Images/plot_navigation.png) no-repeat top;
+	background-size: contain;
+	height:500px;
+}
+#Plot #plotWeather{
+	display:none;
+	background: url(Images/plot_weather.png) no-repeat top;
+	background-size: contain;
+	height: 48%;
+}
+#Plot #plotBody{
+	display: block;
+	background: url(Images/plot_body.png) no-repeat top;
+	background-size: cover;
+	height:100%;
 }
