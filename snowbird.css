@@ -35,7 +35,7 @@ button{
 }
 .drawer{
 	width:100%;
-	height:100%;
+	height:27rem;
 	/*overflow:hidden;*/
 	transform-style: preserve-3d;
 	backface-visibility: hidden;
@@ -293,6 +293,13 @@ Start Weather Widget Styling
 	display: flex;
 	flex-flow: nowrap;
 }
+
+.weatherMobileWidget .rightCol .currentTemp .curr{
+	font-size: 4.7rem;
+	padding: 2% 18% 0 3%;
+	text-align: left;
+}
+
 .weatherMobileWidget .rightCol .currentTemp .icon{
 	background: url(Images/partly_cloudy.png) no-repeat center;
 	background-size: 80%;
@@ -302,12 +309,37 @@ Start Weather Widget Styling
 	display:inline-flex;
 	background-size: 65%;
 }
-.weatherMobileWidget .rightCol .currentTemp .curr{
-	font-size: 4.7rem;
-	padding-top: 2%;
-	padding-right:18%;
-	text-align: left;
+.rightCol .currentTemp .icon.clear{
+	background-image: url(Images/clear.png);
 }
+.rightCol .currentTemp .icon.clear.night{
+	background-image: url(Images/clear_night.png);
+}
+.rightCol .currentTemp .icon.cloudy{
+	background-image: url(Images/cloudy.png);
+}
+.rightCol .currentTemp .icon.cloudy.night{
+	background-image: url(Images/cloudy_night.png);
+}
+.rightCol .currentTemp .icon.partlycloudy{
+	background-image: url(Images/partly_cloudy.png);
+}
+.rightCol .currentTemp .icon.partlycloudy.night{
+	background-image: url(Images/partly_cloudy_night.png);
+}
+.rightCol .currentTemp .icon.rain{
+	background-image: url(Images/rain.png);
+}
+.rightCol .currentTemp .icon.rain.night{
+	background-image: url(Images/rain_night.png);
+}
+.rightCol .currentTemp .icon.snow{
+	background-image: url(Images/snow.png);
+}
+.rightCol .currentTemp .icon.snow.night{
+	background-image: url(Images/snow_night.png);
+}
+
 .weatherMobileWidget .rightCol ul{
 	height: 57%;
 }
@@ -321,40 +353,59 @@ Start Weather Widget Styling
 	flex-flow: nowrap;
 }
 .weatherMobileWidget ul li .icon{
-	background: url(Images/partly_cloudy_blue.png) no-repeat left;
+	background: url(Images/clear_blue.png) no-repeat left;
 	padding-left: 15%;
 	background-size: 90%;
 	background-position: left;
 }
-ul li:nth-child(1) .icon{
-	background-image: url(Images/partly_cloudy_blue.png); 
+.weatherMobileWidget ul .icon.clear{
+	background-image: url(Images/clear_blue.png);
 }
-ul li:nth-child(2) .icon{
-	background-image: url(Images/snow_blue.png); 
+.weatherMobileWidget ul .icon.clear.night{
+	background-image: url(Images/clear_night_blue.png);
 }
-ul li:nth-child(3) .icon{
-	background-image: url(Images/clear_blue.png); 
+.weatherMobileWidget ul .icon.cloudy{
+	background-image: url(Images/cloudy_blue.png);
 }
-ul li:nth-child(4) .icon{
-	background-image: url(Images/clear_blue.png); 
+.weatherMobileWidget ul .icon.cloudy.night{
+	background-image: url(Images/cloudy_night_blue.png);
 }
-ul li:nth-child(5) .icon{
-	background-image: url(Images/clear_blue.png); 
+.weatherMobileWidget ul .icon.partlyCloudy{
+	background-image: url(Images/partly_cloudy_blue.png);
 }
+.weatherMobileWidget ul .icon.partlyCloudy.night{
+	background-image: url(Images/partly_cloudy_night_blue.png);
+}
+.weatherMobileWidget ul .icon.rain{
+	background-image: url(Images/rain_blue.png);
+}
+.weatherMobileWidget ul .icon.rain.night{
+	background-image: url(Images/rain_night_blue.png);
+}
+.weatherMobileWidget ul .icon.snow{
+	background-image: url(Images/snow_blue.png);
+}
+.weatherMobileWidget ul .icon.snow.night{
+	background-image: url(Images/snow_night_blue.png);
+}
+
 .weatherMobileWidget .rightCol li span:first-child{
 	display: inline-block;
-	padding: 5% 0 0 18%;
+	padding: 5% 2% 5% 15%;
 	width: 16%;
 	color:#bcbcbc;
 	font-size: 1rem;
+	text-align:center;
 }
 .low{
 	font-weight: 400;
 	color:#6a90a0;
+	min-width:18%;
 	padding: 4% 0 0 3%;
 }
 .high{
-	padding-top: 2%;
+	padding: 2% 0 0 3%;
+	min-width:18%;
 }
 
 /*
@@ -449,7 +500,7 @@ weatherWidgetBtn:active~#navWBtn{
 #Plot{
 	opacity: 1;
 	display: block;
-	height:2000px;
+	height:3000px;
 	margin-top:13%;
 	transition: margin-top 2s ease;
 }
