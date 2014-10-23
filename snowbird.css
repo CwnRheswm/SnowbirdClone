@@ -66,27 +66,7 @@ button{
 	transform: rotateX(55deg) rotateY(0);
 	transition: transform;
 }
-/*
-.drawer .weatherMobileWidget,
-.drawer .navMobileWidget {
- 	display: block !important;
-}
-.drawer.weather .weatherMobileWidget,
-.drawer.nav .navMobileWidget {
- 	display: block !important;
-}
 
-.drawer .right{
-	transform: rotateY(90deg);
-	transform-origin: right;
-	transition: transform;
-}
-.drawer .left{
-	transform: perspective (300px) rotateY(90deg);
-	tranform-origin: left;
-	transition: transform;
-}
-*/
 /*
 -------------------------------------------------------
 Start Navigation Widget Styling
@@ -502,17 +482,12 @@ Start Header Styling
 	background-color: #fff;
 	transition: background 1s ease 3s;
 }
-weatherWidgetBtn:active{
-	background-color:yellow;
-}
-weatherWidgetBtn:active~#headerBlock{
-	background-color:maroon;
-	height:20rem;
-}
-weatherWidgetBtn:active~#navWBtn{
-	background-color:blue;
-}
 
+/*
+----------------------------------------------------------------
+Fake Page Plotting
+----------------------------------------------------------------
+*/
 
 #Plot{
 	opacity: 1;

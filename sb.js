@@ -15,10 +15,6 @@ var $ = function(selector) {
 	minorDelay=10,
 	weatherKey='2a875b5c2a61bdb14dc7f2af6876cf7b'; //this would not be hardcoded afaik
 
-	//weatherData = (function(){
-	//	var twentyFour = $('.leftCol ul li:nth-child(1) > span:nth-child(1)'),
-	//	;
-	//});
 	setCookie = function (c_name,value,expireminutes){
 		var exdate = new Date();
 		exdate.setMinutes(exdate.getMinutes()+expireminutes);
@@ -54,7 +50,7 @@ var $ = function(selector) {
 		head.appendChild(script);
 	};
 
-	getIconUrl = function(iconCode){
+	getIconClass = function(iconCode){
 		var addClass = [];
 
 		switch(iconCode.substr(0,2)){
@@ -104,54 +100,43 @@ var $ = function(selector) {
 		success(array);
 	};
 	setWeatherFromCookie = function(weatherArray){
-		console.log(weatherArray);
+		var curWeather = getIconClass(weatherArray.today.weather[0].icon),
+		 rightColList = $(".rightCol ul")[0],
+		 date = new Date(),
+		 day = date.getDay(),
+		 weekday = ["sun","mon","tue","wed","thu","fri","sat"];
+
 		$(".curr")[0].innerHTML = Math.round(weatherArray.today.main.temp)+"<span><sup>&deg</sup></span>";
-		var curWeather = getIconUrl(weatherArray.today.weather[0].icon);
 		$(".currentTemp .icon")[0].classList.add(curWeather);
-		//console.log($(".currentTemp .icon")[0]);
-		var rightColList = $(".rightCol ul")[0];
-		//console.log(rightColList.children[0].children[2].innerHTML);
-		//console.log(snowbirdWeather.fiveDay.list);
 		
 		for(var i = 0; i < rightColList.children.length; i++){
-			var d = new Date();
-			var day=d.getDay();
-			var weekday = new Array(7);
-			weekday[0] = "sun";
-			weekday[1] = "mon";
-			weekday[2] = "tue";
-			weekday[3] = "wed";
-			weekday[4] = "thu";
-			weekday[5] = "fri";
-			weekday[6] = "sat";
 			
-			day = day+i;
-			if(day > 6){day-=7};
+			d = day+i;
+			if(d > 6){d-=7};
 
-			rightColList.children[i].children[0].innerHTML = weekday[day];
-			var addClass = getIconUrl(weatherArray.fiveDay.list[i].weather[0].icon);
+			rightColList.children[i].children[0].innerHTML = weekday[d];
+			var addClass = getIconClass(weatherArray.fiveDay.list[i].weather[0].icon);
 			for (var cls of addClass){
 				rightColList.children[i].children[1].classList.add(cls);
 			};
-			rightColList.children[i].children[2].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.max)+'&deg'
-			rightColList.children[i].children[3].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.min)+'&deg'
-			//if(snowbirdWeather.fiveDay.list[i].weather[0].main == "Clouds"){rightColList.children[i].children[1].style.backgroundImage = "url('Images/clear_blue.png')"};console.log(rightColList.children[i].children[1].style.backgroundImage);
+			rightColList.children[i].children[2].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.max)+'&deg';
+			rightColList.children[i].children[3].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.min)+'&deg';
 		};
 		$(".weatherWidgetBtn")[0].classList.add(curWeather);
 	};
 
 	getPrecip = function(precip){
 		if (precip){
-			//
+			//set 24/48/depth/ytd from data
 		}
 	};
 
 	drawer = (function(){
 		var _ele = $('.drawer')[0],
-		_wrap = $('.drawerWrapper')[0],
-		_plot = $('#Plot')[0],
-		minorDelay=10,
-		isWeatherWritten=false;
+			_wrap = $('.drawerWrapper')[0],
+			_plot = $('#Plot')[0],
+			minorDelay=10,
+			isWeatherWritten=false;
 		_open = function(state){
 			_ele.classList.add(state);
 			_ele.classList.add('closed');
@@ -160,48 +145,8 @@ var $ = function(selector) {
 				_wrap.classList.add('opened');
 				_ele.classList.add('opened');
 				_plot.classList.add('opened');
-			},minorDelay);
-			if(!isWeatherWritten){
-				/*
-				//console.log(Math.round(snowbirdWeather.today.main.temp));
-				$(".curr")[0].innerHTML = Math.round(snowbirdWeather.today.main.temp)+"<span><sup>&deg</sup></span>";
-				$(".currentTemp .icon")[0].classList.add(getIconUrl(snowbirdWeather.today.weather[0].icon));
-				//console.log($(".currentTemp .icon")[0]);
-				var rightColList = $(".rightCol ul")[0];
-				//console.log(rightColList.children[0].children[2].innerHTML);
-				//console.log(snowbirdWeather.fiveDay.list);
-				
-				for(var i = 0; i < rightColList.children.length; i++){
-					var d = new Date();
-					var day=d.getDay();
-					var weekday = new Array(7);
-					weekday[0] = "sun";
-					weekday[1] = "mon";
-					weekday[2] = "tue";
-					weekday[3] = "wed";
-					weekday[4] = "thu";
-					weekday[5] = "fri";
-					weekday[6] = "sat";
-					
-					day = day+i;
-					if(day > 6){day-=7};
-
-					rightColList.children[i].children[0].innerHTML = weekday[day];
-					var addClass = getIconUrl(snowbirdWeather.fiveDay.list[i].weather[0].icon);
-					for (var cls of addClass){
-						rightColList.children[i].children[1].classList.add(cls);
-					};
-					rightColList.children[i].children[2].innerHTML = Math.round(snowbirdWeather.fiveDay.list[i].temp.max)+'&deg'
-					rightColList.children[i].children[3].innerHTML = Math.round(snowbirdWeather.fiveDay.list[i].temp.min)+'&deg'
-					//if(snowbirdWeather.fiveDay.list[i].weather[0].main == "Clouds"){rightColList.children[i].children[1].style.backgroundImage = "url('Images/clear_blue.png')"};console.log(rightColList.children[i].children[1].style.backgroundImage);
-				};
-
-				isWeatherWritten = true;
-			*/
-			};
-			
+			},minorDelay);	
 		},
-
 		_close = function(){
 			_wrap.classList.remove('opened');
 			_ele.classList.remove('opened');
@@ -257,31 +202,29 @@ var $ = function(selector) {
 		isInWeatherState = drawer.state('weather'),
 		isInNavState = drawer.state('nav');
 		
-		!isDrawerOpen ? drawer.open('nav') & drawer.toggleState('weather',false) & navIcon.classList.add('active') :  //closed Drawer, opening Drawer from top, displaying Nav and switching the navIcon
-						isInWeatherState ? drawer.toggleState('weather') & weatherBtn.classList.remove('active') & navIcon.classList.add('active') & drawer.toggleState('nav') : //opened Drawer w/ Weather, take '.weather' off, add '.nav' and switch navIcon
-						//removed drawer.setState('weather',false)
-						drawer.close() & navIcon.classList.toggle('active',false); // opened Drawer w/ Nav, close everything.
+		!isDrawerOpen 
+			? drawer.open('nav') & drawer.toggleState('weather',false) & navIcon.classList.add('active') //closed Drawer, opening Drawer from top, displaying Nav and switching the navIcon
+			: isInWeatherState 
+				? drawer.toggleState('weather') & weatherBtn.classList.remove('active') & navIcon.classList.add('active') & drawer.toggleState('nav') //opened Drawer w/ Weather, take '.weather' off, add '.nav' and switch navIcon
+				: drawer.close() & navIcon.classList.toggle('active',false); // opened Drawer w/ Nav, close everything.
 		
 	});
 	snowbirdWeather = {
 		"fiveDay":"",
 		"today":""
 	};
-	cookie = getCookie('Snowbird,UT');
+	cookie=getCookie('Snowbird,UT');
 	cookie===""
-		? 	getJSONP('http://api.openweathermap.org/data/2.5/weather?q=snowbird,ut&cnt=5&mode=json&units=metric&callback=?', function(data){
+		? 	getJSONP('http://api.openweathermap.org/data/2.5/weather?q=snowbird,ut&cnt=5&mode=json&units=metric&callback=?&APPID='+weatherKey, function(data){
 							snowbirdWeather.today = data;
-							//console.log(snowbirdWeather.today);
 							getJSONP('http://api.openweathermap.org/data/2.5/forecast/daily?q=snowbird,ut&cnt=5&mode=json&units=metric&callback=?&APPID='+weatherKey, function(data){
 								snowbirdWeather.fiveDay = data;	
-								//console.log(snowbirdWeather.fiveDay);
 								setCookie("Snowbird,UT",JSON.stringify(snowbirdWeather),720);
-								//console.log("Empty Cookie, Generating Weather Data");
 							});
 						})
 		: snowbirdWeather = getWeatherFromCookie(cookie, function(){
-			setWeatherFromCookie(array);
-		}) //(snowbirdWeather = JSON.parse(cookie), console.log(snowbirdWeather.today.weather.description));
+								setWeatherFromCookie(array);
+							})
 }());
 /*
 current({"coord":{"lon":-0.13,
