@@ -6,33 +6,33 @@
 </head>
 <body>
 
-	<div id="headerWrapper">
-		<div class="drawerWrapper">
-			<div class="drawer">
+	<div id="header">
+		<div class="drawer">
+			<div class="cubeContent">
 				<div class="navMobileWidget">
 					<ul>
-						<li class="searchBar">
-							<a href="#" title="search">search</a></li>
+						<li class="search">
+							<a href="#">search</a></li>
 						<li class="homeBtn">
-							<a href="#" title="home">home</a></li>
+							<a href="#">home</a></li>
 						<li class="winterBtn">
-							<a href="#" title="winter">winter</a></li>
+							<a href="#">winter</a></li>
 						<li class="summerBtn">
-							<a href="#" title="summer">summer</a></li>
+							<a href="#">summer</a></li>
 						<li class="lodgingBtn">
-							<a href="#" title="lodging">lodging</a></li>
+							<a href="#">lodging</a></li>
 						<li class="diningBtn">
-							<a href="#" title="dining">dining</a></li>
+							<a href="#">dining</a></li>
 						<li class="spaBtn">
-							<a href="#" title="spa">cliff spa</a></li>
+							<a href="#">cliff spa</a></li>
 						<li class="eventsBtn">
-							<a href="#" title="events">events</a></li>
+							<a href="#">events</a></li>
 						<li class="groupsBtn">
-							<a href="#" title="groups">groups</a></li>
+							<a href="#">groups</a></li>
 						<li class="shopBtn">
-							<a href="#" title="shop">shop</a></li>
+							<a href="#">shop</a></li>
 						<li class="ticketsBtn">
-							<a href="#" title="tickets">tickets</a></li>
+							<a href="#">tickets</a></li>
 					</ul>
 				</div>
 				<div class="weatherMobileWidget">
@@ -49,39 +49,15 @@
 					<div class="rightCol">
 						<div class="currentTemp">
 							<span class='icon'></span>
-							<span class='curr'>46<span><sup>&deg</sup></span></span>
+							<span class='temp'>46<span><sup>&deg</sup></span></span>
 						</div>
 						<ul>
-							<li>
+							<!--<li>
 								<span class='day'>mon</span>
 								<span class='icon'></span>
 								<span class='high'>49&deg</span>
 								<span class='low'>37&deg</span>
-							</li>
-							<li>
-								<span class='day'>tue</span>
-								<span class='icon'></span>
-								<span class='high'>41&deg</span>
-								<span class='low'>27&deg</span>
-							</li>
-							<li>
-								<span class='day'>wed</span>
-								<span class='icon'></span>
-								<span class='high'>38&deg</span>
-								<span class='low'>31&deg</span>
-							</li>
-							<li>
-								<span class='day'>thu</span>
-								<span class='icon'></span>
-								<span class='high'>47&deg</span>
-								<span class='low'>38&deg</span>
-							</li>
-							<li>
-								<span class='day'>fri</span>
-								<span class='icon'></span>
-								<span class='high'>49&deg</span>
-								<span class='low'>38&deg</span>
-							</li>
+							</li>-->
 						</ul>
 					</div>
 				</div>		
@@ -96,8 +72,116 @@
 				<span>snOWBird</span>
 			</a>
 			<a class="weatherWidgetBtn" href="#">
+				<span class="icon"></span> <!--edit span background image by changing class instead of img tags which only edit style(i.e. src=)-->
 			</a>
 		</div>
+	</div>
+	<div id="page">
+		<div class="welcomeImg"></div>
+		<div class="frontPage">
+			<div class="leftCol">
+				<div class="blueSection">
+					<button class="contact"></button>
+					<ul class="mainLinks">
+						<li href="#">Day Tickets</li>
+						<li href="#">Season Passes</li>
+						<li href="#">Lodging</li>
+						<li href="#">Trail Map</li>
+					</ul>
+				</div>
+				<div class="greenSection">
+					<div class="event">
+						<h5>TODAY - OCT 21 -
+							<span>Apres Specials</span>
+						</h5>
+						<p>The Aerie 50% off Appetizers; Daily 5-6 p.m. $3 Drafts; Daily 5-10 p.m. Martini
+						</p>
+						<p class="expand" href="#">more...</p>
+					</div>
+					<div class="event">
+						<h5>OCT 21 - 22
+							<span>Ski Conditioning Class</span>
+						</h5>
+						<p>
+							Be ready to hit the slopes stronger and better than ever. This 10-week course foceses on functional strength training.
+						</p>
+						<p class="expand" href="#">more..</p>
+					</div>
+				</div>
+			</div>
+			<div class="rightCol">
+				<div class="seasonal" href="#">
+					<img src="Images/cliff_fall_mobile.jpg">
+					<h5>Fall Getaway</h5>
+					<p>Escape to Snowbird and receive a $50 gift card per night!</p>
+				</div>
+
+				<div class="seasonal" href="#">
+					<img src="Images/LaborDaySkiSale_mobile.jpg">
+					<h5>Winter Specials</h5>
+					<p>Book now for the best deals on the coming winter!</p>
+				</div>
+
+				<div class="seasonal" href="#">
+					<img src="Images/birdjobs_mobile.jpg">
+					<h5>Bird Jobs</h5>
+					<p>Snowbird is hiring. Apply now!</p>
+				</div>
+
+				<div class="seasonal" href="#">
+					<img src="Images/seasonpass_mobile.jpg">
+					<h5>Season Pass</h5>
+					<p>Buy your 2014/15 Season Pass today!</p>
+				</div>
+
+				<div class="seasonal" href="#">
+					<img src="Images/mtncollective_mobile.jpg">
+					<h5>Mtn. Collective</h5>
+					<p>14 days at 7 world-class destinations. Buy your Mountain Collective now.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="Footer">
+		<div class="social">
+			<img src="Images/find-us-icons@2x.png">
+		</div>
+		<div class="links">
+			<ul>
+				<li>Specials</li>
+				<li>Winter 2014/15</li>
+				<li>December Snow Sale</li>
+				<li>January Snow Sale</li>
+				<li>Fall Getaway</li>
+				<li>Dine & Stay</li>
+				<li>Cliff Spa Specials</li>
+				<li>White Rooms</li>
+				<li>All Specials</li>
+			</ul>
+			<ul>
+				<li>Buy Online</li>
+				<li>Lodging</li>
+				<li>Lift Tickets</li>
+				<li>Mountain School</li>
+				<li>Season Passes</li>
+				<li>The Cliff Spa</li>
+				<li>Ground Transport</li>
+				<li>Apparel & Gifts</li>
+				<li>Gift Cards</li>
+			</ul>
+	</div>
+	<div class="navLinks">
+		<ul>
+			<li><span>Home</span></li>
+			<li><span>About</span></li>
+			<li><span>Site Index</span></li>
+			<li><span>Environment</span></li>
+			<li><span>Press</span></li>
+			<li><span>Privacy</span></li>
+			<li><span>Specials</span></li>
+			<li><span>Jobs</span></li>
+			<li><span>Contact</span></li>
+		</ul>
 	</div>
 	
 	<div id="Plot">
@@ -105,7 +189,7 @@
 		<div id="plotWeather"></div>
 		<div id="plotBody"></div>
 	</div>
-
+	
 	<!--<script src="jquery-1.11.1.js"></script>-->
 	<!--<script src="underscore-min.js"></script>-->
 	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>-->

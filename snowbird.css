@@ -17,23 +17,24 @@ button{
 	color:#fff;
 	text-transform: uppercase;
 }
-#headerWrapper{
+#header{
 	height:48%; 25rem;
 	width:100%;
 	position: fixed;
 	top:0;
+	z-index: 100;
 	/*transition:top 2s ease;*/
 }
-.drawerWrapper{
+.drawer{
 	height: 0px;
 	overflow: hidden;
 	transition: height 2s ease;
 }
-.drawerWrapper.opened{
+.drawer.opened{
 	height:85%;
 	transition:height 2s ease;
 }
-.drawer{
+.cubeContent{
 	width:100%;
 	height:27rem;
 	/*overflow:hidden;*/
@@ -42,27 +43,27 @@ button{
 	transform: rotateX(55deg);
 	transition: transform 0s ease;
 }
-.drawer.weather{
+.cubeContent.weather{
 	transform: rotateX(55deg) rotateY(-90deg);
 	transition: transform 2s ease;
 }
-.drawer.weather.opened{
+.cubeContent.weather.opened{
 	transform: rotateX(0) rotateY(-90deg);
 	transition: transform 2s ease;
 }
-.drawer.weather.closed{
+.cubeContent.weather.closed{
 	transform: rotateX(55deg) rotateY(-90deg);
 	transition: transform;
 }
-.drawer.nav{
+.cubeContent.nav{
 	transform: rotateX(55deg) rotateY(0);
 	transition: transform 2s ease;
 }
-.drawer.nav.opened{
+.cubeContent.nav.opened{
 	transform: rotateX(0) rotateY(0);
 	transition: transform 2s ease;
 }
-.drawer.nav.closed{
+.cubeContent.nav.closed{
 	transform: rotateX(55deg) rotateY(0);
 	transition: transform;
 }
@@ -122,13 +123,13 @@ Start Navigation Widget Styling
 	
 	transition: background-size 2s ease;
 }
-.navMobileWidget .searchBar{
+.navMobileWidget .search{
 	width:66.66%;
 	background: #66c3e3;
 	display:flex;
 	border-right: 1px solid #fff;
 }
-.navMobileWidget .searchBar a{
+.navMobileWidget .search a{
 	background-image: url(Images/nav-search-icon.png);
 	background-position: 10% 50%;
 	background-repeat: no-repeat;
@@ -274,52 +275,53 @@ Start Weather Widget Styling
 	flex-flow: nowrap;
 }
 
-.weatherMobileWidget .rightCol .currentTemp .curr{
+.weatherMobileWidget .rightCol .currentTemp .temp{
 	font-size: 4.7rem;
 	padding: 2% 18% 0 3%;
 	text-align: left;
 }
 
 .weatherMobileWidget .rightCol .currentTemp .icon{
-	background: url(Images/partly_cloudy.png) no-repeat center;
-	background-size: 80%;
+	/*background: url(Images/partly_cloudy.png) no-repeat center;*/
+	border: none;
 	background-position: 100% 75%;
 	width:48%;
 	height:100%;
 	display:inline-flex;
 	background-size: 65%;
 }
-.rightCol .currentTemp .icon.clear{
-	background-image: url(Images/clear.png);
+/*
+.rightCol img.clear{
+	background: url(Images/clear.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.clear.night{
-	background-image: url(Images/clear_night.png);
+.rightCol img.clear.night{
+	background: url(Images/clear_night.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.cloudy{
-	background-image: url(Images/cloudy.png);
+.rightCol img.cloudy{
+	background: url(Images/cloudy.png) no-repeat center; no-repeat center
 }
-.rightCol .currentTemp .icon.cloudy.night{
-	background-image: url(Images/cloudy_night.png);
+.rightCol img.cloudy.night{
+	background: url(Images/cloudy_night.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.partlycloudy{
-	background-image: url(Images/partly_cloudy.png);
+.rightCol img.partlycloudy{
+	background: url(Images/partly_cloudy.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.partlycloudy.night{
-	background-image: url(Images/partly_cloudy_night.png);
+.rightCol img.partlycloudy.night{
+	background: url(Images/partly_cloudy_night.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.rain{
-	background-image: url(Images/rain.png);
+.rightCol img.rain{
+	background: url(Images/rain.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.rain.night{
-	background-image: url(Images/rain_night.png);
+.rightCol img.rain.night{
+	background: url(Images/rain_night.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.snow{
-	background-image: url(Images/snow.png);
+.rightCol img.snow{
+	background: url(Images/snow.png) no-repeat center;
 }
-.rightCol .currentTemp .icon.snow.night{
-	background-image: url(Images/snow_night.png);
+.rightCol img.snow.night{
+	background: url(Images/snow_night.png) no-repeat center;
 }
-
+*/
 .weatherMobileWidget .rightCol ul{
 	height: 57%;
 }
@@ -338,40 +340,107 @@ Start Weather Widget Styling
 	background-size: 90%;
 	background-position: left;
 }
-.weatherMobileWidget ul .icon.clear{
+/*
+.weatherMobileWidget ul */
+.icon{
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.icon.clear{
+	background-image: url(Images/clear.png);
+}
+.icon.clear.blue{
 	background-image: url(Images/clear_blue.png);
 }
-.weatherMobileWidget ul .icon.clear.night{
+.icon.clear.black{
+	background-image: url(Images/clear_black.png);
+}
+.icon.clear.night{
+	background-image: url(Images/clear_night.png);
+}
+.icon.clear.night.blue{
 	background-image: url(Images/clear_night_blue.png);
 }
-.weatherMobileWidget ul .icon.cloudy{
+.icon.clear.night.black{
+	background-image: url(Images/clear_night_black.png);
+}
+.icon.cloudy{
+	background-image: url(Images/cloudy.png);
+}
+.icon.cloudy.blue{
 	background-image: url(Images/cloudy_blue.png);
 }
-.weatherMobileWidget ul .icon.cloudy.night{
+.icon.cloudy.black{
+	background-image: url(Images/cloudy_black.png);
+}
+.icon.cloudy.night{
+	background-image: url(Images/cloudy_night.png);
+}
+.icon.cloudy.night.blue{
 	background-image: url(Images/cloudy_night_blue.png);
 }
-.weatherMobileWidget ul .icon.partlyCloudy{
+.icon.cloudy.night.black{
+	background-image: url(Images/cloudy_night_black.png);
+}
+.icon.partlyCloudy{
+	background-image: url(Images/partly_cloudy.png);
+}
+.icon.partlyCloudy.blue{
 	background-image: url(Images/partly_cloudy_blue.png);
 }
-.weatherMobileWidget ul .icon.partlyCloudy.night{
+.icon.partlyCloudy.black{
+	background-image: url(Images/partly_cloudy_black.png);
+}
+.icon.partlyCloudy.night{
+	background-image: url(Images/partly_cloudy_night.png);
+}
+.icon.partlyCloudy.night.blue{
 	background-image: url(Images/partly_cloudy_night_blue.png);
 }
-.weatherMobileWidget ul .icon.rain{
+.icon.partlyCloudy.night.black{
+	background-image: url(Images/partly_cloudy_night_black.png);
+}
+.icon.rain{
+	background-image: url(Images/rain.png);
+}
+.icon.rain.blue{
 	background-image: url(Images/rain_blue.png);
 }
-.weatherMobileWidget ul .icon.rain.night{
+.icon.rain.black{
+	background-image: url(Images/rain_black.png);
+}
+.icon.rain.night{
+	background-image: url(Images/rain_night.png);
+}
+.icon.rain.night.blue{
 	background-image: url(Images/rain_night_blue.png);
 }
-.weatherMobileWidget ul .icon.snow{
+.icon.rain.night.black{
+	background-image: url(Images/rain_night_black.png);
+}
+.icon.snow{
+	background-image: url(Images/snow.png);
+}
+.icon.snow.blue{
 	background-image: url(Images/snow_blue.png);
 }
-.weatherMobileWidget ul .icon.snow.night{
+.icon.snow.black{
+	background-image: url(Images/snow_black.png);
+}
+.icon.snow.night{
+	background-image: url(Images/snow_night.png);
+}
+.icon.snow.night.blue{
 	background-image: url(Images/snow_night_blue.png);
 }
+.icon.snow.night.black{
+	background-image: url(Images/snow_night_black.png);
+}
 
-.weatherMobileWidget .rightCol li span:first-child{
+.weatherMobileWidget .rightCol li h5{ /*span:first-child{*/
 	display: inline-block;
-	padding: 5% 2% 5% 15%;
+	margin:0;
+	padding: 6% 2% 5% 15%;
 	width: 16%;
 	color:#bcbcbc;
 	font-size: 1rem;
@@ -460,13 +529,18 @@ Start Header Styling
 	border: none;
 	transition: background 1s ease;
 }
+#headerBar .weatherWidgetBtn .icon{
+	height: 100%;
+	width: 100%;
+}
+/*
 .weatherWidgetBtn.clear{
 	background-image: url(Images/clear_black.png);
 }
 .weatherWidgetBtn.cloudy{
 	background-image: url(Images/cloudy_black.png);
 }
-.weatherWidgetBtn.partlycloudy{
+.weatherWidgetBtn.partly_cloudy{
 	background-image: url(Images/partly_cloudy_black.png);
 }
 .weatherWidgetBtn.rain{
@@ -475,9 +549,10 @@ Start Header Styling
 .weatherWidgetBtn.snow{
 	background-image: url(Images/snow_black.png);
 }
-#headerBar .weatherWidgetBtn.active{
-	height:95%;
-	width:15%;
+*/
+#headerBar .weatherWidgetBtn.active .icon{
+	/*height:95%;
+	width:15%;*/
 	background: url(Images/nav-scroll@2x.png) no-repeat center;
 	background-color: #fff;
 	transition: background 1s ease 3s;
@@ -485,15 +560,136 @@ Start Header Styling
 
 /*
 ----------------------------------------------------------------
+Page Plotting
+----------------------------------------------------------------
+*/
+#page{
+	display: block;
+	/*height: auto;
+	margin-top:13%;
+	min-height:100% !important;*/
+	overflow: hidden;
+	position: relative;
+	transition: margin-top 2s ease;
+}
+.blueSection{
+	border: .1rem solid #bcbcbc;
+	border-left: .4rem solid #7fcae4;
+	padding:8% 0 0 7%;
+}
+.greenSection{
+	border: .1rem solid #bcbcbc;
+	border-left: .4rem solid #b6d99f;
+	padding:9% 0 0 7%;
+}
+h4{
+	font-weight: 900;
+	font-size: .5rem;
+}
+#page.opened{
+	margin-top:84%;
+}
+#page .welcomeImg{
+	background: url("Images/welcome_mobile.jpg") no-repeat center;
+	background-size: cover;
+	border-collapse: collapse;
+	width:100%;
+	height:0;
+	padding-top:57%;
+}
+#page .frontPage{
+	overflow: hidden;
+}
+#page .leftCol{
+	background-color: #faf8f6;
+	height:auto;
+	width:44%;
+	float: left;
+}
+#page .contact{
+	background: url("Images/phone-black@2x.png") no-repeat center;
+	background-size: 43%;
+	width: 88%;
+	padding: 15% 0;
+	background-color: #fff;
+	border-radius: 3rem;
+	border-style: solid;
+	border-color: #bcbcbc;
+	border-width: 0.1rem;
+
+}
+#page .mainLinks{
+	list-style: none;
+	padding-left: 1%;
+	margin-bottom: 0;
+}
+#page .mainLinks li{
+	font-size: 1.3rem;
+	color:#009bd1;
+	padding-bottom: 9%;
+}
+#page h5{
+	font-weight: 900;
+	font-size: 1.1rem;
+	margin: 0 15% 0 0;
+}
+#page .leftCol h5 span{
+	font-weight: 400;
+	color: #7e7c7a;
+}
+#page p{
+	font-size: 1.1rem;
+	font-weight: 400;
+	margin: 7% 15% 7% 0;
+	color: #7e7c7a;
+	line-height: 14px;
+}
+#page .leftCol .expand{
+	font-weight: 900;
+	color:#009bd1;
+}
+#page .rightCol{
+	background-color: #fff;
+	height:auto;
+	width:56%;
+	border-collapse: collapse;
+	float: left;
+
+}
+#page .seasonal{
+	margin: 10% 7% 14% 10%;
+}
+#page .seasonal img{
+	width: 100%;
+}
+#page .rightCol h5{
+	background: url("Images/wing_blue.png") no-repeat right;
+	font-size: 1.5rem;
+	padding-top: 1%;
+	margin: 0;
+	background-size: 8%;
+}
+#page .rightCol p{
+	margin: 0;
+	width: 100%;
+	font-size: 1.2rem;
+	padding: 5% 0 0 0;
+	line-height: 1.5rem;
+}
+
+/*
+----------------------------------------------------------------
 Fake Page Plotting
 ----------------------------------------------------------------
 */
-
 #Plot{
-	opacity: 1;
-	display: block;
+	opacity: 0.5;
+	display: none;
 	height:3000px;
+	width:100%;
 	margin-top:13%;
+	position: absolute;
+	top:0;
 	transition: margin-top 2s ease;
 }
 #Plot.opened{
@@ -516,4 +712,57 @@ Fake Page Plotting
 	background: url(Images/plot_body.png) no-repeat top;
 	background-size: cover;
 	height:100%;
+}
+
+/*
+-----------------------------------------------------------------
+Footer Plotting
+-----------------------------------------------------------------
+*/
+#Footer{
+}
+#Footer .social{
+	background-color: #000;
+	padding:1% 10%;
+	border-bottom: solid #bcbcbc 0.1rem;
+}
+#Footer .social img{
+	width:100%;
+	opacity:0.4;
+}
+#Footer .links{
+	background-color: #353230;
+	display: flex;
+}
+#Footer .links ul{
+	width: 50%;
+	list-style: none;
+	margin: 6% 0 0 7%;
+	padding: 0;
+}
+#Footer .links ul li:first-child{
+	color: #bcbcbc;
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding-bottom: 13%
+}
+#Footer .links ul li{
+	color:#009bd1;
+	font-size: 1.1rem;
+	padding-bottom: 9%
+}
+#Footer .navLinks ul{
+	display:flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin:0;
+	padding:0 0 5% 0;
+}
+#Footer .navLinks ul li{
+	border: none;
+	width: 28%;
+	color: #bcbcbc;
+	font-weight: 400;
+	font-size: 1.2rem;
+	padding: 3% 0 0 5%;
 }
