@@ -565,9 +565,7 @@ Page Plotting
 */
 #page{
 	display: block;
-	/*height: auto;
-	margin-top:13%;
-	min-height:100% !important;*/
+	margin-top:7vh;
 	overflow: hidden;
 	position: relative;
 	transition: margin-top 2s ease;
@@ -587,15 +585,15 @@ h4{
 	font-size: .5rem;
 }
 #page.opened{
-	margin-top:84%;
+	margin-top:76%;
 }
-#page .welcomeImg{
-	background: url("Images/welcome_mobile.jpg") no-repeat center;
+#page .welcomeImg img{
+	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
 	background-size: cover;
 	border-collapse: collapse;
-	width:100%;
 	height:0;
-	padding-top:57%;
+	padding-top:57%;*/
+	width:100%;
 }
 #page .frontPage{
 	overflow: hidden;
@@ -765,4 +763,22 @@ Footer Plotting
 	font-weight: 400;
 	font-size: 1.2rem;
 	padding: 3% 0 0 5%;
+}
+
+@media (min-width: 600px){
+	#header{
+		position: relative;
+	}
+	#page{
+		margin-top: 0;
+		transition: margin-top 0s;
+	}
+	#page .welcomeImg{
+		width: 70%;
+		min-width:600px;
+	}
+	#page .welcomeImg img{
+		max-height: 350px;
+	}
+
 }

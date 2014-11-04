@@ -1,0 +1,25 @@
+setWeatherFromCookie = function(weatherArray){
+        var curWeather = getIconClass(weatherArray.today.weather[0].icon),
+         rightColList = $(".rightCol ul")[0],
+         date = new Date(),
+         day = date.getDay(),
+         weekday = ["sun","mon","tue","wed","thu","fri","sat"];
+
+        $(".curr")[0].innerHTML = Math.round(weatherArray.today.main.temp)+"<span><sup>&deg</sup></span>";
+        $(".currentTemp .icon")[0].classList.add(curWeather);
+        
+        for(var i = 0; i < rightColList.children.length; i++){
+            
+            d = day+i;
+            if(d > 6){d-=7};
+
+            rightColList.children[i].children[0].innerHTML = weekday[d];
+            var addClass = getIconClass(weatherArray.fiveDay.list[i].weather[0].icon);
+            for (var cls of addClass){
+                rightColList.children[i].children[1].classList.add(cls);
+            };
+            rightColList.children[i].children[2].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.max)+'&deg';
+            rightColList.children[i].children[3].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.min)+'&deg';
+        };
+        $(".weatherWidgetBtn")[0].classList.add(curWeather);
+    };
