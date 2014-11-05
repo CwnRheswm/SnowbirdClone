@@ -154,31 +154,31 @@ Start Navigation Widget Styling
 	color:#fff;
 	padding-top:32%;
 }
-.winterBtn a{
+.navMobileWidget .winterBtn a{
 	background: url(Images/nav-winter@2x.png) top;
 }
-.summerBtn a{
+.navMobileWidget .summerBtn a{
 	background: url(Images/nav-summer@2x.png) top;
 }
-.lodgingBtn a{
+.navMobileWidget .lodgingBtn a{
 	background: url(Images/nav-lodging@2x.png) top;
 }
-.diningBtn a{
+.navMobileWidget .diningBtn a{
 	background: url(Images/nav-dining@2x.png) top;
 }
-.spaBtn a{
+.navMobileWidget .spaBtn a{
 	background: url(Images/nav-spa@2x.png) top;
 }
-.eventsBtn a{
+.navMobileWidget .eventsBtn a{
 	background: url(Images/nav-events@2x.png) top;
 }
-.groupsBtn a{
+.navMobileWidget .groupsBtn a{
 	background: url(Images/nav-groups@2x.png) top;
 }
-.shopBtn a{
+.navMobileWidget .shopBtn a{
 	background: url(Images/nav-shop@2x.png) top;
 }
-.ticketsBtn a{
+.navMobileWidget .ticketsBtn a{
 	background: url(Images/nav-tickets@2x.png) top;
 }
 
@@ -517,6 +517,28 @@ Start Header Styling
 	padding: 4% 13% 3% 0;
 	display: inline-block;
 }
+#headerBar .logo ul{
+	display: none;
+	list-style: none;
+	text-decoration: none;
+	padding:0;
+	width:auto;
+	min-width: 700px;
+}
+#headerBar .logo ul li{
+	padding-left:3%;
+	padding-right: 2%;
+	width:auto;
+}
+#headerBar .logo ul li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	font-size: 1.2rem;
+	background: none;
+	font-weight: 600;
+	white-space: nowrap;
+}
 #headerBar .weatherWidgetBtn{
 	height:95%;
 	width:15%;
@@ -563,7 +585,7 @@ Start Header Styling
 Page Plotting
 ----------------------------------------------------------------
 */
-#page{
+.page{
 	display: block;
 	margin-top:7vh;
 	overflow: hidden;
@@ -584,10 +606,10 @@ h4{
 	font-weight: 900;
 	font-size: .5rem;
 }
-#page.opened{
+.page.opened{
 	margin-top:76%;
 }
-#page .welcomeImg img{
+.page .welcomeImg img{
 	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
 	background-size: cover;
 	border-collapse: collapse;
@@ -595,16 +617,16 @@ h4{
 	padding-top:57%;*/
 	width:100%;
 }
-#page .frontPage{
+.page .frontPage{
 	overflow: hidden;
 }
-#page .leftCol{
+.page .leftCol{
 	background-color: #faf8f6;
 	height:auto;
 	width:44%;
 	float: left;
 }
-#page .contact{
+.page .contact{
 	background: url("Images/phone-black@2x.png") no-repeat center;
 	background-size: 43%;
 	width: 88%;
@@ -616,37 +638,37 @@ h4{
 	border-width: 0.1rem;
 
 }
-#page .mainLinks{
+.page .mainLinks{
 	list-style: none;
 	padding-left: 1%;
 	margin-bottom: 0;
 }
-#page .mainLinks li{
+.page .mainLinks li{
 	font-size: 1.3rem;
 	color:#009bd1;
 	padding-bottom: 9%;
 }
-#page h5{
+.page h5{
 	font-weight: 900;
 	font-size: 1.1rem;
 	margin: 0 15% 0 0;
 }
-#page .leftCol h5 span{
+.page .leftCol h5 span{
 	font-weight: 400;
 	color: #7e7c7a;
 }
-#page p{
+.page p{
 	font-size: 1.1rem;
 	font-weight: 400;
 	margin: 7% 15% 7% 0;
 	color: #7e7c7a;
 	line-height: 14px;
 }
-#page .leftCol .expand{
+.page .leftCol .expand{
 	font-weight: 900;
 	color:#009bd1;
 }
-#page .rightCol{
+.page .rightCol{
 	background-color: #fff;
 	height:auto;
 	width:56%;
@@ -654,20 +676,20 @@ h4{
 	float: left;
 
 }
-#page .seasonal{
+.page .seasonal{
 	margin: 10% 7% 14% 10%;
 }
-#page .seasonal img{
+.page .seasonal img{
 	width: 100%;
 }
-#page .rightCol h5{
+.page .rightCol h5{
 	background: url("Images/wing_blue.png") no-repeat right;
 	font-size: 1.5rem;
 	padding-top: 1%;
 	margin: 0;
 	background-size: 8%;
 }
-#page .rightCol p{
+.page .rightCol p{
 	margin: 0;
 	width: 100%;
 	font-size: 1.2rem;
@@ -717,46 +739,46 @@ Fake Page Plotting
 Footer Plotting
 -----------------------------------------------------------------
 */
-#Footer{
+.Footer{
 }
-#Footer .social{
+.Footer .social{
 	background-color: #000;
 	padding:1% 10%;
 	border-bottom: solid #bcbcbc 0.1rem;
 }
-#Footer .social img{
+.Footer .social img{
 	width:100%;
 	opacity:0.4;
 }
-#Footer .links{
+.Footer .links{
 	background-color: #353230;
 	display: flex;
 }
-#Footer .links ul{
+.Footer .links ul{
 	width: 50%;
 	list-style: none;
 	margin: 6% 0 0 7%;
 	padding: 0;
 }
-#Footer .links ul li:first-child{
+.Footer .links ul li:first-child{
 	color: #bcbcbc;
 	font-size: 1rem;
 	text-transform: uppercase;
 	padding-bottom: 13%
 }
-#Footer .links ul li{
+.Footer .links ul li{
 	color:#009bd1;
 	font-size: 1.1rem;
 	padding-bottom: 9%
 }
-#Footer .navLinks ul{
+.Footer .navLinks ul{
 	display:flex;
 	flex-wrap: wrap;
 	list-style: none;
 	margin:0;
 	padding:0 0 5% 0;
 }
-#Footer .navLinks ul li{
+.Footer .navLinks ul li{
 	border: none;
 	width: 28%;
 	color: #bcbcbc;
@@ -769,16 +791,61 @@ Footer Plotting
 	#header{
 		position: relative;
 	}
-	#page{
+	#header .drawer{
+		display:none;
+	}
+	#headerBar{
+		margin:0 auto;
+		border:none;
+		display:flex;
+		flex-flow:wrap;
+		min-width: 1000px;
+	}
+	#headerBar .border{
+		height:0.5vh;
+		background: linear-gradient(to right, #7fcde8 0, #7fcde8 50%, #b6d99f 52%, #b6d99f 100%);		
+	}
+	#headerBar .navWidgetBtn{
+		display: none;
+	}
+	#headerBar .logo{
+		text-align: left;
+		width:auto;
+		margin:0 auto;
+		overflow: hidden;
+}
+	#headerBar .logo span{
+		font-size: 2.5rem;
+		padding: 0 58px 0 0;
+		background-size: 58px;
+		background-position: right bottom;
+		margin: 2% 0;
+		display: inline-flex;
+	}
+	#headerBar .logo ul{
+		display:inline-flex;
+	}
+	#headerBar .weatherWBtn{
+		display: none;
+	}
+	.page{
+		display:none;
+	}
+	.page.desktop{
+		display:block;
 		margin-top: 0;
-		transition: margin-top 0s;
 	}
-	#page .welcomeImg{
-		width: 70%;
-		min-width:600px;
+	.page.desktop .leftCol{
+		width:auto;
+		border-collapse: collapse;
+		float:left;
 	}
-	#page .welcomeImg img{
-		max-height: 350px;
+	.page.desktop .leftCol .welcomeImg img{
+		width:100%;
+	}
+	.page.dektop .rightCol{
+		width: auto;
+		float:left;
 	}
 
 }
