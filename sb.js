@@ -367,7 +367,8 @@ var $ = function(selector) {
     drawer = (function(){
         var _drawer = $('.drawer')[0],
             _cube = $('.cubeContent')[0],
-            _plot = $('#page')[0],
+            _plot = $('.page')[0],
+            _block = $('#headerBlock')[0],
             minorDelay=10,
             isWeatherWritten=false;
         _open = function(state){
@@ -378,12 +379,14 @@ var $ = function(selector) {
                 _cube.classList.add('opened');
                 _drawer.classList.add('opened');
                 _plot.classList.add('opened');
+                _block.classList.add('opened');
             },minorDelay);  
         },
         _close = function(){
             _cube.classList.remove('opened');
             _drawer.classList.remove('opened');
             _plot.classList.remove('opened');
+            _block.classList.remove('opened');
             setTimeout(function(){
                 //_ele.classList.toggle('weather',false);
                 //_ele.classList.toggle('nav',false);
