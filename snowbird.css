@@ -500,7 +500,7 @@ Start Header Styling
 #headerBar .logo ul li{
 	padding:0;
 	width:10%;
-	margin:3% 0 0 3%;
+	margin:1.5% 0 0 3%;
 	display:none;
 }
 #headerBar .logo ul li:first-child{
@@ -516,7 +516,7 @@ Start Header Styling
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #000;
-	font-size: 1.6rem;
+	font-size: 1.2rem;
 	background: none;
 	font-weight: 600;
 	white-space: nowrap;
@@ -597,18 +597,19 @@ h4{
 	font-size: .5rem;
 }
 .page .welcomeImg{
-	background: url("Images/welcome_mobile.jpg") no-repeat;
-	background-size: cover;
-	height:265px;
+	
 }
-.page .welcomeImg img{
+.page .welcomeImg img.desktop{
 	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
 	background-size: cover;
 	border-collapse: collapse;
 	height:0;
 	padding-top:57%;*/
-	width:100%;
 	display:none;
+}
+.page .welcomeImg img.mobile{
+	display:block;
+	width:100%;
 }
 .page .frontPage{
 	display: flex;
@@ -647,6 +648,7 @@ h4{
 .page .leftCol h4{
 	display: none;
 	font-size: 2rem;
+	color:	#3c3a37;
 }
 .page h5{
 	font-weight: 900;
@@ -659,13 +661,11 @@ h4{
 }
 .page .leftCol .tweet h5{
 	background: url("Images/news-icon-twitter.png") no-repeat left;
-	padding-left: 10%;
-	background-size:contain;
+	padding-left: 6%;
 }
 .page .leftCol .fbpost h5{
 	background: url("Images/news-icon-fb.png") no-repeat left;
-	padding-left: 10%;
-	background-size:contain;
+	padding-left: 6%;
 }
 .page p{
 	font-size: 1.1rem;
@@ -786,14 +786,14 @@ Footer Plotting
 	font-size: 1.1rem;
 	padding-bottom: 9%
 }
-.Footer .navLinks ul{
+.navLinks ul{
 	display:flex;
 	flex-wrap: wrap;
 	list-style: none;
 	margin:0;
 	padding:0 0 5% 0;
 }
-.Footer .navLinks ul li{
+.navLinks ul li{
 	border: none;
 	width: 28%;
 	color: #bcbcbc;
@@ -803,6 +803,7 @@ Footer Plotting
 }
 
 @media (min-width: 600px){
+
 	#header{
 		height:auto;
 	}
@@ -820,60 +821,72 @@ Footer Plotting
 	}
 	#headerBar .border{
 		height:0.5vh;
-		background: linear-gradient(to right, #7fcde8 0, #7fcde8 50%, #b6d99f 52%, #b6d99f 100%);		
+		background: linear-gradient(to right, #7fcde8 0, #7fcde8 35%, #fff 35%, #fff 35.5%, #b6d99f 35.5%, #b6d99f 100%);
 	}
 	#headerBar .navWidgetBtn{
 		display: none;
 	}
 	#headerBar .logo{
 		text-align: center;
-		width:1300px;
+		width:1000px;
 		margin:0 auto;
 		display: flex;
 	}
 	#headerBar .logo ul{
 		display: inline-flex;
 		min-width: 700px;
+		margin-top: 1%;
 	}
 	#headerBar .logo ul li{
 		display: list-item;
+		font-size:1.6rem;
 	}
 	#headerBar .logo ul li:first-child{
 		font-size: 2.5rem;
 		padding: 0 0 0 0;
 		background-size: 100%;
 		width:30%;
-		margin: 2% 0 0 4%;
+		margin: 1% 0 0 4%;
 	}
 	#headerBar .weatherWidgetBtn{
 		display: none;
 	}
 	#headerBlock{
-		height:9%;
+		height:11%;
 		transition: height 0s ease;
 	}
 	.page{
 		height:auto;
-		width:65%;
+		width:1000px;
+		margin:0 auto;
+		display:flex;
+		flex-wrap:wrap;
 		transition:margin-top 0s ease;
-		float:left;
+		overflow: visible;
 	}
 	.page .welcomeImg{
-		width:100%;
-		min-width:100%;
-		min-height:480px;
-		background: url("Images/welcome_powder_normal.jpg") no-repeat right;
-		background-size: cover;
+		width:65%;
+		min-width:65%%;
+		min-height:350px;
+		/*background: url("Images/welcome_powder_normal.jpg") no-repeat right;
+		background-size: cover;*/
+		overflow: visible;
+	}
+	.page .welcomeImg img.desktop{
+		width: 920px;
+		float:right;
+		display:block;
+	}
+	.page .welcomeImg img.mobile{
+		display: none;
 	}
 	.page .frontPage{
+		width:65%;
 		flex-wrap:wrap-reverse;
 		flex-direction:row-reverse;
 	}
 	.page .leftCol{
-		width:100%;
-	}
-	.page .leftCol .welcomeImg img{
-		width:70%;
+		width:65%;
 	}
 	.page .leftCol .blueSection{
 		display: none;
@@ -882,16 +895,18 @@ Footer Plotting
 		flex-direction: row-reverse;
 		width:auto;
 		border:none;
+		padding: 2% 0 0 5%;
 	}
 	.page .leftCol .greenSection ul{
 		width:50%;
 	}
 	.page .leftCol h4{
 		display: block;
-		font-size: 3rem;
+		margin:2% 0;
 	}
 	.page .leftCol h5{
-		font-size: 1.7rem;
+		font-size: 1.3rem;
+		color:#3c3a37;
 	}
 	.page .leftCol .event span{
 		margin:4% 0 10% 0;
@@ -919,6 +934,12 @@ Footer Plotting
 		min-width: 200px;
 		margin:20px;
 	}
+	.weatherMobileWidget{
+		width:34%;
+		position:relative;
+		height:auto;
+		transform:rotateY(0) translateZ(0);
+	}
 	.Footer{
 		float: left;
 		display: inline-flex;
@@ -941,5 +962,8 @@ Footer Plotting
 	.Footer .links ul li:first-child{
 		color:#fff;
 		font-size: 3rem;
+	}
+	.Footer .navLinks{
+		display: none;
 	}
 }
