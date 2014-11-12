@@ -24,6 +24,10 @@ ul{
 	margin: 0;
 	padding: 0;
 }
+h6{
+	margin:0;
+	padding:0;
+}
 #header{
 	height:48%; 25rem;
 	width:100%;
@@ -755,11 +759,13 @@ Footer Plotting
 -----------------------------------------------------------------
 */
 .Footer{
+	background-color: #353230;
 }
 .Footer .social{
 	background-color: #000;
 	padding:1% 10%;
 	border-bottom: solid #bcbcbc 0.1rem;
+	font-size: 0rem;
 }
 .Footer .social img{
 	width:100%;
@@ -775,11 +781,12 @@ Footer Plotting
 	margin: 6% 0 0 7%;
 	padding: 0;
 }
-.Footer .links ul li:first-child{
+.Footer .links ul h6{
 	color: #bcbcbc;
 	font-size: 1rem;
 	text-transform: uppercase;
-	padding-bottom: 13%
+	padding-bottom: 13%;
+	font-weight:900;
 }
 .Footer .links ul li{
 	color:#009bd1;
@@ -803,15 +810,17 @@ Footer Plotting
 }
 
 @media (min-width: 600px){
-
+	body{
+	}
 	#header{
 		height:auto;
+		background-color: #fff;
+		padding-bottom: 1.5%;
 	}
 	#header .drawer{
 		display:none;
 	}
 	#headerBar{
-		background-color: #fff;
 		height:20%;
 		margin:0 auto;
 		border:none;
@@ -865,8 +874,8 @@ Footer Plotting
 		overflow: visible;
 	}
 	.page .welcomeImg{
-		width:65%;
-		min-width:65%%;
+		width:67%;
+		min-width:67%%;
 		min-height:350px;
 		/*background: url("Images/welcome_powder_normal.jpg") no-repeat right;
 		background-size: cover;*/
@@ -881,12 +890,12 @@ Footer Plotting
 		display: none;
 	}
 	.page .frontPage{
-		width:65%;
+		width:67%;
 		flex-wrap:wrap-reverse;
-		flex-direction:row-reverse;
+		height:100%;
 	}
 	.page .leftCol{
-		width:65%;
+		width:100%;
 	}
 	.page .leftCol .blueSection{
 		display: none;
@@ -911,13 +920,13 @@ Footer Plotting
 	.page .leftCol .event span{
 		margin:4% 0 10% 0;
 		display: block;
-		font-size:1.7rem;
+		font-size:1.3rem;
 	}
 	.page .leftCol .event p{
 		display: none;
 	}
 	.page .leftCol .news p{
-		font-size: 1.7rem;
+		font-size: 1.3rem;
 		line-height: normal;
 	}
 	.page .rightCol{
@@ -935,35 +944,65 @@ Footer Plotting
 		margin:20px;
 	}
 	.weatherMobileWidget{
-		width:34%;
+		width:33%;
 		position:relative;
 		height:auto;
 		transform:rotateY(0) translateZ(0);
 	}
 	.Footer{
-		float: left;
-		display: inline-flex;
-		width:35%;
+		display:flex;
+		width:33%;
 		margin-right: auto;
 		flex-direction:column-reverse;
 		height:auto;
+		align-self:flex-start;
+		background-color: transparent;
 	}
 	.Footer .social{
-		display: block;
+		background-color: transparent;
+		font-size: 2rem;
+		color: #fff;
+		padding: 2% 12%;
+		border: none;
 	}
 	.Footer .links{
 		height:auto;
 		flex-direction:column-reverse;
 		display: flex;
+		background-color: transparent;
+	}
+	.Footer .links ul{
+		width:auto;
 	}
 	.Footer .links ul li{
 		color:#9cd6ea;
+		padding: 0 0 2% 6%;
+		margin-left: 5%;
+		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
+		background-size: 3%;
+		font-size: 1.2rem;
 	}
-	.Footer .links ul li:first-child{
+	.Footer .links ul h6{
 		color:#fff;
-		font-size: 3rem;
+		font-size: 2rem;
+		padding: 0 0 5% 6%;
+
 	}
 	.Footer .navLinks{
 		display: none;
+	}
+	.navLinks{
+		width:66%;
+	}
+	.navLinks ul{
+		padding: 7% 5%;
+		background: url("Images/logo-gray@2x.png") no-repeat left 6% top 0;
+		background-size: 25%;
+		margin: 5% 0;
+	}
+	.navLinks ul li{
+		width:auto;
+		color:#000;
+		padding: 0 3% 0 0;
 	}
 }
