@@ -770,6 +770,7 @@ Footer Plotting
 .Footer .social img{
 	width:100%;
 	opacity:0.4;
+	margin-top: 5%;
 }
 .Footer .links{
 	background-color: #353230;
@@ -792,6 +793,9 @@ Footer Plotting
 	color:#009bd1;
 	font-size: 1.1rem;
 	padding-bottom: 9%
+}
+.Footer .links ul p{
+	display: none;
 }
 .navLinks ul{
 	display:flex;
@@ -940,8 +944,38 @@ Footer Plotting
 		width: auto;
 	}
 	.page .rightCol ul li{
-		min-width: 200px;
-		margin:20px;
+		min-width: 255px;
+		padding:40px;
+		margin:0;
+		height:275px;
+	}
+	.page .rightCol ul li:nth-child(1){
+		background: url("Images/fall_300x300_sprite.jpg") no-repeat;
+		background-position: 15% 75%;
+	}
+	.page .rightCol ul li:nth-child(2){
+		background: url("Images/LaborDaySkiSale_300x300_B_sprite.jpg") no-repeat;
+		background-position: 15% 75%;
+	}
+	.page .rightCol ul li:nth-child(3){
+		background: url("Images/birdjobs_B_300x300_sprite.jpg") no-repeat;
+		background-position: 15% 75%;
+	}
+	.page .rightCol ul li:nth-child(4){
+		background: url("Images/seasonpass_2014_300x300_sprite.jpg") no-repeat;
+		background-position: 15% 75%;
+	}
+	.page .rightCol ul li:nth-child(5){
+		background: url("Images/mtncollective_2014_300x300_sprite.jpg") no-repeat;
+		background-position: 15% 75%;
+	}
+	.page .rightCol ul li .mobile{
+		display: none;
+	}
+	.page .rightCol ul li h5{
+		background: none;
+		font-size: 2.5rem;
+		color: #3c3a37;
 	}
 	.weatherMobileWidget{
 		width:33%;
@@ -956,7 +990,7 @@ Footer Plotting
 		flex-direction:column-reverse;
 		height:auto;
 		align-self:flex-start;
-		background-color: transparent;
+		background-color: #353230;
 	}
 	.Footer .social{
 		background-color: transparent;
@@ -980,13 +1014,18 @@ Footer Plotting
 		margin-left: 5%;
 		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
 		background-size: 3%;
-		font-size: 1.2rem;
+		font-size: 1.5rem;
 	}
 	.Footer .links ul h6{
 		color:#fff;
 		font-size: 2rem;
 		padding: 0 0 5% 6%;
-
+	}
+	.Footer .links ul p{
+		display: block;
+		margin:	10% 5%;
+		font-size: 2.5rem;
+		font-weight: 100;
 	}
 	.Footer .navLinks{
 		display: none;
