@@ -1,0 +1,108 @@
+.navMobileWidget{
+	border: 1px solid rgba(0,0,0,0.5);
+	display: block;
+	height:100%;
+	overflow: hidden;
+	position: absolute;
+	transform: rotateY(0deg) translateZ(20rem);
+	width:100%;
+	/*transform: perspective(100px) rotateX(60deg);
+	transform: perspective(100px) rotateX(20deg);
+	transform-origin:bottom;
+	transition: transform 2s ease, height 2s ease;*/
+}
+.navMobileWidget ul{
+	height:100%;
+	background: #fff;
+	padding:0;
+	margin:0;
+	list-style:none;
+	display:flex;
+	flex-flow: row wrap;
+}
+.navMobileWidget li{
+	border: 1px solid #bcbcbc;
+	border-left:none;
+	border-top:none;
+	border-collapse: collapse;
+	height:24%;
+	width:33%;
+	overflow-y:hidden;
+	overflow-x:hidden;
+}
+.navMobileWidget li a{
+	/*background-size: 4rem;*/
+	background-size: 46%;
+	background-repeat: no-repeat;
+	background-position: top;
+	color:#000;
+	display:block;
+	font-size:1rem;
+	font-weight: bold;
+	height:auto;/*1.2rem;*/
+	padding:37% 0 0 0;
+	text-align:center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width:100%;
+	
+	transition: background-size 2s ease;
+}
+.navMobileWidget .search{
+	width:66.66%;
+	background: #66c3e3;
+	display:flex;
+	border-right: 1px solid #fff;
+}
+.navMobileWidget .search a{
+	background-image: url(Images/nav-search-icon.png);
+	background-position: 10% 50%;
+	background-repeat: no-repeat;
+	background-size: 10%;
+	color:#fff;
+	height:24%;
+	font-size: 1.6rem;
+	padding:9% 31% 10% 0;
+	text-align: center;
+	text-transform: capitalize;
+	vertical-align: bottom;
+}
+.navMobileWidget .homeBtn{
+	width:32%;
+	background: #66c3e3;
+	display:flex;
+}
+.navMobileWidget .homeBtn a{
+	background: url(Images/nav-logo-white@2x.png) no-repeat;
+	background-size: 30%;
+	background-position: 50% 35%;
+	color:#fff;
+	padding-top:32%;
+}
+.navMobileWidget .winterBtn a{
+	background-image: url(Images/nav-winter@2x.png);
+}
+.navMobileWidget .summerBtn a{
+	background-image: url(Images/nav-summer@2x.png);
+}
+.navMobileWidget .lodgingBtn a{
+	background-image: url(Images/nav-lodging@2x.png);
+}
+.navMobileWidget .diningBtn a{
+	background-image: url(Images/nav-dining@2x.png);
+}
+.navMobileWidget .spaBtn a{
+	background-image: url(Images/nav-spa@2x.png);
+}
+.navMobileWidget .eventsBtn a{
+	background-image: url(Images/nav-events@2x.png);
+}
+.navMobileWidget .groupsBtn a{
+	background-image: url(Images/nav-groups@2x.png);
+}
+.navMobileWidget .shopBtn a{
+	background-image: url(Images/nav-shop@2x.png);
+}
+.navMobileWidget .ticketsBtn a{
+	background-image: url(Images/nav-tickets@2x.png);
+}

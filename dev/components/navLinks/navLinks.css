@@ -1,0 +1,32 @@
+.navLinks ul{
+	display:flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin:0;
+	padding:0 0 5% 0;
+}
+.navLinks ul li{
+	border: none;
+	width: 28%;
+	color: #bcbcbc;
+	font-weight: 400;
+	font-size: 1.2rem;
+	padding: 3% 0 0 5%;
+}
+
+@media (min-width: 600px){
+	.navLinks{
+		width:66%;
+	}
+	.navLinks ul{
+		padding: 7% 5%;
+		background: url("Images/logo-gray@2x.png") no-repeat left 6% top 0;
+		background-size: 25%;
+		margin: 5% 0;
+	}
+	.navLinks ul li{
+		width:auto;
+		color:#000;
+		padding: 0 3% 0 0;
+	}
+}

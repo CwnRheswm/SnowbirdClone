@@ -1,0 +1,17 @@
+#header{
+	height:48%; 25rem;
+	width:100%;
+	position: fixed;
+	top:0;
+	z-index: 100;
+	/*transition:top 2s ease;*/
+}
+
+@media (min-width: 600px){
+	#header{
+		height:auto;
+		background-color: #fff;
+		padding-bottom: 1.5%;
+	}
+	
+}

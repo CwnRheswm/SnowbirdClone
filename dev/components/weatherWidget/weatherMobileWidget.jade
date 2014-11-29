@@ -1,0 +1,14 @@
+.weatherMobileWidget
+	.leftCol
+		.mtnCam= "MTN CAM"
+		ul
+			each item in ["24 hr","48 hr","Depth","YTD"]
+				li
+					span= item
+					span= "°"
+		button= "Mtn Report"
+	.rightCol
+		.currentTemp
+			span.icon
+			span.temp
+		ul

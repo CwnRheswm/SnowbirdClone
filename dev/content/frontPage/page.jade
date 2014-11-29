@@ -1,0 +1,14 @@
+.welcomeImg
+	img.desktop(src="Images/welcome_powder_normal.jpg")
+	img.mobile(src="Images/welcome_mobile.jpg")
+include ../../components/weatherWidget/weatherMobileWidget.jade
+.frontPage
+	.leftCol
+		.blueSection
+			include ../../components/contact/contact.jade
+		.greenSection
+			include ../events/events.jade
+			include ../news/news.jade
+	.rightCol
+		ul
+			include ../seasonal/season.jade

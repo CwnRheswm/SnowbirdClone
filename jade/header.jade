@@ -1,0 +1,17 @@
+//- includes/header.jade
+.drawer
+	.cubeContent
+		block cubePage
+#headerBar
+	.border
+		a.navWidgetBtn
+			span.navIcon
+		.logo
+			ul
+				li
+				each item in ['winter','summer','lodging','dining','cliff spa','events','groups','shop']
+					li= item
+				li.search
+					img(href="#",src="Images/search-icon.png")
+		a.weatherWidgetBtn(href="#")
+			span.icon

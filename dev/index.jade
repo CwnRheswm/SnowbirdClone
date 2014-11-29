@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	head
+		link(rel='stylesheet', href='snowbird.css')
+		title="Fake Snowbird Clone built with JADE"
+	body
+		#header
+			include ./components/drawer/drawer.jade
+			include ./components/header/headerBar.jade
+		#headerBlock
+		#page
+			include ./content/frontpage/page.jade
+		include ./components/footer/footer.jade
+		include ./components/navLinks/navLinks.jade
