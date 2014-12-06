@@ -5,7 +5,10 @@ html(lang="en")
 		title="Fake Snowbird Clone built with JADE"
 	body
 		#header
-			include ./components/drawer/drawer.jade
+			.drawer
+				.cubeContent
+					include ./components/navigationWidget/navigationWidget.html
+					include ./components/weatherWidget/weatherWidget.html
 			include ./components/header/headerBar.jade
 		#headerBlock
 		#page
