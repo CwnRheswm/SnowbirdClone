@@ -17,13 +17,13 @@ module.exports = function(grunt){
 				options: {
 					pretty: true
 				},
-				files: [ {
+				files: [{
 					cwd: "dev",
 					src: ["**/*.jade"],
 					dest: "build",
 					expand: true,
 					ext: ".html"
-				} ]
+				}]
 			}
 		},
 		jshint: {
@@ -39,6 +39,31 @@ module.exports = function(grunt){
 				}
 			}
 		},
+		sass: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: "dev/",
+					src: ["**/*.scss"],
+					dest: "dev/SASSbuild/",
+					ext: ".css",
+					flatten: true
+				}]
+			}
+		},
+		concat: {
+			options: {
+				seperator: ';',
+			},
+			dist: {
+				files: [{
+					expand: true,
+					cwd: "dev/SASSbuild/",
+					src: ["*.css"],
+					dest: "build/snowbird.css"
+				}],
+			}
+		},
 		watch: {
 			jshint: {
 				files: ['<%= jshint.files %>'],
@@ -47,6 +72,12 @@ module.exports = function(grunt){
 			jade: {
 				files: "dev/**/*.jade",
 				tasks: "jade"
+			},
+			connect: {
+				tasks: "connect"
+			},
+			options: {
+				livereload: true
 			}
 		}
 	});
@@ -54,5 +85,6 @@ module.exports = function(grunt){
 	grunt.registerTask('serve','connect:server');
 	grunt.registerTask('lint','jshint');
 	grunt.registerTask('compile','jade');
+	grunt.registerTask('add','concat');
 	grunt.registerTask('default','watch');
 };
