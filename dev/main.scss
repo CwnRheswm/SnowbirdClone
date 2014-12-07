@@ -1,0 +1,39 @@
+$font-stack: "ProximaNova", Helvetica, sans-serif;
+$lt-grey: #bcbcbc;
+$alt-lt-grey: #7e7c7a;
+$med-grey: #353230;
+$alt-med-grey: #3c3a37;
+$drk-grey: #1c1c1c;
+$black: #000;
+$near-white: #faf8f6;
+$white: #fff;
+$puddle-blue: #6a90a0;
+$sky-blue: #9cd6ea;
+$tif-blue: #009bd1;
+$moss-green: #b6d99f;
+$orange: #ff5a00;
+
+html {
+	font-size: 62.5%;
+	height: 100%
+}
+body{
+	font: 900 1.6rem $font-stack;
+	margin: 0;
+	border-collapse: collapse;
+	height: 100%;
+}
+button{
+	background-color: $tif-blue;
+	border:none;
+	border-collapse: collapse;
+	border-radius: 1rem;
+	color:$white;
+	text-transform: uppercase;
+}
+ul,
+h6 {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}

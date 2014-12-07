@@ -74,6 +74,7 @@ module.exports = function(grunt){
 				tasks: "jade"
 			},
 			connect: {
+				files: ['build/index.html'],
 				tasks: "connect"
 			},
 			options: {
