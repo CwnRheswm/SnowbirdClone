@@ -35,7 +35,11 @@ module.exports = function(grunt){
 		connect: {
 			server: {
 				options:{
-					port: 1337,
+					port: 9000,
+					livereload: true,
+					base: 'build/',
+					keepalive: false,
+					livereload: true
 				}
 			}
 		},
@@ -53,7 +57,7 @@ module.exports = function(grunt){
 		},
 		concat: {
 			options: {
-				seperator: ';',
+				seperator: ';'
 			},
 			dist: {
 				files: [{
@@ -65,27 +69,19 @@ module.exports = function(grunt){
 			}
 		},
 		watch: {
-			jshint: {
-				files: ['<%= jshint.files %>'],
-				tasks: ['jshint']
-			},
 			jade: {
-				files: "dev/**/*.jade",
-				tasks: "jade"
+				files: ["dev/**/*.jade"],
+				tasks: ["jade:compile"],
+				options: {
+					livereload: true,
+				},
 			},
-			connect: {
-				files: ['build/index.html'],
-				tasks: "connect"
-			},
-			options: {
-				livereload: true
+			src: {
+				files: ['*.html'],
+				options: {livereload:true}
 			}
 		}
 	});
 
-	grunt.registerTask('serve','connect:server');
-	grunt.registerTask('lint','jshint');
-	grunt.registerTask('compile','jade');
-	grunt.registerTask('add','concat');
-	grunt.registerTask('default','watch');
+	grunt.registerTask('default', ['connect','watch']);
 };

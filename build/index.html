@@ -2,131 +2,140 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="snowbird.css">
-    <title>Fake Snowbird Clone built with JADE</title>
+    <title>Fake Snowbird Clone built with JADE@</title>
+    <script src="http://localhost:1337/livereload.js"></script>
   </head>
   <body>
     <div id="header">
       <div class="drawer">
-        <div class="cubeContent"><div class="navMobileWidget">
-	<ul>
-		<li class="search">
-			<a href="#">search</a></li>
-		<li class="homeBtn">
-			<a href="#">home</a></li>
-		<li class="winterBtn">
-			<a href="#">winter</a></li>
-		<li class="summerBtn">
-			<a href="#">summer</a></li>
-		<li class="lodgingBtn">
-			<a href="#">lodging</a></li>
-		<li class="diningBtn">
-			<a href="#">dining</a></li>
-		<li class="spaBtn">
-			<a href="#">cliff spa</a></li>
-		<li class="eventsBtn">
-			<a href="#">events</a></li>
-		<li class="groupsBtn">
-			<a href="#">groups</a></li>
-		<li class="shopBtn">
-			<a href="#">shop</a></li>
-		<li class="ticketsBtn">
-			<a href="#">tickets</a></li>
-	</ul>
-</div><div class="weatherMobileWidget">
-	<div class="leftCol">
-		<div class="mtnCam">MTN CAM</div>
-		<ul>
-			<li><span>24 hr</span><span>0&#8221</span></li>
-			<li><span>48 hr</span><span>0&#8221</span></li>
-			<li><span>Depth</span><span>0&#8221</span></li>
-			<li><span>YTD</span><span>0&#8221</span></li>
-		</ul>
-		<button>Mtn Report</button>
-	</div>
-	<div class="rightCol">
-		<div class="currentTemp">
-			<span class='icon'></span>
-			<span class='temp'>46<span><sup>&deg</sup></span></span>
-		</div>
-		<ul>
-		</ul>
-	</div>
-</div>
+        <div class="cubeContent">
+          <div class="navMobileWidget">
+            <ul>
+              <li class="search"><a href="#">search</a></li>
+              <li class="home"><a href="#">home</a></li>
+              <li class="winter"><a href="#">winter</a></li>
+              <li class="summer"><a href="#">summer</a></li>
+              <li class="lodging"><a href="#">lodging</a></li>
+              <li class="dining"><a href="#">dining</a></li>
+              <li class="spa"><a href="#">spa</a></li>
+              <li class="events"><a href="#">events</a></li>
+              <li class="groups"><a href="#">groups</a></li>
+              <li class="shop"><a href="#">shop</a></li>
+              <li class="tickets"><a href="#">tickets</a></li>
+            </ul>
+          </div>
+          <div class="weatherMobileWidget">
+            <div class="leftCol">
+              <div class="mtnCam">MTN CAM</div>
+              <ul>
+                <li><span>24 hr</span><span>°</span></li>
+                <li><span>48 hr</span><span>°</span></li>
+                <li><span>Depth</span><span>°</span></li>
+                <li><span>YTD</span><span>°</span></li>
+              </ul>
+              <button>Mtn Report</button>
+            </div>
+            <div class="rightCol">
+              <div class="currentTemp"><span class="icon"></span><span class="temp"></span></div>
+              <ul></ul>
+            </div>
+          </div>
         </div>
-      </div><div id="headerBar">
-    <div class="border"></div><a href="#" class="navWidgetBtn"><span class="navIcon"></span></a>
-    <div class="logo">
-      <ul>
-        <li></li>
-        <li class="item"><a href="#">winter</a></li>
-        <li class="item"><a href="#">summer</a></li>
-        <li class="item"><a href="#">lodging</a></li>
-        <li class="item"><a href="#">dining</a></li>
-        <li class="item"><a href="#">spa</a></li>
-        <li class="item"><a href="#">events</a></li>
-        <li class="item"><a href="#">groups</a></li>
-        <li class="item"><a href="#">shop</a></li>
-        <li class="search"><img href="#" src="Images/search-icon.png"></li>
-      </ul>
-    </div><a href="#" class="weatherWidgetBtn"><span class="icon"></span></a>
-  </div>
-</div>
+      </div>
+      <div id="headerBar">
+        <div class="border"></div><a href="#" class="navWidgetBtn"><span class="navIcon"></span></a>
+        <div class="logo">
+          <ul>
+            <li></li>
+            <li class="item"><a href="#">winter</a></li>
+            <li class="item"><a href="#">summer</a></li>
+            <li class="item"><a href="#">lodging</a></li>
+            <li class="item"><a href="#">dining</a></li>
+            <li class="item"><a href="#">spa</a></li>
+            <li class="item"><a href="#">events</a></li>
+            <li class="item"><a href="#">groups</a></li>
+            <li class="item"><a href="#">shop</a></li>
+            <li class="search"><img href="#" src="Images/search-icon.png"></li>
+          </ul>
+        </div><a href="#" class="weatherWidgetBtn"><span class="icon"></span></a>
+      </div>
     </div>
-    <div id="headerBlock"><div id="headerBlock">
-</div>
-    </div><div class="page">
-		<div class="welcomeImg">
-			<img class="desktop" src="Images/welcome_powder_normal.jpg">
-			<img class="mobile" src="Images/welcome_mobile.jpg">
-		</div>
-	<!--Weather Widget-->
-	<div class="frontPage">
-		<div class="leftCol">
-			<div class="blueSection">
-				<!--contact-->
-			</div>
-			<div class="greenSection">
-				<!--events-->
-				<!--news-->
-			</div>
-		</div>
-		<div class="rightCol">
-			<ul>
-				<!--seasonal-->
-			</ul>
-		</div>
-	</div>
-
-	<div class="footer">
-		<div class="social">FIND US
-			<img src="Images/find-us-icons@2x.png">
-		</div>
-		<div class="links">
-			<ul>
-				<h6>Specials</h6>
-				<li>Winter 2014/15</li>
-				<li>December Snow Sale</li>
-				<li>January Snow Sale</li>
-				<li>Fall Getaway</li>
-				<li>Dine & Stay</li>
-				<li>Cliff Spa Specials</li>
-				<li>White Rooms</li>
-				<li>All Specials</li>
-			</ul>
-			<ul>
-				<h6>Buy Online</h6>
-				<li>Lodging</li>
-				<li>Lift Tickets</li>
-				<li>Mountain School</li>
-				<li>Season Passes</li>
-				<li>The Cliff Spa</li>
-				<li>Ground Transport</li>
-				<li>Apparel & Gifts</li>
-				<li>Gift Cards</li>
-				<p>1-800-XXX-XXXX</p>
-			</ul>
-	</div>
-</div><div id="footer">
+    <div id="headerBlock"></div>
+    <div class="page">
+      <div class="welcomeImg"><img src="Images/welcome_powder_normal.jpg" class="desktop"><img src="Images/welcome_mobile.jpg" class="mobile"></div>
+      <div class="weatherMobileWidget">
+        <div class="leftCol">
+          <div class="mtnCam">MTN CAM</div>
+          <ul>
+            <li><span>24 hr</span><span>°</span></li>
+            <li><span>48 hr</span><span>°</span></li>
+            <li><span>Depth</span><span>°</span></li>
+            <li><span>YTD</span><span>°</span></li>
+          </ul>
+          <button>Mtn Report</button>
+        </div>
+        <div class="rightCol">
+          <div class="currentTemp"><span class="icon"></span><span class="temp"></span></div>
+          <ul></ul>
+        </div>
+      </div>
+      <div class="frontPage">
+        <div class="leftCol">
+          <div class="blueSection">
+            <button class="contact"></button>
+            <ul class="mainLinks">
+              <li href="#">Day Tickets</li>
+              <li href="#">Season Passes</li>
+              <li href="#">Lodging</li>
+              <li href="#">Trail MapQ</li>
+            </ul>
+          </div>
+          <div class="greenSection">
+            <ul class="events">
+              <h4>EVENTS</h4>
+              <div class="event">
+                <h5><span></span></h5>
+                <p></p>
+                <p class="expand">(href="#") more...</p>
+              </div>
+            </ul>
+            <ul class="news">
+              <h4>NEWS</h4>
+              <li>
+                <h5></h5>
+                <p></p>
+                <p class="expand">more...</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="rightCol">
+          <ul>
+            <li href="#" class="seasonal"><img src="Images/cliff_fall_mobile.jpg" class="mobile">
+              <h5>Fall Getaway</h5>
+              <p>Escape to Snowbird and receive a $50 gift card per night!</p>
+            </li>
+            <li href="#" class="seasonal"><img src="Images/LaborDaySkiSale_mobile.jpg" class="mobile">
+              <h5>Winter Specials</h5>
+              <p>Book now for the best deals on the coming winter!</p>
+            </li>
+            <li href="#" class="seasonal"><img src="Images/birdjobs_mobile.jpg" class="mobile">
+              <h5>Bird Jobs</h5>
+              <p>Snowbird is hiring. Apply now!</p>
+            </li>
+            <li href="#" class="seasonal"><img src="Images/seasonpass_mobile.jpg" class="mobile">
+              <h5>Season Pass</h5>
+              <p>Buy your 2014/15 Season Pass today!</p>
+            </li>
+            <li href="#" class="seasonal"><img src="Images/mtncollective_mobile.jpg" class="mobile">
+              <h5>Mtn. Collective</h5>
+              <p>14 days at 7 world-class destinations. Buy your Mountain Collective now.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
       <div class="social">FIND US<img src="Images/find-us-icons@2x.png"></div>
       <div class="links">
         <ul>
@@ -153,18 +162,19 @@
           <p>1-800-XXX-XXXX</p>
         </ul>
       </div>
-    </div><div class="navLinks">
-	<ul>
-		<li><span>Home</span></li>
-		<li><span>About</span></li>
-		<li><span>Site Index</span></li>
-		<li><span>Environment</span></li>
-		<li><span>Press</span></li>
-		<li><span>Privacy</span></li>
-		<li><span>Specials</span></li>
-		<li><span>Jobs</span></li>
-		<li><span>Contact</span></li>
-	</ul>
-</div>
+    </div>
+    <div class="navLinks">
+      <ul>
+        <li><span>Home</span></li>
+        <li><span>About</span></li>
+        <li><span>Site Index</span></li>
+        <li><span>Environment</span></li>
+        <li><span>Press</span></li>
+        <li><span>Privacy</span></li>
+        <li><span>Specials</span></li>
+        <li><span>Jobs</span></li>
+        <li><span>Contact</span></li>
+      </ul>
+    </div>
   </body>
 </html>

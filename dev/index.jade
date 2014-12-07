@@ -2,16 +2,14 @@ doctype html
 html(lang="en")
 	head
 		link(rel='stylesheet', href='snowbird.css')
-		title="Fake Snowbird Clone built with JADE"
+		title="Fake Snowbird Clone built with JADE#"
+		script(src="http://localhost:1337/livereload.js")
 	body
 		#header
-			.drawer
-				.cubeContent
-					include ./components/navigationWidget/navigationWidget.html
-					include ./components/weatherWidget/weatherWidget.html
-			include ./components/header/headerBar.html
+			include ./components/drawer/drawer.jade
+			include ./components/header/headerBar.jade
 		#headerBlock
-			include ./components/header/headerBlock.html
-		include ./content/frontpage/page.html
-		include ./components/footer/footer.html
-		include ./components/navLinks/navLinks.html
+		.page
+			include ./content/frontpage/page.jade
+		include ./components/footer/footer.jade
+		include ./components/navLinks/navLinks.jade
