@@ -1,5 +1,5 @@
 module.exports = function(grunt){
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+	//require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -27,19 +27,12 @@ module.exports = function(grunt){
 			}
 		},
 		jshint: {
-			options: {
-				force: true
-			},
 			files: ['gruntfile.js','sb.js']
 		},
 		connect: {
 			server: {
 				options:{
-					port: 9000,
-					livereload: true,
-					base: 'build/',
-					keepalive: false,
-					livereload: true
+					base: "build/"
 				}
 			}
 		},
@@ -69,19 +62,35 @@ module.exports = function(grunt){
 			}
 		},
 		watch: {
-			jade: {
-				files: ["dev/**/*.jade"],
-				tasks: ["jade:compile"],
+			livereload:{
 				options: {
 					livereload: true,
 				},
+				files: ['build/**/*']
 			},
-			src: {
-				files: ['*.html'],
-				options: {livereload:true}
+			jade: {
+				options: {
+					livereload: false,
+				},
+				files: ["dev/**/*.jade"],
+				tasks: ["jade:compile"],
+				
+			},
+			jshint:{
+				files: ['<%= jshint.files %>'],
+				tasks: ['jshint'],
 			}
 		}
 	});
 
-	grunt.registerTask('default', ['connect','watch']);
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+
+	grunt.registerTask('dev', ['connect','watch']);
 };
