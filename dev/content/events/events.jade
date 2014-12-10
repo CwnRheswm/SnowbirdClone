@@ -1,6 +1,8 @@
 ul.events
 	h4 EVENTS
-	.event
-		h5: span
-		p
-		p.expand (href="#") more...
+	each ev in [["event","TODAY - OCT 21 -","Apres Specials","The Aerie 50% off Appetizers; Daily 5-6 p.m. $3 Drafts; Daily 5-10 p.m. Martini"],["event","OCT 21 - 22","Ski Conditioning Class","Be ready to hit the slopes stronger and better than ever. This 10-week course foceses on functional strength training."]]
+		.event
+			h5 #{ev[1]}
+				span #{ev[2]}
+			p #{ev[3]}
+			p.expand (href="#") more...

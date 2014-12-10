@@ -758,43 +758,43 @@ Fake Page Plotting
 Footer Plotting
 -----------------------------------------------------------------
 */
-.Footer{
+#footer{
 	background-color: #353230;
 }
-.Footer .social{
+#footer .social{
 	background-color: #000;
 	padding:1% 10%;
 	border-bottom: solid #bcbcbc 0.1rem;
 	font-size: 0rem;
 }
-.Footer .social img{
+#footer .social img{
 	width:100%;
 	opacity:0.4;
 	margin-top: 5%;
 }
-.Footer .links{
+#footer .links{
 	background-color: #353230;
 	display: flex;
 }
-.Footer .links ul{
+#footer .links ul{
 	width: 50%;
 	list-style: none;
 	margin: 6% 0 0 7%;
 	padding: 0;
 }
-.Footer .links ul h6{
+#footer .links ul h6{
 	color: #bcbcbc;
 	font-size: 1rem;
 	text-transform: uppercase;
 	padding-bottom: 13%;
 	font-weight:900;
 }
-.Footer .links ul li{
+#footer .links ul li{
 	color:#009bd1;
 	font-size: 1.1rem;
 	padding-bottom: 9%
 }
-.Footer .links ul p{
+#footer .links ul p{
 	display: none;
 }
 .navLinks ul{
@@ -983,7 +983,7 @@ Footer Plotting
 		height:auto;
 		transform:rotateY(0) translateZ(0);
 	}
-	.Footer{
+	#footer{
 		display:flex;
 		width:33%;
 		margin-right: auto;
@@ -992,23 +992,23 @@ Footer Plotting
 		align-self:flex-start;
 		background-color: #353230;
 	}
-	.Footer .social{
+	#footer .social{
 		background-color: transparent;
 		font-size: 2rem;
 		color: #fff;
 		padding: 2% 12%;
 		border: none;
 	}
-	.Footer .links{
+	#footer .links{
 		height:auto;
 		flex-direction:column-reverse;
 		display: flex;
 		background-color: transparent;
 	}
-	.Footer .links ul{
+	#footer .links ul{
 		width:auto;
 	}
-	.Footer .links ul li{
+	#footer .links ul li{
 		color:#9cd6ea;
 		padding: 0 0 2% 6%;
 		margin-left: 5%;
@@ -1016,18 +1016,18 @@ Footer Plotting
 		background-size: 3%;
 		font-size: 1.5rem;
 	}
-	.Footer .links ul h6{
+	#footer .links ul h6{
 		color:#fff;
 		font-size: 2rem;
 		padding: 0 0 5% 6%;
 	}
-	.Footer .links ul p{
+	#footer .links ul p{
 		display: block;
 		margin:	10% 5%;
 		font-size: 2.5rem;
 		font-weight: 100;
 	}
-	.Footer .navLinks{
+	#footer .navLinks{
 		display: none;
 	}
 	.navLinks{
