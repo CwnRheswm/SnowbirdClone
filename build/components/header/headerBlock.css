@@ -1,0 +1,14 @@
+#headerBlock{
+	height:7%;
+	transition: height 2s ease;
+}
+#headerBlock.opened{
+	height:48%;
+}
+
+@media (min-width: 600px){
+	#headerBlock{
+		height:11%;
+		transition: height 0s ease;
+	}
+}

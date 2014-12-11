@@ -1,0 +1,22 @@
+.contact{
+	background: url("Images/phone-black@2x.png") no-repeat center;
+	background-size: 43%;
+	width: 88%;
+	padding: 15% 0;
+	background-color: #fff;
+	border-radius: 3rem;
+	border-style: solid;
+	border-color: #bcbcbc;
+	border-width: 0.1rem;
+
+}
+.contact .mainLinks{
+	list-style: none;
+	padding-left: 1%;
+	margin-bottom: 0;
+}
+.contact .mainLinks li{
+	font-size: 1.3rem;
+	color:#009bd1;
+	padding-bottom: 9%;
+}

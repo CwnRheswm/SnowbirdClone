@@ -1,0 +1,129 @@
+@font-face {
+	font-family:"ProximaNova", Helvetica, sans-serif;
+}
+html{
+	font-size: 62.5%;
+	height: 100% /* needed to enforce height on headerBlock*/
+}
+body{
+	font:900 1.6rem "ProximaNova", Helvetica, sans-serif;
+	margin:0;
+	border-collapse:collapse;
+	height: 100% /* needed to enforce height on headerBlock*/
+}
+button{
+	background-color: #009bd1;
+	border: none;
+	border-collapse: collapse;
+	border-radius: 1rem;
+	color:#fff;
+	text-transform: uppercase;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+h4{
+	font-weight: 900;
+	font-size: .5rem;
+}
+h6{
+	margin:0;
+	padding:0;
+}
+
+.icon{
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.icon.clear{
+	background-image: url(Images/clear.png);
+}
+.icon.clear.blue{
+	background-image: url(Images/clear_blue.png);
+}
+.icon.clear.black{
+	background-image: url(Images/clear_black.png);
+}
+.icon.clear.night{
+	background-image: url(Images/clear_night.png);
+}
+.icon.clear.night.blue{
+	background-image: url(Images/clear_night_blue.png);
+}
+.icon.clear.night.black{
+	background-image: url(Images/clear_night_black.png);
+}
+.icon.cloudy{
+	background-image: url(Images/cloudy.png);
+}
+.icon.cloudy.blue{
+	background-image: url(Images/cloudy_blue.png);
+}
+.icon.cloudy.black{
+	background-image: url(Images/cloudy_black.png);
+}
+.icon.cloudy.night{
+	background-image: url(Images/cloudy_night.png);
+}
+.icon.cloudy.night.blue{
+	background-image: url(Images/cloudy_night_blue.png);
+}
+.icon.cloudy.night.black{
+	background-image: url(Images/cloudy_night_black.png);
+}
+.icon.partlyCloudy{
+	background-image: url(Images/partly_cloudy.png);
+}
+.icon.partlyCloudy.blue{
+	background-image: url(Images/partly_cloudy_blue.png);
+}
+.icon.partlyCloudy.black{
+	background-image: url(Images/partly_cloudy_black.png);
+}
+.icon.partlyCloudy.night{
+	background-image: url(Images/partly_cloudy_night.png);
+}
+.icon.partlyCloudy.night.blue{
+	background-image: url(Images/partly_cloudy_night_blue.png);
+}
+.icon.partlyCloudy.night.black{
+	background-image: url(Images/partly_cloudy_night_black.png);
+}
+.icon.rain{
+	background-image: url(Images/rain.png);
+}
+.icon.rain.blue{
+	background-image: url(Images/rain_blue.png);
+}
+.icon.rain.black{
+	background-image: url(Images/rain_black.png);
+}
+.icon.rain.night{
+	background-image: url(Images/rain_night.png);
+}
+.icon.rain.night.blue{
+	background-image: url(Images/rain_night_blue.png);
+}
+.icon.rain.night.black{
+	background-image: url(Images/rain_night_black.png);
+}
+.icon.snow{
+	background-image: url(Images/snow.png);
+}
+.icon.snow.blue{
+	background-image: url(Images/snow_blue.png);
+}
+.icon.snow.black{
+	background-image: url(Images/snow_black.png);
+}
+.icon.snow.night{
+	background-image: url(Images/snow_night.png);
+}
+.icon.snow.night.blue{
+	background-image: url(Images/snow_night_blue.png);
+}
+.icon.snow.night.black{
+	background-image: url(Images/snow_night_black.png);
+}
