@@ -3,13 +3,33 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		uglify: {
+		locales: {
+			src: "dev/",
+			dest: "build/"
+		},
+		concat_css: {
 			options: {
 
 			},
-			build: {
-				src: 'src/<%= pkg.name %>.js',
-				dest: 'build/<%= pkg.name %>.min.js'
+			all: {
+				src: ["dev/snowbird_main.css","dev/content/**/*.css","dev/components/**/*.css"],
+				dest: "dev/snowbird.css"
+			}
+		},
+		connect: {
+			server: {
+				options:{
+					base: "build/"
+				}
+			}
+		},
+		cssmin: {
+			minify: {
+				expand: true,
+				cwd: 'dev/',
+				src: 'snowbird.css',
+				dest: 'build/',
+				ext: '.min.css'
 			}
 		},
 		jade: {
@@ -27,14 +47,10 @@ module.exports = function(grunt){
 			}
 		},
 		jshint: {
-			files: ['gruntfile.js','sb.js']
-		},
-		connect: {
-			server: {
-				options:{
-					base: "build/"
-				}
-			}
+			options: {
+				force: true
+			},
+			files: ['gruntfile.js','dev/sb.js']
 		},
 		sass: {
 			dist: {
@@ -48,17 +64,15 @@ module.exports = function(grunt){
 				}]
 			}
 		},
-		concat: {
-			options: {
-				seperator: ';'
-			},
-			dist: {
+		uglify: {
+			build: {
 				files: [{
 					expand: true,
-					cwd: "dev/SASSbuild/",
-					src: ["*.css"],
-					dest: "build/snowbird.css"
-				}],
+					cwd: 'dev/',
+					src: '**/*.js',
+					dest: 'build/',
+					ext: '.min.js'
+				}]
 			}
 		},
 		watch: {
@@ -68,29 +82,44 @@ module.exports = function(grunt){
 				},
 				files: ['build/**/*']
 			},
+			concat: {
+				files: ["dev/**/*.css"],
+				tasks: ["concat_css:all"]
+			},
+			cssmin: {
+				files: ['dev/snowbird.css'],
+				tasks: ['cssmin:minify']
+			},
 			jade: {
 				options: {
 					livereload: false,
 				},
 				files: ["dev/**/*.jade"],
-				tasks: ["jade:compile"],
-				
+				tasks: ["jade:compile"],	
 			},
 			jshint:{
 				files: ['<%= jshint.files %>'],
 				tasks: ['jshint'],
+			},
+			uglify:{
+				files: ['dev/**/*.js'],
+				tasks: ['uglify:build']
 			}
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	
+	grunt.loadNpmTasks('grunt-concat-css');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-
-	grunt.registerTask('dev', ['connect','watch']);
+	grunt.registerTask('ugly','uglify:build');
+	grunt.registerTask('min',['cssmin:minify']);
+	grunt.registerTask('add',['concat_css']);
+	grunt.registerTask('dev',['connect','watch']);
 };

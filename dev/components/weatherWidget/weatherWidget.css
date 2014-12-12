@@ -143,5 +143,7 @@
 		position:relative;
 		height:auto;
 		transform:rotateY(0) translateZ(0);
+		background-color: #1e1e1e;
 	}
+	
 }

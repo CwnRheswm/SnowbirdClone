@@ -8,7 +8,7 @@
 
 @media (min-width: 600px){
 	#headerBlock{
-		height:11%;
+		height:7%;
 		transition: height 0s ease;
 	}
 }

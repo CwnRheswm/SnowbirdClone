@@ -20,71 +20,6 @@ var $ = function(selector) {
     today=new Date(),
     weatherConditions;
 
-    /*
-    setCookie = function (c_name,value,expireminutes){
-        var exdate = new Date();
-        exdate.setMinutes(exdate.getMinutes()+expireminutes);
-        document.cookie = c_name+"="+escape(value)+((expireminutes==null) ? "" : ";expires="+exdate.toUTCString());
-    };
-    getCookie = function(c_name){
-        if (document.cookie.length > 0){ //if cookies exists
-            c_start=document.cookie.indexOf(c_name+"="); //look for specified cookie
-            if (c_start!=-1){ //if that start is actually there
-                c_start=c_start + c_name.length+1; //ammend start to start at the beginning of given cookie
-                c_end=document.cookie.indexOf(";",c_start);
-                if (c_end==-1){
-                    c_end=document.cookie.length; //if c_end is at the end of the cookie
-                    return unescape(document.cookie.substring(c_start,c_end));
-                }
-            }
-        }
-        return "";
-    };
-    getWeatherFromCookie = function(cookie, success){
-        array = JSON.parse(cookie);
-        success(array);
-    };
-    setWeatherFromCookie = function(weatherArray){
-        var curWeather = getIconClass(weatherArray.today.weather[0].icon),
-         rightColList = $(".rightCol ul")[0],
-         date = new Date(),
-         day = date.getDay(),
-         weekday = ["sun","mon","tue","wed","thu","fri","sat"];
-
-        $(".curr")[0].innerHTML = Math.round(weatherArray.today.main.temp)+"<span><sup>&deg</sup></span>";
-        $(".currentTemp .icon")[0].classList.add(curWeather);
-        
-        for(var i = 0; i < rightColList.children.length; i++){
-            
-            d = day+i;
-            if(d > 6){d-=7};
-
-            rightColList.children[i].children[0].innerHTML = weekday[d];
-            var addClass = getIconClass(weatherArray.fiveDay.list[i].weather[0].icon);
-            for (var cls of addClass){
-                rightColList.children[i].children[1].classList.add(cls);
-            };
-            rightColList.children[i].children[2].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.max)+'&deg';
-            rightColList.children[i].children[3].innerHTML = Math.round(weatherArray.fiveDay.list[i].temp.min)+'&deg';
-        };
-        $(".weatherWidgetBtn")[0].classList.add(curWeather);
-    };
-    getJSONP = function(url, success){
-                var ud = '_'+ +new Date,
-                script = document.createElement('script'),
-                head = $('#head')[0]
-                        || document.documentElement;
-            
-                window[ud] = function(data){
-                    head.removeChild(script);
-                    success && success(data);
-                };
-
-                script.src = url.replace('callback=?', 'callback='+ud);
-                
-                head.appendChild(script);
-    };
-    */
     onPageLoad = function(){
         weatherConditions = weather.getWeather();
         console.log(weatherConditions," ",weatherConditions.forecast);
@@ -102,19 +37,21 @@ var $ = function(selector) {
             if(i === 0){
                 var curIcon = $(".currentTemp .icon")[0],
                 weaIcon = $(".weatherWidgetBtn .icon")[0];
-                for(cls of dayObj.icon){
-                    curIcon.classList.add(cls);//("Images/"+dayObj.icon+".png");
-                    weaIcon.classList.add(cls);
+                
+                for(var j=0; i<dayObj.icon.length; j++){
+                    curIcon.classList.add(dayObj.icon[j]);//("Images/"+dayObj.icon+".png");
+                    weaIcon.classList.add(dayObj.icon[j]);
                     weaIcon.classList.add("black");
                 }
                 $(".currentTemp .temp")[0].innerHTML = Math.round(dayObj.temp)+"&deg";
-            };
+            }
             docDay = document.createElement('h5');//.appendChild(document.createTextNode(dayObj.day));
             docDay.appendChild(document.createTextNode(dayObj.day));
             docDay.className = "day";
             docImg = document.createElement('span');
-            for(cls of (dayObj.icon.concat(["icon","blue"]))){
-                docImg.classList.add(cls);
+            var iconArray = dayObj.icon.concat(["icon","blue"]);
+            for(var k=0; k<(iconArray.length); k++){
+                docImg.classList.add(iconArray[k]);
             }
             docHigh= document.createElement('span');
             //docHigh.appendChild(document.createTextNode(Math.round(dayObj.high)+"&deg");
@@ -132,8 +69,8 @@ var $ = function(selector) {
             list.appendChild(docLow);
             rightColList.appendChild(list);
             
-        };
-    }
+        }
+    };
 
     weather = (function(){
 
@@ -144,9 +81,9 @@ var $ = function(selector) {
                     "today":"",
                     "forecast":""
                 },
-                units = arguments["units"] || "metric",
-                city = arguments["city"] || "snowbird, UT",
-                forecastDays = arguments["forcastDays"] || "5",
+                units = arguments.units || "metric",
+                city = arguments.city || "snowbird, UT",
+                forecastDays = arguments.forcastDays || "5",
                 weatherKey='2a875b5c2a61bdb14dc7f2af6876cf7b',
                 url = "http://api.openweathermap.org/data/2.5/",
                 //weather = ,
@@ -158,14 +95,14 @@ var $ = function(selector) {
                 //forecast/daily instead of weather
 
                 callService = function(url, success){
-                    var ud = '_'+ +new Date,
+                    var ud = '_'+new Date(),
                     script = document.createElement('script'),
-                    head = $('#head')[0]
-                            || document.documentElement;
+                    head = $('#head')[0] || document.documentElement;
                 
                     window[ud] = function(data){
                         head.removeChild(script);
-                        success && success(data);
+                        //@@REMOVED!
+                        //success && success(data);
                     };
 
                     script.src = url.replace('callback=?', 'callback='+ud);
@@ -177,94 +114,83 @@ var $ = function(selector) {
                     callService((url + "forecast/daily" + args), function(data){
                         weatherArray.forecast = data;
                         return weatherArray;
-                    })
+                    });
                 });
             }
             else{
-                fauxWeather = ({ "coord":{"lon":-0.13,
-                                          "lat":51.51},
-                                 /*"current":{"weather":[{"id":802,
-                                                        "main":"Clouds",
-                                                        "description":"scattered clouds",
-                                                        "icon":"03n"}],
-                                            "main":{"temp":5,
-                                                    "pressure":1018,
-                                                    "humidity":61,
-                                                    "temp_min":14,
-                                                    "temp_max":1},
-                                            "wind":{"speed":10.3,
-                                                    "deg":290,
-                                                    "gust":15.4}
-                                            },*/
-                                 "forecast":{"0":{"weather":[{"id":800, //weather.id
-                                                              "main":"Clear", //weather.main
-                                                              "description":"sky is clear", //weather.description
-                                                              "icon":"10n"}], //weather.icon
-                                                    "main":{"temp":12.73, //temp.day
-                                                            "pressure":814.36, //pressure
-                                                            "humidity":61, //humidity
-                                                            "temp_min":0, //temp.min
-                                                            "temp_max":15.22}, //temp.max
-                                                    "wind":{"speed":10.3, //speed
-                                                            "deg":290,  //deg
-                                                            "gust":15.4},
-                                                },
-                                            "1":{"weather":[{"id":500, //weather.id
-                                                              "main":"Rain", //weather.main
-                                                              "description":"light rain", //weather.description
-                                                              "icon":"10n"}], //weather.icon
-                                                    "main":{"temp":12.73, //temp.day
-                                                            "pressure":814.36, //pressure
-                                                            "humidity":61, //humidity
-                                                            "temp_min":1, //temp.min
-                                                            "temp_max":11.46}, //temp.max
-                                                    "wind":{"speed":10.3, //speed
-                                                            "deg":290,  //deg
-                                                            "gust":15.4},
-                                                },
-                                            "2":{"weather":[{"id":800, //weather.id
-                                                              "main":"Clear", //weather.main
-                                                              "description":"sky is clear", //weather.description
-                                                              "icon":"01n"}], //weather.icon
-                                                    "main":{"temp":12.73, //temp.day
-                                                            "pressure":814.36, //pressure
-                                                            "humidity":61, //humidity
-                                                            "temp_min":4.11, //temp.min
-                                                            "temp_max":14.78}, //temp.max
-                                                    "wind":{"speed":10.3, //speed
-                                                            "deg":290,  //deg
-                                                            "gust":15.4},
-                                                },
-                                            "3":{"weather":[{"id":500, //weather.id
-                                                              "main":"Rain", //weather.main
-                                                              "description":"light rain", //weather.description
-                                                              "icon":"10n"}], //weather.icon
-                                                    "main":{"temp":14.64, //temp.day
-                                                            "pressure":814.36, //pressure
-                                                            "humidity":61, //humidity
-                                                            "temp_min":4.11, //temp.min
-                                                            "temp_max":14.64}, //temp.max
-                                                    "wind":{"speed":10.3, //speed
-                                                            "deg":290,  //deg
-                                                            "gust":15.4},
-                                                },
-                                            "4":{"weather":[{"id":802, //weather.id
-                                                              "main":"Rain", //weather.main
-                                                              "description":"light rain", //weather.description
-                                                              "icon":"10n"}], //weather.icon
-                                                    "main":{"temp":9, //temp.day
-                                                            "pressure":814.36, //pressure
-                                                            "humidity":61, //humidity
-                                                            "temp_min":2, //temp.min
-                                                            "temp_max":9}, //temp.max
-                                                    "wind":{"speed":10.3, //speed
-                                                            "deg":290,  //deg
-                                                            "gust":15.4},
-                                                }
-                                            },
-                                 "name":"London",
-                                 "dateSet":new Date()
-                     });
+                fauxWeather = ({ "coord":{"lon":-0.13,"lat":51.51},
+                    /*"current":{"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03n"}],
+                    "main":{"temp":5,"pressure":1018,"humidity":61,"temp_min":14,"temp_max":1},
+                    "wind":{"speed":10.3,"deg":290,"gust":15.4}},*/
+                    "forecast":{"0":{"weather":[{"id":800, //weather.id
+                        "main":"Clear", //weather.main
+                        "description":"sky is clear", //weather.description
+                        "icon":"10n"}], //weather.icon
+                        "main":{"temp":12.73, //temp.day
+                            "pressure":814.36, //pressure
+                            "humidity":61, //humidity
+                            "temp_min":0, //temp.min
+                            "temp_max":15.22}, //temp.max
+                        "wind":{"speed":10.3, //speed
+                            "deg":290,  //deg
+                            "gust":15.4},
+                        },
+                        "1":{"weather":[{"id":500, //weather.id
+                        "main":"Rain", //weather.main
+                        "description":"light rain", //weather.description
+                        "icon":"10n"}], //weather.icon
+                        "main":{"temp":12.73, //temp.day
+                            "pressure":814.36, //pressure
+                            "humidity":61, //humidity
+                            "temp_min":1, //temp.min
+                            "temp_max":11.46}, //temp.max
+                        "wind":{"speed":10.3, //speed
+                            "deg":290,  //deg
+                            "gust":15.4},
+                        },
+                        "2":{"weather":[{"id":800, //weather.id
+                        "main":"Clear", //weather.main
+                        "description":"sky is clear", //weather.description
+                        "icon":"01n"}], //weather.icon
+                        "main":{"temp":12.73, //temp.day
+                            "pressure":814.36, //pressure
+                            "humidity":61, //humidity
+                            "temp_min":4.11, //temp.min
+                            "temp_max":14.78}, //temp.max
+                        "wind":{"speed":10.3, //speed
+                            "deg":290,  //deg
+                            "gust":15.4},
+                        },
+                        "3":{"weather":[{"id":500, //weather.id
+                        "main":"Rain", //weather.main
+                        "description":"light rain", //weather.description
+                        "icon":"10n"}], //weather.icon
+                        "main":{"temp":14.64, //temp.day
+                            "pressure":814.36, //pressure
+                            "humidity":61, //humidity
+                            "temp_min":4.11, //temp.min
+                            "temp_max":14.64}, //temp.max
+                        "wind":{"speed":10.3, //speed
+                            "deg":290,  //deg
+                            "gust":15.4},
+                        },
+                        "4":{"weather":[{"id":802, //weather.id
+                        "main":"Rain", //weather.main
+                        "description":"light rain", //weather.description
+                        "icon":"10n"}], //weather.icon
+                        "main":{"temp":9, //temp.day
+                            "pressure":814.36, //pressure
+                            "humidity":61, //humidity
+                            "temp_min":2, //temp.min
+                            "temp_max":9}, //temp.max
+                        "wind":{"speed":10.3, //speed
+                            "deg":290,  //deg
+                            "gust":15.4},
+                        }
+                    },
+                    "name":"London",
+                    "dateSet":new Date()
+                });
                 return fauxWeather;
             }
         },
@@ -290,19 +216,19 @@ var $ = function(selector) {
                 case '13':
                     icon.push("snow");
                     break;
-                case "01":
+                //case "01":
                 default:
                     icon.push("clear");
                     break;
-            };
+            }
             switch(iconCode.substr(2,1)){
                 case "n":
                     icon.push("night");
                     break;
-                case "d":
+                //case "d":
                 default:
                     break;
-            };
+            }
             //};
             //else{icon = " snow"};
             /*
@@ -317,7 +243,7 @@ var $ = function(selector) {
         _getWeather = function(){ //returns JSON object of current/forecast weather data
             //pull weather from local storage, return JSON
             var storedWeather = sessionStorage.weatherObject;
-            if(storedWeather != undefined){
+            if(storedWeather !== undefined){
                 if(storedWeather.dateSet.getTime() > (today.getTime() + 43200000)){
                     
                     return _getWeatherFromOWM();
@@ -344,7 +270,7 @@ var $ = function(selector) {
                         day-=7;
                     }
                     dayObj.day = weekday[day];
-                };
+                }
                 
                 dayObj.icon = _parseOWMIcon(weatherCondition.weather[0].icon);
                 dayObj.high = weatherCondition.main.temp_max;
@@ -356,8 +282,8 @@ var $ = function(selector) {
         _storeWeather = function(weatherObject){
             //store weather array/JSON in localstorage
             //localStorage.setItem("weatherObject", JSON.stringify(weatherObject) );
-            sessionStorage.setItem("weatherObject", JSON.stringify(weatherObject) );
-        }
+            sessionStorage.setItem("weatherObject", JSON.stringify(weatherObject));
+        };
 
         return{getWeather: _getWeather,
                setWeather: _setWeather,
@@ -393,14 +319,14 @@ var $ = function(selector) {
             },delay);
         },
         _setState = function(state, stateOnOff){
-            if(stateOnOff == true){
+            if(stateOnOff === true){
                 return _cube.classList.add(state);
             }
-            else if(stateOnOff == false){
+            else if(stateOnOff === false){
                 return _cube.classList.remove(state);
             }
             else {
-                return
+                return;
             }
         },
         _toggleState = function(state){
@@ -411,13 +337,13 @@ var $ = function(selector) {
         },
         _state = function(stateCheck){
             return _cube.classList.contains(stateCheck);
-        }
+        };
 
         return {open:_open, 
             close:_close, 
             setState:_setState,
             toggleState:_toggleState,
-            state: _state};
+            state:_state};
     }());
 
     
@@ -426,10 +352,10 @@ var $ = function(selector) {
         
         isDrawerOpen = drawer.state('opened'),
         isInWeatherState = drawer.state('weather'),
-        isInNavState = drawer.state('nav'); 
+        isInNavState = drawer.state('nav'),
 
-        !isDrawerOpen 
-            ? drawer.open('weather')
+        !isDrawerOpen ?
+            drawer.open('weather')
                 & drawer.toggleState('nav',false) 
                 & weatherBtn.classList.add('active') 
                 & console.log("Drawer is closed, open and set weather")
@@ -437,21 +363,21 @@ var $ = function(selector) {
                 & navIcon.classList.remove('active')
                 & weatherBtn.classList.add('active')
                 & drawer.toggleState('weather')
-                    : drawer.close()
-                        & weatherBtn.classList.toggle('active',false);
+                    : drawer.close() & 
+                    weatherBtn.classList.toggle('active',false);
     });
 
     navBtn.addEventListener('click', function(){
         isDrawerOpen = drawer.state('opened'),
         isInWeatherState = drawer.state('weather'),
-        isInNavState = drawer.state('nav');
+        isInNavState = drawer.state('nav'),
         
-        !isDrawerOpen 
-            ? drawer.open('nav') 
+        !isDrawerOpen ? 
+            drawer.open('nav') 
                 & drawer.toggleState('weather',false) 
                 & navIcon.classList.add('active') //closed Drawer, opening Drawer from top, displaying Nav and switching the navIcon
-            : isInWeatherState 
-                ? drawer.toggleState('weather') 
+            : isInWeatherState ? 
+                drawer.toggleState('weather') 
                     & weatherBtn.classList.remove('active') 
                     & navIcon.classList.add('active') 
                     & drawer.toggleState('nav') //opened Drawer w/ Weather, take '.weather' off, add '.nav' and switch navIcon
