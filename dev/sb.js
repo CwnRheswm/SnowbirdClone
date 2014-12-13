@@ -2,7 +2,7 @@ var $ = function(selector) {
     return document.querySelectorAll(selector);
 };
 
-(function(){
+$(function(){
     var weatherBtn = $('.weatherWidgetBtn')[0],
     navBtn = $('.navWidgetBtn')[0],
     bar = $('#headerBar')[0],
@@ -22,7 +22,7 @@ var $ = function(selector) {
 
     onPageLoad = function(){
         weatherConditions = weather.getWeather();
-        console.log(weatherConditions," ",weatherConditions.forecast);
+        //console.log(weatherConditions," ",weatherConditions.forecast);
         for (var i = 0; i < 5; i++){
             var dayObj = {},
             docDay,
@@ -34,22 +34,26 @@ var $ = function(selector) {
             
             dayObj = weather.setWeather(weatherConditions.forecast[i],i);
             //set current Temp
+            //console.log(i+": "+dayObj.high);
+            
             if(i === 0){
                 var curIcon = $(".currentTemp .icon")[0],
                 weaIcon = $(".weatherWidgetBtn .icon")[0];
-                
-                for(var j=0; i<dayObj.icon.length; j++){
-                    curIcon.classList.add(dayObj.icon[j]);//("Images/"+dayObj.icon+".png");
+                //console.log(dayObj.icon.length);
+                for(var j=0; j<dayObj.icon.length; j++){
+                    curIcon.classList.add(dayObj.icon[j]);
                     weaIcon.classList.add(dayObj.icon[j]);
                     weaIcon.classList.add("black");
                 }
                 $(".currentTemp .temp")[0].innerHTML = Math.round(dayObj.temp)+"&deg";
             }
+            
             docDay = document.createElement('h5');//.appendChild(document.createTextNode(dayObj.day));
             docDay.appendChild(document.createTextNode(dayObj.day));
             docDay.className = "day";
             docImg = document.createElement('span');
             var iconArray = dayObj.icon.concat(["icon","blue"]);
+            //console.log(iconArray.length);
             for(var k=0; k<(iconArray.length); k++){
                 docImg.classList.add(iconArray[k]);
             }
@@ -101,8 +105,7 @@ var $ = function(selector) {
                 
                     window[ud] = function(data){
                         head.removeChild(script);
-                        //@@REMOVED!
-                        //success && success(data);
+                        success && success(data);
                     };
 
                     script.src = url.replace('callback=?', 'callback='+ud);
@@ -405,31 +408,3 @@ var $ = function(selector) {
     onPageLoad();
 
 }());
-/*
-current({"coord":{"lon":-0.13,
-                  "lat":51.51},
-         "sys":{"type":1,
-                "id":5091,
-                "message":0.0291,
-                "country":"GB",
-                "sunrise":1413873338,
-                "sunset":1413910469},
-          "weather":[{"id":802,
-                      "main":"Clouds",
-                      "description":"scattered clouds",
-                      "icon":"03n"}],
-          "base":"cmc stations",
-          "main":{"temp":281.57,
-                  "pressure":1018,
-                  "humidity":61,
-                  "temp_min":280.15,
-                  "temp_max":283.15},
-          "wind":{"speed":10.3,
-                  "deg":290,
-                  "gust":15.4},
-          "clouds":{"all":48},
-          "dt":1413928073,
-          "id":2643743,
-          "name":"London",
-          "cod":200});
-*/

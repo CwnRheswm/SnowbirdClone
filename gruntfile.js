@@ -19,7 +19,8 @@ module.exports = function(grunt){
 		connect: {
 			server: {
 				options:{
-					base: "build/"
+					base: "build/",
+					keepalive: false
 				}
 			}
 		},
@@ -66,6 +67,9 @@ module.exports = function(grunt){
 		},
 		uglify: {
 			build: {
+			options: {
+					beautify: true
+				},
 				files: [{
 					expand: true,
 					cwd: 'dev/',
@@ -121,5 +125,6 @@ module.exports = function(grunt){
 	grunt.registerTask('ugly','uglify:build');
 	grunt.registerTask('min',['cssmin:minify']);
 	grunt.registerTask('add',['concat_css']);
+	grunt.registerTask('start',['connect:server']);
 	grunt.registerTask('dev',['connect','watch']);
 };
