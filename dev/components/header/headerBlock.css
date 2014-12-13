@@ -1,5 +1,5 @@
 #headerBlock{
-	height:7%;
+	height:69px;
 	transition: height 2s ease;
 }
 #headerBlock.opened{
@@ -8,7 +8,6 @@
 
 @media (min-width: 600px){
 	#headerBlock{
-		height:7%;
 		transition: height 0s ease;
 	}
 }

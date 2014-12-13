@@ -671,7 +671,7 @@ h6{
 	}
 }
 #headerBlock{
-	height:7%;
+	height:69px;
 	transition: height 2s ease;
 }
 #headerBlock.opened{
@@ -680,7 +680,6 @@ h6{
 
 @media (min-width: 600px){
 	#headerBlock{
-		height:7%;
 		transition: height 0s ease;
 	}
 }
@@ -827,7 +826,7 @@ h6{
 .weatherMobileWidget{
 	background-color:#353230;
 	color:#fff;
-	display:block;
+	display:flex;
 	height:100%;
 	overflow:hidden;
 	position: absolute;
@@ -939,7 +938,9 @@ h6{
 	flex-flow: nowrap;
 }
 .weatherMobileWidget ul li .icon{
-	background: url(Images/clear_blue.png) no-repeat left;
+	background-image: url(Images/clear_blue.png);
+	background-repeat: no-repeat;
+	background-position: left;
 	padding-left: 15%;
 	background-size: 90%;
 	background-position: left;
@@ -970,6 +971,29 @@ h6{
 		height:auto;
 		transform:rotateY(0) translateZ(0);
 		background-color: #1e1e1e;
+		flex-wrap: wrap-reverse;
 	}
-	
+	.weatherMobileWidget .rightCol{
+		background-color: #353230;
+		width:100%;
+		height:66%;
+	}
+	.weatherMobileWidget .leftCol{
+		width: 100%;
+		height: 33%;
+	}
+	.weatherMobileWidget .leftCol .mtnCam{
+		display: none;
+	}
+	.weatherMobileWidget .leftCol ul{
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+	}
+	.weatherMobileWidget .leftCol ul li{
+		flex-direction: row;
+	}
+	.weatherMobileWidget .rightCol .currentTemp .icon{
+		height: auto;
+	}
 }

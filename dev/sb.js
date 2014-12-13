@@ -29,7 +29,10 @@ $(function(){
             docImg,
             docHigh,
             docLow,
-            list;
+            list,
+            curIcon,
+            weaIcon,
+            curTemp;
             //run loop to create and set variables for each day
             
             dayObj = weather.setWeather(weatherConditions.forecast[i],i);
@@ -37,15 +40,20 @@ $(function(){
             //console.log(i+": "+dayObj.high);
             
             if(i === 0){
-                var curIcon = $(".currentTemp .icon")[0],
-                weaIcon = $(".weatherWidgetBtn .icon")[0];
+                curIcon = $(".currentTemp .icon"),
+                weaIcon = $(".weatherWidgetBtn .icon")[0],
+                curTemp = $(".currentTemp .temp");
                 //console.log(dayObj.icon.length);
                 for(var j=0; j<dayObj.icon.length; j++){
-                    curIcon.classList.add(dayObj.icon[j]);
+                    for(var curIconIter=0; curIconIter<curIcon.length;curIconIter++){
+                        curIcon[curIconIter].classList.add(dayObj.icon[j]);
+                    }
                     weaIcon.classList.add(dayObj.icon[j]);
                     weaIcon.classList.add("black");
                 }
-                $(".currentTemp .temp")[0].innerHTML = Math.round(dayObj.temp)+"&deg";
+                for(var tempIter=0; tempIter<curTemp.length; tempIter++){
+                    curTemp[tempIter].innerHTML = Math.round(dayObj.temp)+"&deg";
+                }
             }
             
             docDay = document.createElement('h5');//.appendChild(document.createTextNode(dayObj.day));
