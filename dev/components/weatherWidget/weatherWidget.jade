@@ -2,10 +2,10 @@
 	.leftCol
 		.mtnCam= "MTN CAM"
 		ul
-			each item in ["24 hr","48 hr","Depth","YTD"]
+			each item in [["24 hr","4"],["48 hr","6"],["Depth","14"],["YTD","55"]]
 				li
-					span= item
-					span= "°"
+					div #{item[0]}
+					div #{item[1]}"
 		button= "Mtn Report"
 	.rightCol
 		.currentTemp

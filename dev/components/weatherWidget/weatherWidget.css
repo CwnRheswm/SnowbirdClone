@@ -49,13 +49,13 @@
 .weatherMobileWidget .leftCol ul li:first-child{
 	background-color: #ff5a00;
 }
-.weatherMobileWidget .leftCol ul span:first-child{
+.weatherMobileWidget .leftCol ul div:first-child{
 	color:#bcbcbc;
 	padding-left: 2%;
 	width:30%;
 	font-size:1rem;
 }
-.weatherMobileWidget .leftCol ul span{
+.weatherMobileWidget .leftCol ul div{
 	display:inline-block;
 	text-align:left;
 }
@@ -165,8 +165,15 @@
 		-moz-column-count: 4;
 		column-count: 4;
 	}
-	.weatherMobileWidget .leftCol ul li{
-		flex-direction: row;
+	.weatherMobileWidget .leftCol ul li div{
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+	.weatherMobileWidget .leftCol ul li div:first-child{
+		width: 100%;
+		font-size: 2rem;
+		font-weight: 100;
 	}
 	.weatherMobileWidget .rightCol .currentTemp .icon{
 		height: auto;
