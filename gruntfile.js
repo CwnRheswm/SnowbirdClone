@@ -22,6 +22,12 @@ module.exports = function(grunt){
 					base: "build/",
 					keepalive: false
 				}
+			},
+			polyDev: {
+				options: {
+					base: "dev/",
+					keepalive:true
+				}
 			}
 		},
 		cssmin: {
@@ -126,5 +132,6 @@ module.exports = function(grunt){
 	grunt.registerTask('min',['cssmin:minify']);
 	grunt.registerTask('add',['concat_css']);
 	grunt.registerTask('start',['connect:server']);
-	grunt.registerTask('dev',['connect','watch']);
+	grunt.registerTask('dev',['connect:server','watch']);
+	grunt.registerTask('polyDev',['connect:polyDev'])
 };
