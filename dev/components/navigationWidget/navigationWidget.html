@@ -1,26 +1,64 @@
-<div class="navMobileWidget">
-	<ul>
-		<li class="search">
-			<a href="#">search</a></li>
-		<li class="homeBtn">
-			<a href="#">home</a></li>
-		<li class="winterBtn">
-			<a href="#">winter</a></li>
-		<li class="summerBtn">
-			<a href="#">summer</a></li>
-		<li class="lodgingBtn">
-			<a href="#">lodging</a></li>
-		<li class="diningBtn">
-			<a href="#">dining</a></li>
-		<li class="spaBtn">
-			<a href="#">cliff spa</a></li>
-		<li class="eventsBtn">
-			<a href="#">events</a></li>
-		<li class="groupsBtn">
-			<a href="#">groups</a></li>
-		<li class="shopBtn">
-			<a href="#">shop</a></li>
-		<li class="ticketsBtn">
-			<a href="#">tickets</a></li>
-	</ul>
-</div>
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="navigation-widget">
+	<template>
+		<link rel="stylesheet" href="navigationWidget.css">
+		<div class="navMobileWidget">
+			<ul>
+				<template repeat="{{link in navLinks}}">
+					<li class={{link.txt}}>
+						<a href="#">{{link.txt}}</a>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</template>
+	<script>
+		Polymer('navigation-widget',{
+			ready: function(){
+				this.navLinks = [
+					{txt:"search"},
+					{txt:"home"},
+					{txt:"winter"},
+					{txt:"summer"},
+					{txt:"lodging"},
+					{txt:"dining"},
+					{txt:"spa"},
+					{txt:"events"},
+					{txt:"groups"},
+					{txt:"shop"},
+					{txt:"tickets"}
+				];
+			}
+		});
+	</script>
+</polymer-element>
+
+<!--
+	<div class="navMobileWidget">
+		<ul>
+			<li class="search">
+				<a href="#">search</a></li>
+			<li class="homeBtn">
+				<a href="#">home</a></li>
+			<li class="winterBtn">
+				<a href="#">winter</a></li>
+			<li class="summerBtn">
+				<a href="#">summer</a></li>
+			<li class="lodgingBtn">
+				<a href="#">lodging</a></li>
+			<li class="diningBtn">
+				<a href="#">dining</a></li>
+			<li class="spaBtn">
+				<a href="#">cliff spa</a></li>
+			<li class="eventsBtn">
+				<a href="#">events</a></li>
+			<li class="groupsBtn">
+				<a href="#">groups</a></li>
+			<li class="shopBtn">
+				<a href="#">shop</a></li>
+			<li class="ticketsBtn">
+				<a href="#">tickets</a></li>
+		</ul>
+	</div>
+-->
