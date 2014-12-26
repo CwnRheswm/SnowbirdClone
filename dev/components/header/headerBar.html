@@ -3,9 +3,10 @@
 <polymer-element name="header-bar">
 	<template>
 		<link rel="stylesheet" href="headerBar.css">
+		<link rel="stylesheet" href="../../snowbird_main.css">
 		<div id="headerBar">
 			<div class="border"></div>
-			<a href="#" class="navWidgetBtn">
+			<a class="navWidgetBtn">
 				<span class="navIcon"></span>
 			</a>
 			<div class="logo">
@@ -18,8 +19,8 @@
 					</template>
 				</ul>
 			</div>
-			<a href="#" class="weatherWidgetBtn">
-				<span class="icon"></span>
+			<a class="weatherWidgetBtn">
+				<span class="icon{{sky}} black"></span>
 			</a>
 		</div>
 	</template>
@@ -36,6 +37,9 @@
 				{txt:"groups"},
 				{txt:"shop"},
 				];
+
+				var forecast = weather.getWeather();		 
+				this.sky = forecast[0].icon;
 			}
 		});
 	</script>

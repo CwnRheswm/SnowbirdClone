@@ -67,42 +67,42 @@
 	text-transform: capitalize;
 	vertical-align: bottom;
 }
-.navMobileWidget .homeBtn{
+.navMobileWidget .home{
 	width:32%;
 	background: #66c3e3;
 	display:flex;
 }
-.navMobileWidget .homeBtn a{
+.navMobileWidget .home a{
 	background: url(../Images/nav-logo-white@2x.png) no-repeat;
 	background-size: 30%;
 	background-position: 50% 35%;
 	color:#fff;
 	padding-top:32%;
 }
-.navMobileWidget .winterBtn a{
+.navMobileWidget .winter a{
 	background-image: url(../Images/nav-winter@2x.png);
 }
-.navMobileWidget .summerBtn a{
+.navMobileWidget .summer a{
 	background-image: url(../Images/nav-summer@2x.png);
 }
-.navMobileWidget .lodgingBtn a{
+.navMobileWidget .lodging a{
 	background-image: url(../Images/nav-lodging@2x.png);
 }
-.navMobileWidget .diningBtn a{
+.navMobileWidget .dining a{
 	background-image: url(../Images/nav-dining@2x.png);
 }
-.navMobileWidget .spaBtn a{
+.navMobileWidget .spa a{
 	background-image: url(../Images/nav-spa@2x.png);
 }
-.navMobileWidget .eventsBtn a{
+.navMobileWidget .events a{
 	background-image: url(../Images/nav-events@2x.png);
 }
-.navMobileWidget .groupsBtn a{
+.navMobileWidget .groups a{
 	background-image: url(../Images/nav-groups@2x.png);
 }
-.navMobileWidget .shopBtn a{
+.navMobileWidget .shop a{
 	background-image: url(../Images/nav-shop@2x.png);
 }
-.navMobileWidget .ticketsBtn a{
+.navMobileWidget .tickets a{
 	background-image: url(../Images/nav-tickets@2x.png);
 }

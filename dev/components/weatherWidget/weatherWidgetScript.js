@@ -25,7 +25,7 @@ var $ = function(selector) {
 				"icon":_parseOWMIconCode(owmJSON.forecast[weatherIter].weather[0].icon),
 				"high":owmJSON.forecast[weatherIter].main.temp_max,
 				"low":owmJSON.forecast[weatherIter].main.temp_min,
-				"temp":owmJSON.forecast[weatherIter].main.temp};
+				"temp":Math.round( owmJSON.forecast[weatherIter].main.temp)};
 			};
 			weatherDay.dateSet = new Date();
 			console.log(weatherDay.dateSet.toJSON());

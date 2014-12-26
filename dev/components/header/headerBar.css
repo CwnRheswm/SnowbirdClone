@@ -29,7 +29,7 @@
 .navIcon{
 	height: 100%;
 	width: 100%;
-	background: url(Images/plus@2x.png) no-repeat center;
+	background: url(../Images/plus@2x.png) no-repeat center;
 	background-size: 3rem;
 	transform: rotateZ(0);
 	transition: transform 1s ease;
@@ -63,7 +63,7 @@
 	display:none;
 }
 #headerBar .logo ul li:first-child{
-	background: url(Images/logo-color.png) no-repeat center;
+	background: url(../Images/logo-color.png) no-repeat center;
 	background-size: 60%;
 	width:100%;
 	min-height: 100%;
@@ -99,10 +99,12 @@
 #headerBar .weatherWidgetBtn.active .icon{
 	/*height:95%;
 	width:15%;*/
-	background: url(Images/nav-scroll@2x.png) no-repeat center;
+	background: url(../Images/nav-scroll@2x.png) no-repeat center;
 	background-color: #fff;
 	transition: background 1s ease 3s;
 }
+
+
 @media (min-width: 600px){
 	#headerBar{
 		height:20%;

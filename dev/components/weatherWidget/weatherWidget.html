@@ -3,20 +3,21 @@
 <polymer-element name="weather-widget">
 	<template>
 		<link rel="stylesheet" href="weatherWidget.css">
+		<link rel="stylesheet" href="../../snowbird_main.css">
 		<div class="weatherMobileWidget">
 			<div class="leftCol">
 				<div class="mtnCam">MTN CAM</div>
 				<ul>
-					<li><span>24 hr</span><span>0&#8221</span></li>
-					<li><span>48 hr</span><span>0&#8221</span></li>
-					<li><span>Depth</span><span>0&#8221</span></li>
-					<li><span>YTD</span><span>0&#8221</span></li>
+					<li><div>24 hr</div><div>4"</div></li>
+					<li><div>48 hr</div><div>6"</div></li>
+					<li><div>Depth</div><div>14"</div></li>
+					<li><div>YTD</div><div>55"</div></li>
 				</ul>
 				<button>Mtn Report</button>
 			</div>
 			<div class="rightCol">
 				<div class="currentTemp">
-					<span class='icon'></span>
+					<span class='icon{{sky}}'>CURRENTLY</span>
 					<span class='temp'>{{temp}}<span><sup>&deg</sup></span></span>
 				</div>
 				<ul>
@@ -36,8 +37,9 @@
 		Polymer('weather-widget',{
 			ready: function(){
 		      var forecast = weather.getWeather();
-		      console.log(forecast);
+		      
 		      this.temp = forecast[0].temp;
+		      this.sky = forecast[0].icon;
               this.daily = [
               	{day:forecast[0].day, icon:forecast[0].icon, high:forecast[0].high, low:forecast[0].low},
               	{day:forecast[1].day, icon:forecast[1].icon, high:forecast[1].high, low:forecast[1].low},
