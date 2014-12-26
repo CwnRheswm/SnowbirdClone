@@ -155,34 +155,34 @@ var $ = function(selector) {
 		},
 		_parseOWMIconCode = function(iconCode){
 			//parse iconCode, return class string to add to class
-	            var icon = [];
+	            var icon = "";
 	            
 	            switch(iconCode.substr(0,2)){
 	                
 	                case '02':
 	                case '03':
-	                    icon.push("partlyCloudy");
+	                    icon+=" partlyCloudy";
 	                    break;
 	                case '04':
 	                case '50':
-	                    icon.push("cloudy");
+	                    icon+=" cloudy";
 	                    break;
 	                case '09':
 	                case '10':
 	                case '11':
-	                    icon.push("rain");
+	                    icon+=" rain";
 	                    break;
 	                case '13':
-	                    icon.push("snow");
+	                    icon+=" snow";
 	                    break;
 	                //case "01":
 	                default:
-	                    icon.push("clear");
+	                    icon+=" clear";
 	                    break;
 	            }
 	            switch(iconCode.substr(2,1)){
 	                case "n":
-	                    icon.push("night");
+	                    icon+=" night";
 	                    break;
 	                //case "d":
 	                default:

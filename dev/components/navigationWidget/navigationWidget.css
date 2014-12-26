@@ -55,7 +55,7 @@
 	border-right: 1px solid #fff;
 }
 .navMobileWidget .search a{
-	background-image: url(Images/nav-search-icon.png);
+	background-image: url(../Images/nav-search-icon.png);
 	background-position: 10% 50%;
 	background-repeat: no-repeat;
 	background-size: 10%;
@@ -73,36 +73,36 @@
 	display:flex;
 }
 .navMobileWidget .homeBtn a{
-	background: url(Images/nav-logo-white@2x.png) no-repeat;
+	background: url(../Images/nav-logo-white@2x.png) no-repeat;
 	background-size: 30%;
 	background-position: 50% 35%;
 	color:#fff;
 	padding-top:32%;
 }
 .navMobileWidget .winterBtn a{
-	background-image: url(Images/nav-winter@2x.png);
+	background-image: url(../Images/nav-winter@2x.png);
 }
 .navMobileWidget .summerBtn a{
-	background-image: url(Images/nav-summer@2x.png);
+	background-image: url(../Images/nav-summer@2x.png);
 }
 .navMobileWidget .lodgingBtn a{
-	background-image: url(Images/nav-lodging@2x.png);
+	background-image: url(../Images/nav-lodging@2x.png);
 }
 .navMobileWidget .diningBtn a{
-	background-image: url(Images/nav-dining@2x.png);
+	background-image: url(../Images/nav-dining@2x.png);
 }
 .navMobileWidget .spaBtn a{
-	background-image: url(Images/nav-spa@2x.png);
+	background-image: url(../Images/nav-spa@2x.png);
 }
 .navMobileWidget .eventsBtn a{
-	background-image: url(Images/nav-events@2x.png);
+	background-image: url(../Images/nav-events@2x.png);
 }
 .navMobileWidget .groupsBtn a{
-	background-image: url(Images/nav-groups@2x.png);
+	background-image: url(../Images/nav-groups@2x.png);
 }
 .navMobileWidget .shopBtn a{
-	background-image: url(Images/nav-shop@2x.png);
+	background-image: url(../Images/nav-shop@2x.png);
 }
 .navMobileWidget .ticketsBtn a{
-	background-image: url(Images/nav-tickets@2x.png);
+	background-image: url(../Images/nav-tickets@2x.png);
 }

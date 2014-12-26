@@ -3,10 +3,17 @@
 <head>
 	<title>Snowbird Polymer Clone</title>
 
+	<link rel="import" href="/components/navigationWidget/navigationWidget.html">
 	<link rel="import" href="/components/weatherWidget/weatherWidget.html">
+	<link rel="import" href="/components/header/boxHeader.html">
+	<link rel="import" href="/components/header/headerBar.html">
 </head>
 
 <body unresolved>
-	<weather-widget></weather-widget>
+	<box-header>
+		<navigation-widget></navigation-widget>
+		<weather-widget></weather-widget>
+		<header-bar></header-bar>
+	</box-header>
 </body>
 </html>

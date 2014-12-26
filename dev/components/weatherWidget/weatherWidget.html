@@ -17,11 +17,14 @@
 			<div class="rightCol">
 				<div class="currentTemp">
 					<span class='icon'></span>
-					<span class='temp'>46<span><sup>&deg</sup></span></span>
+					<span class='temp'>{{temp}}<span><sup>&deg</sup></span></span>
 				</div>
 				<ul>
                     <template repeat="{{day in daily}}">
-                        <li>{{day.temp}}</li>
+                        <li>{{day.day}}</li>
+                        <li class=".icon{{day.icon}}"></li>
+                        <li>{{day.high}}</li>
+                        <li>{{day.low}}</li>
                     </template>
 				</ul>
 			</div>
@@ -33,8 +36,15 @@
 		Polymer('weather-widget',{
 			ready: function(){
 		      var forecast = weather.getWeather();
-              console.log(forecast);
-              
+		      console.log(forecast);
+		      this.temp = forecast[0].temp;
+              this.daily = [
+              	{day:forecast[0].day, icon:forecast[0].icon, high:forecast[0].high, low:forecast[0].low},
+              	{day:forecast[1].day, icon:forecast[1].icon, high:forecast[1].high, low:forecast[1].low},
+              	{day:forecast[2].day, icon:forecast[2].icon, high:forecast[2].high, low:forecast[2].low},
+              	{day:forecast[3].day, icon:forecast[3].icon, high:forecast[3].high, low:forecast[3].low},
+              	{day:forecast[4].day, icon:forecast[4].icon, high:forecast[4].high, low:forecast[4].low}
+              ];
             }
         });
 

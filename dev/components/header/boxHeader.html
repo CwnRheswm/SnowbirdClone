@@ -1,0 +1,25 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="box-header">
+	<template>
+		<link rel="stylesheet" href="boxHeader.css">
+		<div id="header">
+			<content select="p"></content>
+			<div class="drawer">
+				<div class="cubeContent">
+					<content select="navigation-widget"></content>
+					<content select="weather-widget"></content>
+				</div>
+			</div>
+			<content select="header-bar"></content>
+		</div>
+		<div id="headerBlock"></div>
+	</template>
+	<script>
+		Polymer('box-header',{
+			ready:function(){
+
+			}
+		});
+	</script>
+</polymer-element>

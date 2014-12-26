@@ -1,18 +1,42 @@
-<div id="headerBar">
-    <div class="border"></div><a href="#" class="navWidgetBtn"><span class="navIcon"></span></a>
-    <div class="logo">
-      <ul>
-        <li></li>
-        <li class="item"><a href="#">winter</a></li>
-        <li class="item"><a href="#">summer</a></li>
-        <li class="item"><a href="#">lodging</a></li>
-        <li class="item"><a href="#">dining</a></li>
-        <li class="item"><a href="#">spa</a></li>
-        <li class="item"><a href="#">events</a></li>
-        <li class="item"><a href="#">groups</a></li>
-        <li class="item"><a href="#">shop</a></li>
-        <li class="search"><img href="#" src="Images/search-icon.png"></li>
-      </ul>
-    </div><a href="#" class="weatherWidgetBtn"><span class="icon"></span></a>
-  </div>
-</div>
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="header-bar">
+	<template>
+		<link rel="stylesheet" href="headerBar.css">
+		<div id="headerBar">
+			<div class="border"></div>
+			<a href="#" class="navWidgetBtn">
+				<span class="navIcon"></span>
+			</a>
+			<div class="logo">
+				<ul>
+					<li></li>
+					<template repeat="{{link in links}}">
+						<li class={{link.txt}}>
+							<a href="#">{{link.txt}}</a>
+						</li>
+					</template>
+				</ul>
+			</div>
+			<a href="#" class="weatherWidgetBtn">
+				<span class="icon"></span>
+			</a>
+		</div>
+	</template>
+	<script>
+		Polymer('header-bar',{
+			ready: function(){
+				this.links=[
+				{txt:"winter"},
+				{txt:"summer"},
+				{txt:"lodging"},
+				{txt:"dining"},
+				{txt:"spa"},
+				{txt:"events"},
+				{txt:"groups"},
+				{txt:"shop"},
+				];
+			}
+		});
+	</script>
+</polymer-element>
