@@ -24,17 +24,130 @@ ul{
 	margin: 0;
 	padding: 0;
 }
+h4{
+	font-weight: 900;
+	font-size: .5rem;
+}
 h6{
 	margin:0;
 	padding:0;
 }
-#header{
-	height:48%; 25rem;
-	width:100%;
-	position: fixed;
-	top:0;
-	z-index: 100;
-	/*transition:top 2s ease;*/
+
+.icon{
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.icon.clear{
+	background-image: url(Images/clear.png);
+}
+.icon.clear.blue{
+	background-image: url(Images/clear_blue.png);
+}
+.icon.clear.black{
+	background-image: url(Images/clear_black.png);
+}
+.icon.clear.night{
+	background-image: url(Images/clear_night.png);
+}
+.icon.clear.night.blue{
+	background-image: url(Images/clear_night_blue.png);
+}
+.icon.clear.night.black{
+	background-image: url(Images/clear_night_black.png);
+}
+.icon.cloudy{
+	background-image: url(Images/cloudy.png);
+}
+.icon.cloudy.blue{
+	background-image: url(Images/cloudy_blue.png);
+}
+.icon.cloudy.black{
+	background-image: url(Images/cloudy_black.png);
+}
+.icon.cloudy.night{
+	background-image: url(Images/cloudy_night.png);
+}
+.icon.cloudy.night.blue{
+	background-image: url(Images/cloudy_night_blue.png);
+}
+.icon.cloudy.night.black{
+	background-image: url(Images/cloudy_night_black.png);
+}
+.icon.partlyCloudy{
+	background-image: url(Images/partly_cloudy.png);
+}
+.icon.partlyCloudy.blue{
+	background-image: url(Images/partly_cloudy_blue.png);
+}
+.icon.partlyCloudy.black{
+	background-image: url(Images/partly_cloudy_black.png);
+}
+.icon.partlyCloudy.night{
+	background-image: url(Images/partly_cloudy_night.png);
+}
+.icon.partlyCloudy.night.blue{
+	background-image: url(Images/partly_cloudy_night_blue.png);
+}
+.icon.partlyCloudy.night.black{
+	background-image: url(Images/partly_cloudy_night_black.png);
+}
+.icon.rain{
+	background-image: url(Images/rain.png);
+}
+.icon.rain.blue{
+	background-image: url(Images/rain_blue.png);
+}
+.icon.rain.black{
+	background-image: url(Images/rain_black.png);
+}
+.icon.rain.night{
+	background-image: url(Images/rain_night.png);
+}
+.icon.rain.night.blue{
+	background-image: url(Images/rain_night_blue.png);
+}
+.icon.rain.night.black{
+	background-image: url(Images/rain_night_black.png);
+}
+.icon.snow{
+	background-image: url(Images/snow.png);
+}
+.icon.snow.blue{
+	background-image: url(Images/snow_blue.png);
+}
+.icon.snow.black{
+	background-image: url(Images/snow_black.png);
+}
+.icon.snow.night{
+	background-image: url(Images/snow_night.png);
+}
+.icon.snow.night.blue{
+	background-image: url(Images/snow_night_blue.png);
+}
+.icon.snow.night.black{
+	background-image: url(Images/snow_night_black.png);
+}
+.contact{
+	background: url("Images/phone-black@2x.png") no-repeat center;
+	background-size: 43%;
+	width: 88%;
+	padding: 15% 0;
+	background-color: #fff;
+	border-radius: 3rem;
+	border-style: solid;
+	border-color: #bcbcbc;
+	border-width: 0.1rem;
+
+}
+.contact .mainLinks{
+	list-style: none;
+	padding-left: 1%;
+	margin-bottom: 0;
+}
+.contact .mainLinks li{
+	font-size: 1.3rem;
+	color:#009bd1;
+	padding-bottom: 9%;
 }
 .drawer{
 	height: 0px;
@@ -78,13 +191,524 @@ h6{
 	transform: rotateX(55deg) rotateY(0);
 	transition: transform;
 }
+@media (min-width: 600px){
+	.drawer{
+			display:none;
+	}
+}
+.Footer{
+	background-color: #353230;
+}
+.Footer .social{
+	background-color: #000;
+	padding:1% 10%;
+	border-bottom: solid #bcbcbc 0.1rem;
+	font-size: 0rem;
+}
+.Footer .social img{
+	width:100%;
+	opacity:0.4;
+	margin-top: 5%;
+}
+.Footer .links{
+	background-color: #353230;
+	display: flex;
+}
+.Footer .links ul{
+	width: 50%;
+	list-style: none;
+	margin: 6% 0 0 7%;
+	padding: 0;
+}
+.Footer .links ul h6{
+	color: #bcbcbc;
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding-bottom: 13%;
+	font-weight:900;
+}
+.Footer .links ul li{
+	color:#009bd1;
+	font-size: 1.1rem;
+	padding-bottom: 9%
+}
+.Footer .links ul p{
+	display: none;
+}
 
-/*
--------------------------------------------------------
-Start Navigation Widget Styling
--------------------------------------------------------
-*/
+@media (min-width: 600px){
+	.Footer{
+		display:flex;
+		width:33%;
+		margin-right: auto;
+		flex-direction:column-reverse;
+		height:auto;
+		align-self:flex-start;
+		background-color: #353230;
+	}
+	.Footer .social{
+		background-color: transparent;
+		font-size: 2rem;
+		color: #fff;
+		padding: 2% 12%;
+		border: none;
+	}
+	.Footer .links{
+		height:auto;
+		flex-direction:column-reverse;
+		display: flex;
+		background-color: transparent;
+	}
+	.Footer .links ul{
+		width:auto;
+	}
+	.Footer .links ul li{
+		color:#9cd6ea;
+		padding: 0 0 2% 6%;
+		margin-left: 5%;
+		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
+		background-size: 3%;
+		font-size: 1.5rem;
+	}
+	.Footer .links ul h6{
+		color:#fff;
+		font-size: 2rem;
+		padding: 0 0 5% 6%;
+	}
+	.Footer .links ul p{
+		display: block;
+		margin:	10% 5%;
+		font-size: 2.5rem;
+		font-weight: 100;
+	}
+	.Footer .navLinks{
+		display: none;
+	}
+}
+.page{
+	display: block;
+	overflow: hidden;
+	position: relative;
+	transition: margin-top 2s ease;
+}
+.blueSection{
+	border: .1rem solid #bcbcbc;
+	border-left: .4rem solid #7fcae4;
+	padding:8% 0 0 7%;
+}
+.greenSection{
+	border: .1rem solid #bcbcbc;
+	border-left: .4rem solid #b6d99f;
+	padding:9% 0 0 7%;
+	display: flex;
+	flex-direction:column;
+}
+.page .welcomeImg{
+	
+}
+.page .welcomeImg img.desktop{
+	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
+	background-size: cover;
+	border-collapse: collapse;
+	height:0;
+	padding-top:57%;*/
+	display:none;
+}
+.page .welcomeImg img.mobile{
+	display:block;
+	width:100%;
+}
+.page .frontPage{
+	display: flex;
+	flex-direction:row;
+	overflow: hidden;
 
+}
+.page .leftCol{
+	background-color: #faf8f6;
+	height:auto;
+	width:44%;
+	float: left;
+}
+.page .leftCol h4{
+	display: none;
+	font-size: 2rem;
+	color:	#3c3a37;
+}
+.page h5{
+	font-weight: 900;
+	font-size: 1.1rem;
+	margin: 0 15% 0 0;
+}
+.page .leftCol h5 span{
+	font-weight: 400;
+	color: #7e7c7a;
+}
+.page .leftCol .tweet h5{
+	background: url("Images/news-icon-twitter.png") no-repeat left;
+	padding-left: 6%;
+}
+.page .leftCol .fbpost h5{
+	background: url("Images/news-icon-fb.png") no-repeat left;
+	padding-left: 6%;
+}
+.page p{
+	font-size: 1.1rem;
+	font-weight: 400;
+	margin: 7% 15% 7% 0;
+	color: #7e7c7a;
+	line-height: 14px;
+}
+.page .leftCol .expand{
+	font-weight: 900;
+	color:#009bd1;
+}
+.page .rightCol{
+	background-color: #fff;
+	height:auto;
+	width:56%;
+	border-collapse: collapse;
+	float: left;
+}
+.page .rightCol ul{
+	display: flex;
+	flex-direction: column;
+}
+.page .rightCol h5{
+	background: url("Images/wing_blue.png") no-repeat right;
+	font-size: 1.5rem;
+	padding-top: 1%;
+	margin: 0;
+	background-size: 8%;
+}
+.page .rightCol p{
+	margin: 0;
+	width: 100%;
+	font-size: 1.2rem;
+	padding: 5% 0 0 0;
+	line-height: 1.5rem;
+}
+@media (min-width: 600px){
+	.page{
+		height:auto;
+		width:1000px;
+		margin:0 auto;
+		display:flex;
+		flex-wrap:wrap;
+		transition:margin-top 0s ease;
+		overflow: visible;
+	}
+	.page .welcomeImg{
+		width:67%;
+		min-width:67%%;
+		min-height:350px;
+		/*background: url("Images/welcome_powder_normal.jpg") no-repeat right;
+		background-size: cover;*/
+		overflow: visible;
+	}
+	.page .welcomeImg img.desktop{
+		width: 920px;
+		float:right;
+		display:block;
+	}
+	.page .welcomeImg img.mobile{
+		display: none;
+	}
+	.page .frontPage{
+		width:67%;
+		flex-wrap:wrap-reverse;
+		height:100%;
+	}
+	.page .leftCol{
+		width:100%;
+	}
+	.page .leftCol .blueSection{
+		display: none;
+	}
+	.page .leftCol .greenSection{
+		flex-direction: row-reverse;
+		width:auto;
+		border:none;
+		padding: 2% 0 0 5%;
+	}
+	.page .leftCol .greenSection ul{
+		width:50%;
+	}
+	.page .leftCol h4{
+		display: block;
+		margin:2% 0;
+	}
+	.page .leftCol h5{
+		font-size: 1.3rem;
+		color:#3c3a37;
+	}
+	.page .leftCol .event span{
+		margin:4% 0 10% 0;
+		display: block;
+		font-size:1.3rem;
+	}
+	.page .leftCol .event p{
+		display: none;
+	}
+	.page .leftCol .news p{
+		font-size: 1.3rem;
+		line-height: normal;
+	}
+	.page .rightCol{
+		width: auto;
+		float: none;
+		overflow: hidden;
+	}
+	.page .rightCol ul{
+		flex-direction:row;
+		overflow: hidden;
+		width: auto;
+	}
+	.page .rightCol ul li{
+		min-width: 255px;
+		padding:40px;
+		margin:0;
+		height:275px;
+	}
+	.page .rightCol ul li:nth-child(1){
+		background: url("Images/fall_300x300_sprite.jpg") no-repeat;
+		background-position: 22% 75%;
+	}
+	.page .rightCol ul li:nth-child(2){
+		background: url("Images/LaborDaySkiSale_300x300_B_sprite.jpg") no-repeat;
+		background-position: 22% 75%;
+	}
+	.page .rightCol ul li:nth-child(3){
+		background: url("Images/birdjobs_B_300x300_sprite.jpg") no-repeat;
+		background-position: 22% 75%;
+	}
+	.page .rightCol ul li:nth-child(4){
+		background: url("Images/seasonpass_2014_300x300_sprite.jpg") no-repeat;
+		background-position: 22% 75%;
+	}
+	.page .rightCol ul li:nth-child(5){
+		background: url("Images/mtncollective_2014_300x300_sprite.jpg") no-repeat;
+		background-position: 22% 75%;
+	}
+	.page .rightCol ul li .mobile{
+		display: none;
+	}
+	.page .rightCol ul li h5{
+		background: none;
+		font-size: 2.5rem;
+		color: #3c3a37;
+	}
+}
+#header{
+	height:48%; 25rem;
+	width:100%;
+	position: fixed;
+	top:0;
+	z-index: 100;
+	/*transition:top 2s ease;*/
+}
+
+@media (min-width: 600px){
+	#header{
+		height:auto;
+		background-color: #fff;
+		padding-bottom: 1.5%;
+	}
+	
+}
+#headerBar{
+	height:15%;
+	width:100%;
+	border:none;
+	border-bottom: 3px solid #bcbcbc;
+	display: flex;
+	flex-flow: row wrap;
+}
+#headerBar .border{
+	height:6%;
+	width:100%;
+	background-color: #b6d99f;
+}
+#headerBar .border > span{
+	width:50%;
+	background-color: none;
+}
+#headerBar .navWidgetBtn{
+	height: 95%;
+	width:15%;
+	background-color: white;
+	display: inline-flex;
+	border: none;
+	transition: background-color ease;
+}
+#headerBar .navWidgetBtn:active~weatherWBtn{
+	background-color: blue;
+}
+.navIcon{
+	height: 100%;
+	width: 100%;
+	background: url(Images/plus@2x.png) no-repeat center;
+	background-size: 3rem;
+	transform: rotateZ(0);
+	transition: transform 1s ease;
+}
+.navIcon.active{
+	transform: rotateZ( 45deg);
+	transition: transform 1s ease 3s;
+}
+#headerBar .logo{
+	text-align: center;
+	text-transform: lowercase;
+	width:70%;
+	height:95%;
+	background-color: white;
+}
+
+#headerBar .logo ul{
+	display: block;
+	list-style: none;
+	text-decoration: none;
+	padding:0;
+	width:100%;
+	min-width: 0px;
+	min-height: 100%;
+	height:100%;
+}
+#headerBar .logo ul li{
+	padding:0;
+	width:10%;
+	margin:1.5% 0 0 3%;
+	display:none;
+}
+#headerBar .logo ul li:first-child{
+	background: url(Images/logo-color.png) no-repeat center;
+	background-size: 60%;
+	width:100%;
+	min-height: 100%;
+	padding: 0;
+	display: block;
+	margin:0;
+}
+#headerBar .logo ul li a{
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #000;
+	font-size: 1.2rem;
+	background: none;
+	font-weight: 600;
+	white-space: nowrap;
+}
+#headerBar .weatherWidgetBtn{
+	height:95%;
+	width:15%;
+	/*background: url(Images/clear_black.png) no-repeat center;*/
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #fff;
+	position: relative;
+	display: inline-flex;
+	border: none;
+	transition: background 1s ease;
+}
+#headerBar .weatherWidgetBtn .icon{
+	height: 100%;
+	width: 100%;
+}
+#headerBar .weatherWidgetBtn.active .icon{
+	/*height:95%;
+	width:15%;*/
+	background: url(Images/nav-scroll@2x.png) no-repeat center;
+	background-color: #fff;
+	transition: background 1s ease 3s;
+}
+@media (min-width: 600px){
+	#headerBar{
+		height:20%;
+		margin:0 auto;
+		border:none;
+		display:flex;
+		flex-flow:wrap;
+		min-width: 1000px;
+	}
+	#headerBar .border{
+		height:0.5vh;
+		background: linear-gradient(to right, #7fcde8 0, #7fcde8 35%, #fff 35%, #fff 35.5%, #b6d99f 35.5%, #b6d99f 100%);
+	}
+	#headerBar .navWidgetBtn{
+		display: none;
+	}
+	#headerBar .logo{
+		text-align: center;
+		width:1000px;
+		margin:0 auto;
+		display: flex;
+	}
+	#headerBar .logo ul{
+		display: inline-flex;
+		min-width: 700px;
+		margin-top: 1%;
+	}
+	#headerBar .logo ul li{
+		display: list-item;
+		font-size:1.6rem;
+	}
+	#headerBar .logo ul li:first-child{
+		font-size: 2.5rem;
+		padding: 0 0 0 0;
+		background-size: 100%;
+		width:30%;
+		margin: 1% 0 0 4%;
+	}
+	#headerBar .weatherWidgetBtn{
+		display: none;
+	}
+}
+#headerBlock{
+	height:7%;
+	transition: height 2s ease;
+}
+#headerBlock.opened{
+	height:48%;
+}
+
+@media (min-width: 600px){
+	#headerBlock{
+		height:11%;
+		transition: height 0s ease;
+	}
+}
+.navLinks ul{
+	display:flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin:0;
+	padding:0 0 5% 0;
+}
+.navLinks ul li{
+	border: none;
+	width: 28%;
+	color: #bcbcbc;
+	font-weight: 400;
+	font-size: 1.2rem;
+	padding: 3% 0 0 5%;
+}
+
+@media (min-width: 600px){
+	.navLinks{
+		width:66%;
+	}
+	.navLinks ul{
+		padding: 7% 5%;
+		background: url("Images/logo-gray@2x.png") no-repeat left 6% top 0;
+		background-size: 25%;
+		margin: 5% 0;
+	}
+	.navLinks ul li{
+		width:auto;
+		color:#000;
+		padding: 0 3% 0 0;
+	}
+}
 .navMobileWidget{
 	border: 1px solid rgba(0,0,0,0.5);
 	display: block;
@@ -193,13 +817,13 @@ Start Navigation Widget Styling
 .navMobileWidget .ticketsBtn a{
 	background-image: url(Images/nav-tickets@2x.png);
 }
-
-/*
--------------------------------------------------------
-Start Weather Widget Styling
--------------------------------------------------------
-*/
-
+.seasonal{
+	margin: 10% 7% 14% 10%;
+	position: relative;
+}
+.seasonal img{
+	width: 100%;
+}
 .weatherMobileWidget{
 	background-color:#353230;
 	color:#fff;
@@ -320,103 +944,6 @@ Start Weather Widget Styling
 	background-size: 90%;
 	background-position: left;
 }
-/*
-.weatherMobileWidget ul */
-.icon{
-	background-position: center;
-	background-repeat: no-repeat;
-}
-.icon.clear{
-	background-image: url(Images/clear.png);
-}
-.icon.clear.blue{
-	background-image: url(Images/clear_blue.png);
-}
-.icon.clear.black{
-	background-image: url(Images/clear_black.png);
-}
-.icon.clear.night{
-	background-image: url(Images/clear_night.png);
-}
-.icon.clear.night.blue{
-	background-image: url(Images/clear_night_blue.png);
-}
-.icon.clear.night.black{
-	background-image: url(Images/clear_night_black.png);
-}
-.icon.cloudy{
-	background-image: url(Images/cloudy.png);
-}
-.icon.cloudy.blue{
-	background-image: url(Images/cloudy_blue.png);
-}
-.icon.cloudy.black{
-	background-image: url(Images/cloudy_black.png);
-}
-.icon.cloudy.night{
-	background-image: url(Images/cloudy_night.png);
-}
-.icon.cloudy.night.blue{
-	background-image: url(Images/cloudy_night_blue.png);
-}
-.icon.cloudy.night.black{
-	background-image: url(Images/cloudy_night_black.png);
-}
-.icon.partlyCloudy{
-	background-image: url(Images/partly_cloudy.png);
-}
-.icon.partlyCloudy.blue{
-	background-image: url(Images/partly_cloudy_blue.png);
-}
-.icon.partlyCloudy.black{
-	background-image: url(Images/partly_cloudy_black.png);
-}
-.icon.partlyCloudy.night{
-	background-image: url(Images/partly_cloudy_night.png);
-}
-.icon.partlyCloudy.night.blue{
-	background-image: url(Images/partly_cloudy_night_blue.png);
-}
-.icon.partlyCloudy.night.black{
-	background-image: url(Images/partly_cloudy_night_black.png);
-}
-.icon.rain{
-	background-image: url(Images/rain.png);
-}
-.icon.rain.blue{
-	background-image: url(Images/rain_blue.png);
-}
-.icon.rain.black{
-	background-image: url(Images/rain_black.png);
-}
-.icon.rain.night{
-	background-image: url(Images/rain_night.png);
-}
-.icon.rain.night.blue{
-	background-image: url(Images/rain_night_blue.png);
-}
-.icon.rain.night.black{
-	background-image: url(Images/rain_night_black.png);
-}
-.icon.snow{
-	background-image: url(Images/snow.png);
-}
-.icon.snow.blue{
-	background-image: url(Images/snow_blue.png);
-}
-.icon.snow.black{
-	background-image: url(Images/snow_black.png);
-}
-.icon.snow.night{
-	background-image: url(Images/snow_night.png);
-}
-.icon.snow.night.blue{
-	background-image: url(Images/snow_night_blue.png);
-}
-.icon.snow.night.black{
-	background-image: url(Images/snow_night_black.png);
-}
-
 .weatherMobileWidget .rightCol li h5{ /*span:first-child{*/
 	display: inline-block;
 	margin:0;
@@ -436,612 +963,11 @@ Start Weather Widget Styling
 	padding: 2% 0 0 3%;
 	min-width:18%;
 }
-
-/*
--------------------------------------------------------
-Start Header Styling
--------------------------------------------------------
-*/
-
-#headerBar{
-	height:15%;
-	width:100%;
-	border:none;
-	border-bottom: 3px solid #bcbcbc;
-	display: flex;
-	flex-flow: row wrap;
-}
-#headerBar .border{
-	height:6%;
-	width:100%;
-	background-color: #b6d99f;
-}
-#headerBar .border > span{
-	width:50%;
-	background-color: none;
-}
-#headerBar .navWidgetBtn{
-	height: 95%;
-	width:15%;
-	background-color: white;
-	display: inline-flex;
-	border: none;
-	transition: background-color ease;
-}
-#headerBar .navWidgetBtn:active~weatherWBtn{
-	background-color: blue;
-}
-.navIcon{
-	height: 100%;
-	width: 100%;
-	background: url(Images/plus@2x.png) no-repeat center;
-	background-size: 3rem;
-	transform: rotateZ(0);
-	transition: transform 1s ease;
-}
-.navIcon.active{
-	transform: rotateZ( 45deg);
-	transition: transform 1s ease 3s;
-}
-#headerBar .logo{
-	text-align: center;
-	text-transform: lowercase;
-	width:70%;
-	height:95%;
-	background-color: white;
-}
-
-#headerBar .logo ul{
-	display: block;
-	list-style: none;
-	text-decoration: none;
-	padding:0;
-	width:100%;
-	min-width: 0px;
-	min-height: 100%;
-	height:100%;
-}
-#headerBar .logo ul li{
-	padding:0;
-	width:10%;
-	margin:1.5% 0 0 3%;
-	display:none;
-}
-#headerBar .logo ul li:first-child{
-	background: url(Images/logo-color.png) no-repeat center;
-	background-size: 60%;
-	width:100%;
-	min-height: 100%;
-	padding: 0;
-	display: block;
-	margin:0;
-}
-#headerBar .logo ul li a{
-	text-decoration: none;
-	text-transform: uppercase;
-	color: #000;
-	font-size: 1.2rem;
-	background: none;
-	font-weight: 600;
-	white-space: nowrap;
-}
-#headerBar .weatherWidgetBtn{
-	height:95%;
-	width:15%;
-	/*background: url(Images/clear_black.png) no-repeat center;*/
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #fff;
-	position: relative;
-	display: inline-flex;
-	border: none;
-	transition: background 1s ease;
-}
-#headerBar .weatherWidgetBtn .icon{
-	height: 100%;
-	width: 100%;
-}
-/*
-.weatherWidgetBtn.clear{
-	background-image: url(Images/clear_black.png);
-}
-.weatherWidgetBtn.cloudy{
-	background-image: url(Images/cloudy_black.png);
-}
-.weatherWidgetBtn.partly_cloudy{
-	background-image: url(Images/partly_cloudy_black.png);
-}
-.weatherWidgetBtn.rain{
-	background-image: url(Images/rain_black.png);
-}
-.weatherWidgetBtn.snow{
-	background-image: url(Images/snow_black.png);
-}
-*/
-#headerBar .weatherWidgetBtn.active .icon{
-	/*height:95%;
-	width:15%;*/
-	background: url(Images/nav-scroll@2x.png) no-repeat center;
-	background-color: #fff;
-	transition: background 1s ease 3s;
-}
-#headerBlock{
-	height:7%;
-	transition: height 2s ease;
-}
-#headerBlock.opened{
-	height:48%;
-}
-
-/*
-----------------------------------------------------------------
-Page Plotting
-----------------------------------------------------------------
-*/
-.page{
-	display: block;
-	overflow: hidden;
-	position: relative;
-	transition: margin-top 2s ease;
-}
-.blueSection{
-	border: .1rem solid #bcbcbc;
-	border-left: .4rem solid #7fcae4;
-	padding:8% 0 0 7%;
-}
-.greenSection{
-	border: .1rem solid #bcbcbc;
-	border-left: .4rem solid #b6d99f;
-	padding:9% 0 0 7%;
-	display: flex;
-	flex-direction:column;
-}
-h4{
-	font-weight: 900;
-	font-size: .5rem;
-}
-.page .welcomeImg{
-	
-}
-.page .welcomeImg img.desktop{
-	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
-	background-size: cover;
-	border-collapse: collapse;
-	height:0;
-	padding-top:57%;*/
-	display:none;
-}
-.page .welcomeImg img.mobile{
-	display:block;
-	width:100%;
-}
-.page .frontPage{
-	display: flex;
-	flex-direction:row;
-	overflow: hidden;
-
-}
-.page .leftCol{
-	background-color: #faf8f6;
-	height:auto;
-	width:44%;
-	float: left;
-}
-.page .contact{
-	background: url("Images/phone-black@2x.png") no-repeat center;
-	background-size: 43%;
-	width: 88%;
-	padding: 15% 0;
-	background-color: #fff;
-	border-radius: 3rem;
-	border-style: solid;
-	border-color: #bcbcbc;
-	border-width: 0.1rem;
-
-}
-.page .mainLinks{
-	list-style: none;
-	padding-left: 1%;
-	margin-bottom: 0;
-}
-.page .mainLinks li{
-	font-size: 1.3rem;
-	color:#009bd1;
-	padding-bottom: 9%;
-}
-.page .leftCol h4{
-	display: none;
-	font-size: 2rem;
-	color:	#3c3a37;
-}
-.page h5{
-	font-weight: 900;
-	font-size: 1.1rem;
-	margin: 0 15% 0 0;
-}
-.page .leftCol h5 span{
-	font-weight: 400;
-	color: #7e7c7a;
-}
-.page .leftCol .tweet h5{
-	background: url("Images/news-icon-twitter.png") no-repeat left;
-	padding-left: 6%;
-}
-.page .leftCol .fbpost h5{
-	background: url("Images/news-icon-fb.png") no-repeat left;
-	padding-left: 6%;
-}
-.page p{
-	font-size: 1.1rem;
-	font-weight: 400;
-	margin: 7% 15% 7% 0;
-	color: #7e7c7a;
-	line-height: 14px;
-}
-.page .leftCol .expand{
-	font-weight: 900;
-	color:#009bd1;
-}
-.page .rightCol{
-	background-color: #fff;
-	height:auto;
-	width:56%;
-	border-collapse: collapse;
-	float: left;
-
-}
-.page .rightCol ul{
-	display: flex;
-	flex-direction: column;
-}
-.page .seasonal{
-	margin: 10% 7% 14% 10%;
-	position: relative;
-}
-.page .seasonal img{
-	width: 100%;
-}
-.page .rightCol h5{
-	background: url("Images/wing_blue.png") no-repeat right;
-	font-size: 1.5rem;
-	padding-top: 1%;
-	margin: 0;
-	background-size: 8%;
-}
-.page .rightCol p{
-	margin: 0;
-	width: 100%;
-	font-size: 1.2rem;
-	padding: 5% 0 0 0;
-	line-height: 1.5rem;
-}
-
-/*
-----------------------------------------------------------------
-Fake Page Plotting
-----------------------------------------------------------------
-*/
-#Plot{
-	opacity: 0.5;
-	display: none;
-	height:3000px;
-	width:100%;
-	margin-top:13%;
-	position: absolute;
-	top:0;
-	transition: margin-top 2s ease;
-}
-#Plot.opened{
-	margin-top:84%;
-}
-#Plot #plotNav{
-	display:none;
-	background: url(Images/plot_navigation.png) no-repeat top;
-	background-size: contain;
-	height:500px;
-}
-#Plot #plotWeather{
-	display:none;
-	background: url(Images/plot_weather.png) no-repeat top;
-	background-size: contain;
-	height: 48%;
-}
-#Plot #plotBody{
-	display: block;
-	background: url(Images/plot_body.png) no-repeat top;
-	background-size: cover;
-	height:100%;
-}
-
-/*
------------------------------------------------------------------
-Footer Plotting
------------------------------------------------------------------
-*/
-.Footer{
-	background-color: #353230;
-}
-.Footer .social{
-	background-color: #000;
-	padding:1% 10%;
-	border-bottom: solid #bcbcbc 0.1rem;
-	font-size: 0rem;
-}
-.Footer .social img{
-	width:100%;
-	opacity:0.4;
-	margin-top: 5%;
-}
-.Footer .links{
-	background-color: #353230;
-	display: flex;
-}
-.Footer .links ul{
-	width: 50%;
-	list-style: none;
-	margin: 6% 0 0 7%;
-	padding: 0;
-}
-.Footer .links ul h6{
-	color: #bcbcbc;
-	font-size: 1rem;
-	text-transform: uppercase;
-	padding-bottom: 13%;
-	font-weight:900;
-}
-.Footer .links ul li{
-	color:#009bd1;
-	font-size: 1.1rem;
-	padding-bottom: 9%
-}
-.Footer .links ul p{
-	display: none;
-}
-.navLinks ul{
-	display:flex;
-	flex-wrap: wrap;
-	list-style: none;
-	margin:0;
-	padding:0 0 5% 0;
-}
-.navLinks ul li{
-	border: none;
-	width: 28%;
-	color: #bcbcbc;
-	font-weight: 400;
-	font-size: 1.2rem;
-	padding: 3% 0 0 5%;
-}
-
 @media (min-width: 600px){
-	body{
-	}
-	#header{
-		height:auto;
-		background-color: #fff;
-		padding-bottom: 1.5%;
-	}
-	#header .drawer{
-		display:none;
-	}
-	#headerBar{
-		height:20%;
-		margin:0 auto;
-		border:none;
-		display:flex;
-		flex-flow:wrap;
-		min-width: 1000px;
-	}
-	#headerBar .border{
-		height:0.5vh;
-		background: linear-gradient(to right, #7fcde8 0, #7fcde8 35%, #fff 35%, #fff 35.5%, #b6d99f 35.5%, #b6d99f 100%);
-	}
-	#headerBar .navWidgetBtn{
-		display: none;
-	}
-	#headerBar .logo{
-		text-align: center;
-		width:1000px;
-		margin:0 auto;
-		display: flex;
-	}
-	#headerBar .logo ul{
-		display: inline-flex;
-		min-width: 700px;
-		margin-top: 1%;
-	}
-	#headerBar .logo ul li{
-		display: list-item;
-		font-size:1.6rem;
-	}
-	#headerBar .logo ul li:first-child{
-		font-size: 2.5rem;
-		padding: 0 0 0 0;
-		background-size: 100%;
-		width:30%;
-		margin: 1% 0 0 4%;
-	}
-	#headerBar .weatherWidgetBtn{
-		display: none;
-	}
-	#headerBlock{
-		height:11%;
-		transition: height 0s ease;
-	}
-	.page{
-		height:auto;
-		width:1000px;
-		margin:0 auto;
-		display:flex;
-		flex-wrap:wrap;
-		transition:margin-top 0s ease;
-		overflow: visible;
-	}
-	.page .welcomeImg{
-		width:67%;
-		min-width:67%%;
-		min-height:350px;
-		/*background: url("Images/welcome_powder_normal.jpg") no-repeat right;
-		background-size: cover;*/
-		overflow: visible;
-	}
-	.page .welcomeImg img.desktop{
-		width: 920px;
-		float:right;
-		display:block;
-	}
-	.page .welcomeImg img.mobile{
-		display: none;
-	}
-	.page .frontPage{
-		width:67%;
-		flex-wrap:wrap-reverse;
-		height:100%;
-	}
-	.page .leftCol{
-		width:100%;
-	}
-	.page .leftCol .blueSection{
-		display: none;
-	}
-	.page .leftCol .greenSection{
-		flex-direction: row-reverse;
-		width:auto;
-		border:none;
-		padding: 2% 0 0 5%;
-	}
-	.page .leftCol .greenSection ul{
-		width:50%;
-	}
-	.page .leftCol h4{
-		display: block;
-		margin:2% 0;
-	}
-	.page .leftCol h5{
-		font-size: 1.3rem;
-		color:#3c3a37;
-	}
-	.page .leftCol .event span{
-		margin:4% 0 10% 0;
-		display: block;
-		font-size:1.3rem;
-	}
-	.page .leftCol .event p{
-		display: none;
-	}
-	.page .leftCol .news p{
-		font-size: 1.3rem;
-		line-height: normal;
-	}
-	.page .rightCol{
-		width: auto;
-		float: none;
-		overflow: hidden;
-	}
-	.page .rightCol ul{
-		flex-direction:row;
-		overflow: hidden;
-		width: auto;
-	}
-	.page .rightCol ul li{
-		min-width: 255px;
-		padding:40px;
-		margin:0;
-		height:275px;
-	}
-	.page .rightCol ul li:nth-child(1){
-		background: url("Images/fall_300x300_sprite.jpg") no-repeat;
-		background-position: 15% 75%;
-	}
-	.page .rightCol ul li:nth-child(2){
-		background: url("Images/LaborDaySkiSale_300x300_B_sprite.jpg") no-repeat;
-		background-position: 15% 75%;
-	}
-	.page .rightCol ul li:nth-child(3){
-		background: url("Images/birdjobs_B_300x300_sprite.jpg") no-repeat;
-		background-position: 15% 75%;
-	}
-	.page .rightCol ul li:nth-child(4){
-		background: url("Images/seasonpass_2014_300x300_sprite.jpg") no-repeat;
-		background-position: 15% 75%;
-	}
-	.page .rightCol ul li:nth-child(5){
-		background: url("Images/mtncollective_2014_300x300_sprite.jpg") no-repeat;
-		background-position: 15% 75%;
-	}
-	.page .rightCol ul li .mobile{
-		display: none;
-	}
-	.page .rightCol ul li h5{
-		background: none;
-		font-size: 2.5rem;
-		color: #3c3a37;
-	}
 	.weatherMobileWidget{
 		width:33%;
 		position:relative;
 		height:auto;
 		transform:rotateY(0) translateZ(0);
-	}
-	.Footer{
-		display:flex;
-		width:33%;
-		margin-right: auto;
-		flex-direction:column-reverse;
-		height:auto;
-		align-self:flex-start;
-		background-color: #353230;
-	}
-	.Footer .social{
-		background-color: transparent;
-		font-size: 2rem;
-		color: #fff;
-		padding: 2% 12%;
-		border: none;
-	}
-	.Footer .links{
-		height:auto;
-		flex-direction:column-reverse;
-		display: flex;
-		background-color: transparent;
-	}
-	.Footer .links ul{
-		width:auto;
-	}
-	.Footer .links ul li{
-		color:#9cd6ea;
-		padding: 0 0 2% 6%;
-		margin-left: 5%;
-		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
-		background-size: 3%;
-		font-size: 1.5rem;
-	}
-	.Footer .links ul h6{
-		color:#fff;
-		font-size: 2rem;
-		padding: 0 0 5% 6%;
-	}
-	.Footer .links ul p{
-		display: block;
-		margin:	10% 5%;
-		font-size: 2.5rem;
-		font-weight: 100;
-	}
-	.Footer .navLinks{
-		display: none;
-	}
-	.navLinks{
-		width:66%;
-	}
-	.navLinks ul{
-		padding: 7% 5%;
-		background: url("Images/logo-gray@2x.png") no-repeat left 6% top 0;
-		background-size: 25%;
-		margin: 5% 0;
-	}
-	.navLinks ul li{
-		width:auto;
-		color:#000;
-		padding: 0 3% 0 0;
 	}
 }
