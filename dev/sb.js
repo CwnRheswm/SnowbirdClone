@@ -18,7 +18,8 @@ $(function(){
     minorDelay=10,
     isDebug=window.location.hostname === "localhost",
     today=new Date(),
-    weatherConditions;
+    weatherConditions,
+    expTime = 43200000;
 
     onPageLoad = function(){
         weatherConditions = weather.getWeather();
@@ -255,7 +256,8 @@ $(function(){
             //pull weather from local storage, return JSON
             var storedWeather = sessionStorage.weatherObject;
             if(storedWeather !== undefined){
-                if(storedWeather.dateSet.getTime() > (today.getTime() + 43200000)){
+                storedWeather = JSON.parse(storedWeather);
+                if(new Date(storedWeather.dateSet).getTime() > (today.getTime() + expTime)){
                     
                     return _getWeatherFromOWM();
                     
