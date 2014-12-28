@@ -22,10 +22,12 @@
 				</div>
 				<ul>
                     <template repeat="{{day in daily}}">
-                        <li>{{day.day}}</li>
-                        <li class=".icon{{day.icon}}"></li>
-                        <li>{{day.high}}</li>
-                        <li>{{day.low}}</li>
+                    	<li>
+	                        <h5>{{day.day}}</h5>
+	                        <span class="icon{{day.icon}}"></span>
+	                        <span class='high'>{{day.high}}<sup>&deg</sup></span>
+	                        <span class='low'>{{day.low}}<sup>&deg</sup></span>
+	                    </li>
                     </template>
 				</ul>
 			</div>

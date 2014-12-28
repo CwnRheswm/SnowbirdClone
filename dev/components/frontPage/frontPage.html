@@ -1,0 +1,54 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="front-page">
+	<template>
+		<div class="frontPage">
+			<div class="leftCol">
+				<div class="blueSection">
+					<button class="contact"></button>
+					<ul class="mainLinks">
+						<li href="#">Day Tickets</li>
+						<li href="#">Season Pass</li>
+						<li href="#">Lodging</li>
+						<li href="#">Trail Map</li>
+					</ul>
+				</div>
+				<div class="greenSection">
+					<ul class="events">
+						<h4>EVENTS</h4>
+						<div class="event">
+							<content select="h5"><content select="span"></content></content>
+							<content select="p"></content>
+						</div>
+					</ul>
+					<ul class="news">
+						<h4>NEWS</h4>
+						<template repeat="{{new in news}}">
+							<li class={{new.cls}}>
+								<h5>{{new.h5}}</h5>
+								<p>{{new.p}}</p>
+								<p class="expand">more...</p>
+							<li>
+						</template>
+					</ul>
+				</div>
+			</div>
+			<div class="rightCol">
+				<ul>
+				</ul>
+			</div>
+	</template>
+	<script>
+		Polymer("front-page",{
+			ready: function(){
+				this.news = [
+				{cls:"tweet", h5:"NOV 4",p:"RT @PowderMagazine: Registration opened for the 2015 Subaru Freeride Series @Snowbird, @Telluride, and @Bigskyresort..."},
+				{cls:"tweet",h5:"NOV 4",p:"Get $20 off #PaintNite at the Aerie tomorrow night with Voucher Code: snowbird1. http://t.co/oinwgOmXlA #drinkcreatively"},
+				{cls:"tweet",h5:"NOV 4",p:"Create your own masterpiece with a drink in hand this Wed night at The Aerie. http://t.co/oinwgOmXlA @paintniteslc http://t.co/cIKhfQ8uei"},
+				{cls:"tweet",h5:"NOV 4",p:"RT @SkiUtah: The Monster Dump contest just launched today at 4pm in honor of the +12 inches of snow that fe... http://t.co/WgLn4G1iZ5..."},
+				{cls:"fbpost",h5:"NOV 4",p:"Follow along with the artist and create your own masterpiece with a drink in hand this Wednesday night at The Aerie. #drinkcreatively..."}
+				]
+			}
+		});
+	</script>
+</polymer-element>

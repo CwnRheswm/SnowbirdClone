@@ -113,7 +113,6 @@
 							toggleState: _toggleState,
 							state: _state};
 					}());
-					console.log(weatherBtn);
 					weatherBtn.addEventListener('click', function(){
 						isDrawerOpen = drawer.state('opened'),
 				        isInWeatherState = drawer.state('weather'),
@@ -122,8 +121,7 @@
 				        !isDrawerOpen ?
 				            drawer.open('weather')
 				                & drawer.toggleState('nav',false) 
-				                & weatherBtn.classList.add('active') 
-				                & console.log("Drawer is closed, open and set weather")
+				                & weatherBtn.classList.add('active')
 				            : isInNavState ? drawer.toggleState('nav')
 				                & navIcon.classList.remove('active')
 				                & weatherBtn.classList.add('active')

@@ -23,8 +23,8 @@ var $ = function(selector) {
 				}
 				weatherDay[weatherIter] = {"day":weekday[dayIter],
 				"icon":_parseOWMIconCode(owmJSON.forecast[weatherIter].weather[0].icon),
-				"high":owmJSON.forecast[weatherIter].main.temp_max,
-				"low":owmJSON.forecast[weatherIter].main.temp_min,
+				"high": Math.round(owmJSON.forecast[weatherIter].main.temp_max),
+				"low": Math.round(owmJSON.forecast[weatherIter].main.temp_min),
 				"temp":Math.round( owmJSON.forecast[weatherIter].main.temp)};
 			};
 			weatherDay.dateSet = new Date();
