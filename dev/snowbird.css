@@ -32,100 +32,257 @@ h6{
 	margin:0;
 	padding:0;
 }
-
 .icon{
 	background-position: center;
 	background-repeat: no-repeat;
 }
 .icon.clear{
-	background-image: url(Images/clear.png);
+	background-image: url(components/Images/clear.png);
 }
 .icon.clear.blue{
-	background-image: url(Images/clear_blue.png);
+	background-image: url(components/Images/clear_blue.png);
 }
 .icon.clear.black{
-	background-image: url(Images/clear_black.png);
+	background-image: url(components/Images/clear_black.png);
 }
 .icon.clear.night{
-	background-image: url(Images/clear_night.png);
+	background-image: url(components/Images/clear_night.png);
 }
 .icon.clear.night.blue{
-	background-image: url(Images/clear_night_blue.png);
+	background-image: url(components/Images/clear_night_blue.png);
 }
 .icon.clear.night.black{
-	background-image: url(Images/clear_night_black.png);
+	background-image: url(components/Images/clear_night_black.png);
 }
 .icon.cloudy{
-	background-image: url(Images/cloudy.png);
+	background-image: url(components/Images/cloudy.png);
 }
 .icon.cloudy.blue{
-	background-image: url(Images/cloudy_blue.png);
+	background-image: url(components/Images/cloudy_blue.png);
 }
 .icon.cloudy.black{
-	background-image: url(Images/cloudy_black.png);
+	background-image: url(components/Images/cloudy_black.png);
 }
 .icon.cloudy.night{
-	background-image: url(Images/cloudy_night.png);
+	background-image: url(components/Images/cloudy_night.png);
 }
 .icon.cloudy.night.blue{
-	background-image: url(Images/cloudy_night_blue.png);
+	background-image: url(components/Images/cloudy_night_blue.png);
 }
 .icon.cloudy.night.black{
-	background-image: url(Images/cloudy_night_black.png);
+	background-image: url(components/Images/cloudy_night_black.png);
 }
 .icon.partlyCloudy{
-	background-image: url(Images/partly_cloudy.png);
+	background-image: url(components/Images/partly_cloudy.png);
 }
 .icon.partlyCloudy.blue{
-	background-image: url(Images/partly_cloudy_blue.png);
+	background-image: url(components/Images/partly_cloudy_blue.png);
 }
 .icon.partlyCloudy.black{
-	background-image: url(Images/partly_cloudy_black.png);
+	background-image: url(components/Images/partly_cloudy_black.png);
 }
 .icon.partlyCloudy.night{
-	background-image: url(Images/partly_cloudy_night.png);
+	background-image: url(components/Images/partly_cloudy_night.png);
 }
 .icon.partlyCloudy.night.blue{
-	background-image: url(Images/partly_cloudy_night_blue.png);
+	background-image: url(components/Images/partly_cloudy_night_blue.png);
 }
 .icon.partlyCloudy.night.black{
-	background-image: url(Images/partly_cloudy_night_black.png);
+	background-image: url(components/Images/partly_cloudy_night_black.png);
 }
 .icon.rain{
-	background-image: url(Images/rain.png);
+	background-image: url(components/Images/rain.png);
 }
 .icon.rain.blue{
-	background-image: url(Images/rain_blue.png);
+	background-image: url(components/Images/rain_blue.png);
 }
 .icon.rain.black{
-	background-image: url(Images/rain_black.png);
+	background-image: url(components/Images/rain_black.png);
 }
 .icon.rain.night{
-	background-image: url(Images/rain_night.png);
+	background-image: url(components/Images/rain_night.png);
 }
 .icon.rain.night.blue{
-	background-image: url(Images/rain_night_blue.png);
+	background-image: url(components/Images/rain_night_blue.png);
 }
 .icon.rain.night.black{
-	background-image: url(Images/rain_night_black.png);
+	background-image: url(components/Images/rain_night_black.png);
 }
 .icon.snow{
-	background-image: url(Images/snow.png);
+	background-image: url(components/Images/snow.png);
 }
 .icon.snow.blue{
-	background-image: url(Images/snow_blue.png);
+	background-image: url(components/Images/snow_blue.png);
 }
 .icon.snow.black{
-	background-image: url(Images/snow_black.png);
+	background-image: url(components/Images/snow_black.png);
 }
 .icon.snow.night{
-	background-image: url(Images/snow_night.png);
+	background-image: url(components/Images/snow_night.png);
 }
 .icon.snow.night.blue{
-	background-image: url(Images/snow_night_blue.png);
+	background-image: url(components/Images/snow_night_blue.png);
 }
 .icon.snow.night.black{
-	background-image: url(Images/snow_night_black.png);
+	background-image: url(components/Images/snow_night_black.png);
+}
+.contact{
+	background: url("Images/phone-black@2x.png") no-repeat center;
+	background-size: 43%;
+	width: 88%;
+	padding: 15% 0;
+	background-color: #fff;
+	border-radius: 3rem;
+	border-style: solid;
+	border-color: #bcbcbc;
+	border-width: 0.1rem;
+
+}
+.contact .mainLinks{
+	list-style: none;
+	padding-left: 1%;
+	margin-bottom: 0;
+}
+.contact .mainLinks li{
+	font-size: 1.3rem;
+	color:#009bd1;
+	padding-bottom: 9%;
+}
+.drawer{
+	height: 0px;
+	overflow: hidden;
+	transition: height 2s ease;
+}
+.drawer.opened{
+	height:85%;
+	transition:height 2s ease;
+}
+.cubeContent{
+	width:100%;
+	height:27rem;
+	/*overflow:hidden;*/
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform: rotateX(55deg);
+	transition: transform 0s ease;
+}
+.cubeContent.weather{
+	transform: rotateX(55deg) rotateY(-90deg);
+	transition: transform 2s ease;
+}
+.cubeContent.weather.opened{
+	transform: rotateX(0) rotateY(-90deg);
+	transition: transform 2s ease;
+}
+.cubeContent.weather.closed{
+	transform: rotateX(55deg) rotateY(-90deg);
+	transition: transform;
+}
+.cubeContent.nav{
+	transform: rotateX(55deg) rotateY(0);
+	transition: transform 2s ease;
+}
+.cubeContent.nav.opened{
+	transform: rotateX(0) rotateY(0);
+	transition: transform 2s ease;
+}
+.cubeContent.nav.closed{
+	transform: rotateX(55deg) rotateY(0);
+	transition: transform;
+}
+@media (min-width: 600px){
+	.drawer{
+			display:none;
+	}
+}
+#footer{
+	background-color: #353230;
+}
+#footer .social{
+	background-color: #000;
+	padding:1% 10%;
+	border-bottom: solid #bcbcbc 0.1rem;
+	font-size: 0rem;
+}
+#footer .social img{
+	width:100%;
+	opacity:0.4;
+	margin-top: 5%;
+}
+#footer .links{
+	background-color: #353230;
+	display: flex;
+}
+#footer .links ul{
+	width: 50%;
+	list-style: none;
+	margin: 6% 0 0 7%;
+	padding: 0;
+}
+#footer .links ul h6{
+	color: #bcbcbc;
+	font-size: 1rem;
+	text-transform: uppercase;
+	padding-bottom: 13%;
+	font-weight:900;
+}
+#footer .links ul li{
+	color:#009bd1;
+	font-size: 1.1rem;
+	padding-bottom: 9%
+}
+#footer .links ul p{
+	display: none;
+}
+
+@media (min-width: 600px){
+	#footer{
+		display:flex;
+		width:33%;
+		margin-right: auto;
+		flex-direction:column-reverse;
+		height:auto;
+		align-self:flex-start;
+		background-color: #353230;
+	}
+	#footer .social{
+		background-color: transparent;
+		font-size: 2rem;
+		color: #fff;
+		padding: 2% 12%;
+		border: none;
+	}
+	#footer .links{
+		height:auto;
+		flex-direction:column-reverse;
+		display: flex;
+		background-color: transparent;
+	}
+	#footer .links ul{
+		width:auto;
+	}
+	#footer .links ul li{
+		color:#9cd6ea;
+		padding: 0 0 2% 6%;
+		margin-left: 5%;
+		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
+		background-size: 3%;
+		font-size: 1.5rem;
+	}
+	#footer .links ul h6{
+		color:#fff;
+		font-size: 2rem;
+		padding: 0 0 5% 6%;
+	}
+	#footer .links ul p{
+		display: block;
+		margin:	10% 5%;
+		font-size: 2.5rem;
+		font-weight: 100;
+	}
+	#footer .navLinks{
+		display: none;
+	}
 }
 .page{
 	display: block;
@@ -341,34 +498,27 @@ h6{
 		color: #3c3a37;
 	}
 }
-.seasonal{
-	margin: 10% 7% 14% 10%;
-	position: relative;
+#header{
+	height:48%; 25rem;
+	width:100%;
+	position: fixed;
+	top:0;
+	z-index: 100;
+	/*transition:top 2s ease;*/
 }
-.seasonal img{
-	width: 100%;
-}
-.contact{
-	background: url("Images/phone-black@2x.png") no-repeat center;
-	background-size: 43%;
-	width: 88%;
-	padding: 15% 0;
-	background-color: #fff;
-	border-radius: 3rem;
-	border-style: solid;
-	border-color: #bcbcbc;
-	border-width: 0.1rem;
 
+	border:none;
+	border-bottom: 3px solid #bcbcbc;
+	display: flex;
+	flex-flow: row wrap;
 }
-.contact .mainLinks{
-	list-style: none;
-	padding-left: 1%;
-	margin-bottom: 0;
+
+#headerBlock{
+	height:69px;
+	transition: height 2s ease;
 }
-.contact .mainLinks li{
-	font-size: 1.3rem;
-	color:#009bd1;
-	padding-bottom: 9%;
+#headerBlock.opened{
+	height:48%;
 }
 .drawer{
 	height: 0px;
@@ -412,98 +562,58 @@ h6{
 	transform: rotateX(55deg) rotateY(0);
 	transition: transform;
 }
-@media (min-width: 600px){
-	.drawer{
-			display:none;
-	}
-}
-#footer{
-	background-color: #353230;
-}
-#footer .social{
-	background-color: #000;
-	padding:1% 10%;
-	border-bottom: solid #bcbcbc 0.1rem;
-	font-size: 0rem;
-}
-#footer .social img{
-	width:100%;
-	opacity:0.4;
-	margin-top: 5%;
-}
-#footer .links{
-	background-color: #353230;
-	display: flex;
-}
-#footer .links ul{
-	width: 50%;
-	list-style: none;
-	margin: 6% 0 0 7%;
-	padding: 0;
-}
-#footer .links ul h6{
-	color: #bcbcbc;
-	font-size: 1rem;
-	text-transform: uppercase;
-	padding-bottom: 13%;
-	font-weight:900;
-}
-#footer .links ul li{
-	color:#009bd1;
-	font-size: 1.1rem;
-	padding-bottom: 9%
-}
-#footer .links ul p{
-	display: none;
-}
 
 @media (min-width: 600px){
-	#footer{
+	#header{
+		height:auto;
+		background-color: #fff;
+		padding-bottom: 1.5%;
+	}
+	#headerBar{
+		height:20%;
+		margin:0 auto;
+		border:none;
 		display:flex;
-		width:33%;
-		margin-right: auto;
-		flex-direction:column-reverse;
-		height:auto;
-		align-self:flex-start;
-		background-color: #353230;
+		flex-flow:wrap;
+		min-width: 1000px;
 	}
-	#footer .social{
-		background-color: transparent;
-		font-size: 2rem;
-		color: #fff;
-		padding: 2% 12%;
-		border: none;
+	#headerBar .border{
+		height:0.5vh;
+		background: linear-gradient(to right, #7fcde8 0, #7fcde8 35%, #fff 35%, #fff 35.5%, #b6d99f 35.5%, #b6d99f 100%);
 	}
-	#footer .links{
-		height:auto;
-		flex-direction:column-reverse;
-		display: flex;
-		background-color: transparent;
-	}
-	#footer .links ul{
-		width:auto;
-	}
-	#footer .links ul li{
-		color:#9cd6ea;
-		padding: 0 0 2% 6%;
-		margin-left: 5%;
-		background: url("Images/wing-bullet-light@2x.png") no-repeat left;
-		background-size: 3%;
-		font-size: 1.5rem;
-	}
-	#footer .links ul h6{
-		color:#fff;
-		font-size: 2rem;
-		padding: 0 0 5% 6%;
-	}
-	#footer .links ul p{
-		display: block;
-		margin:	10% 5%;
-		font-size: 2.5rem;
-		font-weight: 100;
-	}
-	#footer .navLinks{
+	#headerBar .navWidgetBtn{
 		display: none;
+	}
+	#headerBar .logo{
+		text-align: center;
+		width:1000px;
+		margin:0 auto;
+		display: flex;
+	}
+	#headerBar .logo ul{
+		display: inline-flex;
+		min-width: 700px;
+		margin-top: 1%;
+	}
+	#headerBar .logo ul li{
+		display: list-item;
+		font-size:1.6rem;
+	}
+	#headerBar .logo ul li:first-child{
+		font-size: 2.5rem;
+		padding: 0 0 0 0;
+		background-size: 100%;
+		width:30%;
+		margin: 1% 0 0 4%;
+	}
+	#headerBar .weatherWidgetBtn{
+		display: none;
+	}
+	#headerBlock{
+		transition: height 0s ease;
+	}
+	.drawer{
+			display:none;
 	}
 }
 #header{
@@ -554,7 +664,7 @@ h6{
 .navIcon{
 	height: 100%;
 	width: 100%;
-	background: url(Images/plus@2x.png) no-repeat center;
+	background: url(../Images/plus@2x.png) no-repeat center;
 	background-size: 3rem;
 	transform: rotateZ(0);
 	transition: transform 1s ease;
@@ -588,7 +698,7 @@ h6{
 	display:none;
 }
 #headerBar .logo ul li:first-child{
-	background: url(Images/logo-color.png) no-repeat center;
+	background: url(../Images/logo-color.png) no-repeat center;
 	background-size: 60%;
 	width:100%;
 	min-height: 100%;
@@ -624,10 +734,12 @@ h6{
 #headerBar .weatherWidgetBtn.active .icon{
 	/*height:95%;
 	width:15%;*/
-	background: url(Images/nav-scroll@2x.png) no-repeat center;
+	background: url(../Images/nav-scroll@2x.png) no-repeat center;
 	background-color: #fff;
 	transition: background 1s ease 3s;
 }
+
+
 @media (min-width: 600px){
 	#headerBar{
 		height:20%;
@@ -772,7 +884,7 @@ h6{
 	border-right: 1px solid #fff;
 }
 .navMobileWidget .search a{
-	background-image: url(Images/nav-search-icon.png);
+	background-image: url(../Images/nav-search-icon.png);
 	background-position: 10% 50%;
 	background-repeat: no-repeat;
 	background-size: 10%;
@@ -784,44 +896,51 @@ h6{
 	text-transform: capitalize;
 	vertical-align: bottom;
 }
-.navMobileWidget .homeBtn{
+.navMobileWidget .home{
 	width:32%;
 	background: #66c3e3;
 	display:flex;
 }
-.navMobileWidget .homeBtn a{
-	background: url(Images/nav-logo-white@2x.png) no-repeat;
+.navMobileWidget .home a{
+	background: url(../Images/nav-logo-white@2x.png) no-repeat;
 	background-size: 30%;
 	background-position: 50% 35%;
 	color:#fff;
 	padding-top:32%;
 }
-.navMobileWidget .winterBtn a{
-	background-image: url(Images/nav-winter@2x.png);
+.navMobileWidget .winter a{
+	background-image: url(../Images/nav-winter@2x.png);
 }
-.navMobileWidget .summerBtn a{
-	background-image: url(Images/nav-summer@2x.png);
+.navMobileWidget .summer a{
+	background-image: url(../Images/nav-summer@2x.png);
 }
-.navMobileWidget .lodgingBtn a{
-	background-image: url(Images/nav-lodging@2x.png);
+.navMobileWidget .lodging a{
+	background-image: url(../Images/nav-lodging@2x.png);
 }
-.navMobileWidget .diningBtn a{
-	background-image: url(Images/nav-dining@2x.png);
+.navMobileWidget .dining a{
+	background-image: url(../Images/nav-dining@2x.png);
 }
-.navMobileWidget .spaBtn a{
-	background-image: url(Images/nav-spa@2x.png);
+.navMobileWidget .spa a{
+	background-image: url(../Images/nav-spa@2x.png);
 }
-.navMobileWidget .eventsBtn a{
-	background-image: url(Images/nav-events@2x.png);
+.navMobileWidget .events a{
+	background-image: url(../Images/nav-events@2x.png);
 }
-.navMobileWidget .groupsBtn a{
-	background-image: url(Images/nav-groups@2x.png);
+.navMobileWidget .groups a{
+	background-image: url(../Images/nav-groups@2x.png);
 }
-.navMobileWidget .shopBtn a{
-	background-image: url(Images/nav-shop@2x.png);
+.navMobileWidget .shop a{
+	background-image: url(../Images/nav-shop@2x.png);
 }
-.navMobileWidget .ticketsBtn a{
-	background-image: url(Images/nav-tickets@2x.png);
+.navMobileWidget .tickets a{
+	background-image: url(../Images/nav-tickets@2x.png);
+}
+.seasonal{
+	margin: 10% 7% 14% 10%;
+	position: relative;
+}
+.seasonal img{
+	width: 100%;
 }
 .weatherMobileWidget{
 	background-color:#353230;
@@ -851,7 +970,7 @@ h6{
 	display: block;
 	width:38%;
 	height:5%;
-	background: url(Images/nav-cam@2x.png) no-repeat top;
+	background: url(../Images/nav-cam@2x.png) no-repeat top;
 	/*background-size:5.5rem;*/
 	background-size:90%;
 	/*margin:1rem 30%;*/
@@ -917,7 +1036,7 @@ h6{
 }
 
 .weatherMobileWidget .rightCol .currentTemp .icon{
-	/*background: url(Images/partly_cloudy.png) no-repeat center;*/
+	/*background: url(../Images/partly_cloudy.png) no-repeat center;*/
 	border: none;
 	background-position: 100% 75%;
 	width:48%;
@@ -939,7 +1058,7 @@ h6{
 	flex-flow: nowrap;
 }
 .weatherMobileWidget ul li .icon{
-	background-image: url(Images/clear_blue.png);
+	background-image: url(../Images/clear_blue.png);
 	background-repeat: no-repeat;
 	background-position: left;
 	padding-left: 15%;
