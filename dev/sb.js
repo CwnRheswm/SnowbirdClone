@@ -18,7 +18,8 @@ $(function(){
     minorDelay=10,
     isDebug=window.location.hostname === "localhost",
     today=new Date(),
-    weatherConditions;
+    weatherConditions,
+    expTime = 43200000;
 
     onPageLoad = function(){
         weatherConditions = weather.getWeather();
@@ -34,8 +35,8 @@ $(function(){
             weaIcon,
             curTemp;
             //run loop to create and set variables for each day
-            
-            dayObj = weather.setWeather(weatherConditions.forecast[i],i);
+        
+            dayObj = weather.setWeather(weatherConditions[i],i);
             //set current Temp
             //console.log(i+": "+dayObj.high);
             
@@ -255,7 +256,8 @@ $(function(){
             //pull weather from local storage, return JSON
             var storedWeather = sessionStorage.weatherObject;
             if(storedWeather !== undefined){
-                if(storedWeather.dateSet.getTime() > (today.getTime() + 43200000)){
+                storedWeather = JSON.parse(storedWeather);
+                if(new Date(storedWeather.dateSet).getTime() > (today.getTime() + expTime)){
                     
                     return _getWeatherFromOWM();
                     
@@ -271,7 +273,7 @@ $(function(){
             var weekday = ["sun","mon","tue","wed","thu","fri","sat"],
             day = today.getDay(),
             dayObj = {"day":"","icon":"","high":"","low":"","temp":""};
-
+            console.log(weatherCondition);
             if(weatherCondition){
                 //set weather parameters (INDIVIDUAL/group)?
                 //"date":"weather":{"icon"},"main":{"temp","temp_min","temp_max"}
