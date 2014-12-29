@@ -1,4 +1,4 @@
-.page{
+#page{
 	display: block;
 	overflow: hidden;
 	position: relative;
@@ -16,10 +16,10 @@
 	display: flex;
 	flex-direction:column;
 }
-.page .welcomeImg{
+#page .welcomeImg{
 	
 }
-.page .welcomeImg img.desktop{
+#page .welcomeImg img.desktop{
 	/*background: url("Images/welcome_mobile.jpg") no-repeat center;
 	background-size: cover;
 	border-collapse: collapse;
@@ -27,74 +27,74 @@
 	padding-top:57%;*/
 	display:none;
 }
-.page .welcomeImg img.mobile{
+#page .welcomeImg img.mobile{
 	display:block;
 	width:100%;
 }
-.page .frontPage{
+#page .frontPage{
 	display: flex;
 	flex-direction:row;
 	overflow: hidden;
 
 }
-.page .leftCol{
+#page .leftCol{
 	background-color: #faf8f6;
 	height:auto;
 	width:44%;
 	float: left;
 }
-.page .leftCol h4{
+#page .leftCol h4{
 	display: none;
 	font-size: 2rem;
 	color:	#3c3a37;
 }
-.page h5{
+#page h5{
 	font-weight: 900;
 	font-size: 1.1rem;
 	margin: 0 15% 0 0;
 }
-.page .leftCol h5 span{
+#page .leftCol h5 span{
 	font-weight: 400;
 	color: #7e7c7a;
 }
-.page .leftCol .tweet h5{
+#page .leftCol .tweet h5{
 	background: url("Images/news-icon-twitter.png") no-repeat left;
 	padding-left: 6%;
 }
-.page .leftCol .fbpost h5{
+#page .leftCol .fbpost h5{
 	background: url("Images/news-icon-fb.png") no-repeat left;
 	padding-left: 6%;
 }
-.page p{
+#page p{
 	font-size: 1.1rem;
 	font-weight: 400;
 	margin: 7% 15% 7% 0;
 	color: #7e7c7a;
 	line-height: 14px;
 }
-.page .leftCol .expand{
+#page .leftCol .expand{
 	font-weight: 900;
 	color:#009bd1;
 }
-.page .rightCol{
+#page .rightCol{
 	background-color: #fff;
 	height:auto;
 	width:56%;
 	border-collapse: collapse;
 	float: left;
 }
-.page .rightCol ul{
+#page .rightCol ul{
 	display: flex;
 	flex-direction: column;
 }
-.page .rightCol h5{
+#page .rightCol h5{
 	background: url("Images/wing_blue.png") no-repeat right;
 	font-size: 1.5rem;
 	padding-top: 1%;
 	margin: 0;
 	background-size: 8%;
 }
-.page .rightCol p{
+#page .rightCol p{
 	margin: 0;
 	width: 100%;
 	font-size: 1.2rem;
@@ -102,7 +102,7 @@
 	line-height: 1.5rem;
 }
 @media (min-width: 600px){
-	.page{
+	#page{
 		height:auto;
 		width:1000px;
 		margin:0 auto;
@@ -111,7 +111,7 @@
 		transition:margin-top 0s ease;
 		overflow: visible;
 	}
-	.page .welcomeImg{
+	#page .welcomeImg{
 		width:67%;
 		min-width:67%%;
 		min-height:350px;
@@ -119,94 +119,94 @@
 		background-size: cover;*/
 		overflow: visible;
 	}
-	.page .welcomeImg img.desktop{
+	#page .welcomeImg img.desktop{
 		width: 920px;
 		float:right;
 		display:block;
 	}
-	.page .welcomeImg img.mobile{
+	#page .welcomeImg img.mobile{
 		display: none;
 	}
-	.page .frontPage{
+	#page .frontPage{
 		width:67%;
 		flex-wrap:wrap-reverse;
 		height:100%;
 	}
-	.page .leftCol{
+	#page .leftCol{
 		width:100%;
 	}
-	.page .leftCol .blueSection{
+	#page .leftCol .blueSection{
 		display: none;
 	}
-	.page .leftCol .greenSection{
+	#page .leftCol .greenSection{
 		flex-direction: row-reverse;
 		width:auto;
 		border:none;
 		padding: 2% 0 0 5%;
 	}
-	.page .leftCol .greenSection ul{
+	#page .leftCol .greenSection ul{
 		width:50%;
 	}
-	.page .leftCol h4{
+	#page .leftCol h4{
 		display: block;
 		margin:2% 0;
 	}
-	.page .leftCol h5{
+	#page .leftCol h5{
 		font-size: 1.3rem;
 		color:#3c3a37;
 	}
-	.page .leftCol .event span{
+	#page .leftCol .event span{
 		margin:4% 0 10% 0;
 		display: block;
 		font-size:1.3rem;
 	}
-	.page .leftCol .event p{
+	#page .leftCol .event p{
 		display: none;
 	}
-	.page .leftCol .news p{
+	#page .leftCol .news p{
 		font-size: 1.3rem;
 		line-height: normal;
 	}
-	.page .rightCol{
+	#page .rightCol{
 		width: auto;
 		float: none;
 		overflow: hidden;
 	}
-	.page .rightCol ul{
+	#page .rightCol ul{
 		flex-direction:row;
 		overflow: hidden;
 		width: auto;
 	}
-	.page .rightCol ul li{
+	#page .rightCol ul li{
 		min-width: 255px;
 		padding:40px;
 		margin:0;
 		height:275px;
 	}
-	.page .rightCol ul li:nth-child(1){
+	#page .rightCol ul li:nth-child(1){
 		background: url("Images/fall_300x300_sprite.jpg") no-repeat;
 		background-position: 22% 75%;
 	}
-	.page .rightCol ul li:nth-child(2){
+	#page .rightCol ul li:nth-child(2){
 		background: url("Images/LaborDaySkiSale_300x300_B_sprite.jpg") no-repeat;
 		background-position: 22% 75%;
 	}
-	.page .rightCol ul li:nth-child(3){
+	#page .rightCol ul li:nth-child(3){
 		background: url("Images/birdjobs_B_300x300_sprite.jpg") no-repeat;
 		background-position: 22% 75%;
 	}
-	.page .rightCol ul li:nth-child(4){
+	#page .rightCol ul li:nth-child(4){
 		background: url("Images/seasonpass_2014_300x300_sprite.jpg") no-repeat;
 		background-position: 22% 75%;
 	}
-	.page .rightCol ul li:nth-child(5){
+	#page .rightCol ul li:nth-child(5){
 		background: url("Images/mtncollective_2014_300x300_sprite.jpg") no-repeat;
 		background-position: 22% 75%;
 	}
-	.page .rightCol ul li .mobile{
+	#page .rightCol ul li .mobile{
 		display: none;
 	}
-	.page .rightCol ul li h5{
+	#page .rightCol ul li h5{
 		background: none;
 		font-size: 2.5rem;
 		color: #3c3a37;
